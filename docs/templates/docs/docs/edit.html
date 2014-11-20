@@ -1,0 +1,28 @@
+{% extends "docs/docs/index.html" %}
+
+
+{% block breadcrumb %}
+	{{ block.super }}
+	| <a class="breadcrumb" href = "/docs/{{doc_id}}"> {{ doc.name }} </a>
+	| <a class="breadcrumb" href = "/docs/{{doc_id}}/edit"> Edit </a>
+{% endblock %}
+
+{% block main %}
+
+<div class="row">
+	<div class="col-md-12">
+		<h1 class="pagetitle">{{ doc.name }} | Edit</h1>
+	</div>
+</div>
+
+<form enctype="multipart/form-data" action="/docs/{{doc_id}}/edit" method="post" class="linear">
+     {% for field in form %}
+        <div class="fieldWrapper">
+            {{ field.errors }}
+            {{ field.label_tag }}: {{ field }}
+        </div>
+    {% endfor %}
+<input type="submit" value="Save doc" class="button" />
+{% csrf_token %}
+</form>
+{% endblock %}

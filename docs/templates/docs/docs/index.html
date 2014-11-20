@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block breadcrumb %}
+	{{ block.super }}
+	| <a class="breadcrumb" href = "/docs"> Docs </a>
+{% endblock %}
+
+{% block main %}
+
+
+<div class="row">
+	<div class="col-md-12">
+		<h1 class="pagetitle">Docs</h1>
+	</div>
+</div>
+
+<div class="row">
+
+	<h2>Collections</h2>
+
+	{% for group in groups %}
+		<div class="group col-md-4">
+			<div class="boxitem">
+				<h4><a href="/docs/group/{{ group.id }}">{{group.name}}</a></h4>
+			</div>
+		</div>
+	{% endfor %}
+
+
+</div>
+
+<hr>
+
+<div class="row">
+
+	<h2>Latest Documents</h2>
+	{% for doc in latest_docs_list %}
+		<div class="doc col-md-4">
+			<a href="/docs/{{ doc.id }}">
+			<div class="docitem">
+			<i class="fa fa-file-word-o"></i>
+				<h4>{{ doc.name }}</h4>
+			</div>
+			</a>
+		</div>
+	{% endfor %}
+</div>
+<hr>
+	<a href="add" class="button">add doc</a>
+{% endblock %}

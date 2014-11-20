@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block breadcrumb %}
+	{{ block.super }}
+{% endblock %}
+
+{% block main %}
+
+
+<div class="row">
+	<div class="col-md-12">
+		<h1 class="pagetitle"><i class="fa fa-home"></i> Tactical Tech Collective</h1>
+	</div>
+</div>
+
+<hr>
+
+
+<div class="row">
+	<div class="col-md-8">
+		<h3><i class="fa fa-comments"></i> Announcements</h3>
+		<a href="/home/add_announcement" class="addannouncement">add announcement</a>
+		<hr>
+		
+		{% for announcement in announcements %}
+			<div class="announcement" >
+				{{ announcement.description|safe }}
+
+				
+			</div>
+			<div class='username'><strong><small>{{ announcement.getCreatorID }}</small></strong></div>
+			<span class='announcement_created'>{{ announcement.created }}</span>
+			<hr>
+		{% endfor %}
+		
+	</div>
+
+	<div class="col-md-4">
+		<h3>Tactical Tech Resources</h3>
+		{% for link in links %}
+			<hr>
+			<a href="{{ link.link }}" target='_blank'>
+			<div class="resource">
+					{% if link.image %}
+					<div class="imageresource">
+						<img src="/media/{{ link.image }}" />
+					</div>
+					{% endif %}
+					<h4>{{ link.name }}</h4>
+					{{ link.description }}
+			</div>
+			</a>
+
+
+		{% endfor %}
+		<hr>
+		<a href="/home/add_link" class="button">add link</a>
+	</div>
+</div>
+
+
+
+
+<div class="row">
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

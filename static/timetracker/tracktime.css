@@ -1,0 +1,58 @@
+#ajaxwrapper{
+	border-bottom:1px solid #ddd;
+	border-top:1em solid #FF5959;
+	padding-bottom:3rem;
+	background-color:#f9f9f9; /*rgba(255,255,255,.3); */
+	padding:1em;
+	box-shadow: 1px 1px 1px #aaa;
+}
+
+.timewrap{
+	padding:1em;
+}
+
+.timewrap h4, .timewrap label{
+	color:#555;
+	font-size: 1.5rem;
+	width:100%;
+	border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+#entryadd .row{
+    overflow: hidden; 
+}
+
+#entryadd [class*="col-"]{
+    margin-bottom: -99999px;
+    padding-bottom: 99999px;
+}
+
+.whatdidyoudo input{
+	font-size:2.5rem;
+}
+
+
+#sendbutton {
+    color: #666;
+    float: right;
+    font-size: 2em;
+    text-align: center;
+    border-top:0px solid transparent;
+}
+
+#id_hours {
+    width: 4em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

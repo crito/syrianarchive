@@ -1,0 +1,78 @@
+
+{% extends "docs/docs/index.html" %}
+
+{% block breadcrumb %}
+	{{ block.super }}
+	| <a class="breadcrumb" href = "/docs/{{ our_doc.id }}"> {{ doc.name }} </a>
+{% endblock %}
+
+
+{% block main %}
+
+<div class="row">
+	<div class="col-md-12">
+		<h1 class="pagetitle doctitle">{{ doc.name }}</h1>
+	</div>
+</div>
+
+
+
+<div class="row">
+	<div class="col-md-8">
+		<div class="documentcontent">{{ doc.description | safe }}</div>
+	</div>
+
+	<div class="col-md-4">
+		
+			<a href='editor' class='button'>EDIT DOCUMENT</a>
+	</div>
+
+</div>
+
+
+<div class="row">
+
+	<div class="col-md-6">
+
+		<h3>Recent Changes</h3>
+		{% for version in version_list %}
+		<li>
+		 <b>{{ version.revision.comment }}</b> | {{ version.revision.date_created }}
+		</li>
+		{% endfor %}
+	</div>
+</div>
+
+
+
+<div class="row">
+	<div class="col-md-12">
+		<div class="footactions">
+			<a href = "remove">remove doc</a> |
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+{% block javascripts %}
+
+
+<script src="/static/components/showdown/showdown.js"></script>
+
+<script type="text/javascript">
+	
+(function($){
+  var converter = new Showdown.converter();
+  var htmlize = function(content) {
+    return converter.makeHtml(content);
+  };
+
+
+	$('.documentcontent').html(htmlize($('.documentcontent').html()));
+}(jQuery));
+</script>
+
+<link rel="stylesheet" href="/static/docs/docs.css">
+
+
+{% endblock %}

@@ -1,0 +1,63 @@
+
+<form id="entryadd" name="entryadd" enctype="multipart/form-data" method="post" action="add">
+	<div id="ajaxwrapper">
+	<div class="row">
+		<div class="timewrap whatdidyoudo col-md-6">
+	        <input type="text" name="name" maxlength="250" id="id_name" value="What did you do?">
+	    </div>
+	    <div class="timewrap projectselect col-md-6">
+	        
+			<select name="activity" id="id_activity" data-placeholder="add a project, type to find">
+				{% for project in projects %}
+					<optgroup label="{{ project.name }}" style="color:{{project.color}};">
+					{% for activity in project.activitieslist %}
+						<option value="{{ activity.id }}" style="color:{{project.color}};">
+							{{ activity.name }} ({{ project.name }})
+						</option>
+					{% endfor %}
+					</optgroup>
+				{% endfor %}
+			</select>
+	    </div>
+	</div>
+	<div class="row">
+
+		<div class="timewrap col-md-6">
+	        <div id="fakedate" class="datepicker date input-append">
+            	<input type="text" name="date" id="fakedate" value="">
+            	<span class="add-on"><i class="icon-th"></i></span>
+            </div>
+
+            <div id="realdate" class="datepicker realdate date" >
+            	<input type="hidden" name="date" id="id_date" value="">
+            	<span class="add-on"></span>
+        	</div>
+	    </div>
+
+
+		
+
+	    <div class="timewrap  col-md-6">
+            <input type="number" value="8" name="hours" id="id_hours"> Hours
+        </div>
+
+	</div>
+</div>
+
+
+
+
+	<div id="sendwrapper" class="row">
+		<div class="col-md-12">
+			<small class="subtle">You can navigate this form entirely with your keyboard.  TAB moves to the next field, ENTER submits the form, and your ARROWS change options</small>
+			<input type="submit" value="Add Entry" class="button" id="sendbutton" />
+		</div>
+	</div>
+
+
+
+
+
+
+{% csrf_token %}
+</form>

@@ -1,0 +1,6 @@
+MySQL-python
+South
+django-summernote
+django-reversion
+html2text
+pillow

@@ -1,0 +1,10 @@
+{% for file in files %}
+
+<a href="{{file.docfile.url}}" target='_blank'>{{ file.name }}</a>
+<small>
+<input type="text" onClick="this.select();" class="filesurl" readonly value="{{file.docfile.url}}" />
+</small>
+<hr>
+
+
+{% endfor %}

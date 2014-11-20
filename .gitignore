@@ -1,0 +1,15 @@
+*.pyc
+*.db
+syrianarchive/settings.py
+media/files/*
+static-collected/*
+syrianarchive/wsgi.py
+.sass-cache
+.DS_Store
+/media/avatars/*
+whoosh_index
+.idea
+migrations
+media
+django-summernote
+

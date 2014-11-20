@@ -1,0 +1,15 @@
+{
+	"success": 1,
+	"result": [
+	{% for entry in latest_entries %}
+		{
+			"id": "{{ entry.id }}",
+			"title": "{{ entry.name }}",
+			"url": "/time/entry/{{ entry.id }}",
+			"class": "event-important",
+			"start": "{{ entry.date|date:"U" }}",
+			"end":   "{{ entry.date|date:"U"|add:"5" }}"
+		},
+	{% endfor %}
+	]
+}

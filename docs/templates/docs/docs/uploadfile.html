@@ -1,0 +1,22 @@
+{% extends "docs/docs/index.html" %}
+
+
+{% block breadcrumb %}
+	{{ block.super }}
+
+{% endblock %}
+
+{% block main %}
+
+
+<form enctype="multipart/form-data" action="/docs/{{doc.id}}/file/upload" method="post" class="linear">
+     {% for field in form %}
+        <div class="fieldWrapper">
+            {{ field.errors }}
+            {{ field.label_tag }}: {{ field }}
+        </div>
+    {% endfor %}
+<input type="submit" value="Save doc" class="button" />
+{% csrf_token %}
+</form>
+{% endblock %}

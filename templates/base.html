@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+<title>{% block title %}{% endblock %} TTC Collective </title>
+
+<!-- Jquery, webdev crutch -->
+<script src="/static/bootstrap/js/jquery.js"></script>
+
+
+<link href='https://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+
+<link rel="stylesheet" href="/static/components/fontawesome/css/font-awesome.css">
+
+
+<!-- Select2 - magic beans.  including gere because its a heavy input/output site, and should be used everywhere -->
+<script src="/static/components/select2.0/select2.js"></script>
+<link href="/static/components/select2.0/select2.css" rel="stylesheet" media="screen">
+
+<!-- notification system for the js app -->
+<script src="/static/components/bootstrap-notify/js/bootstrap-notify.js"></script>
+<link href="/static/components/bootstrap-notify/css/bootstrap-notify.css" rel="stylesheet" media="screen">
+
+<!-- main app for site -->
+<script src="/static/js/app.js"></script>
+
+
+<link href="/static/css/main.css" rel="stylesheet" media="screen">
+
+{% block headscripts %}{% endblock %}
+
+</head>
+<body>
+
+	<a href='#'>Home</a>
+	<a href='#'>Calendar</a>
+	<a href='#'>News</a>
+	<a href='#'>What is this?</a>
+
+
+				{% block breadcrumb %}
+				{% endblock %}
+
+
+
+		{% block main %}
+
+		{% endblock %}
+
+	</div>
+
+
+{% block javascripts %}{% endblock %}
+
+</body>
+</html>

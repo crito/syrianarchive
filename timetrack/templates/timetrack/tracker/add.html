@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+
+{% block breadcrumb %}
+	{{ block.super }}
+	| <a class="breadcrumb" href = "/time/add"> Add </a>
+{% endblock %}
+
+{% block main %}
+
+<form enctype="multipart/form-data" action="/time/add" method="post">
+     {% for field in form %}
+        <div class="fieldWrapper">
+            {{ field.errors }}
+            {{ field.label_tag }}: {{ field }}
+        </div>
+    {% endfor %}
+<input type="submit" value="Add Entry" class="button" />
+{% csrf_token %}
+</form>
+{% endblock %}

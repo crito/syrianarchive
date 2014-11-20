@@ -1,0 +1,217 @@
+
+{% extends "docs/docs/index.html" %}
+
+{% block breadcrumb %}
+	{{ block.super }}
+	| <a class="breadcrumb" href = "/docs/{{ doc.id }}"> {{ doc.name }} </a> |  <a class="breadcrumb" href = "#}"> Editor</a>
+{% endblock %}
+
+
+{% block main %}
+
+
+
+<div class="modal fade" id="uploadmodal" tabindex="-1" role="dialog" aria-labelledby="uploadmodal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+        	<form id="uploadform" class="" method="post" action="/docs/{{doc.id}}/file/upload" enctype="multipart/form-data">
+     
+            
+			  	<input type="text" name="name" maxlength="520" id="id_name" value="a name for your document">
+			  	<input type="file" name="docfile" id="id_docfile">
+			    
+				<input type="submit" class="button" value="Upload File" id="uploaddoc">
+				{% csrf_token %}
+			</form>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="savemodal" tabindex="-1" role="dialog" aria-labelledby="savemodal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        	<h3>Save changes before you go?</h3>
+        	<a href='#' class='savedocument button'>Yes, save my changes!</a>
+
+			<a href='/docs/{{ doc_id }}' class='button discard'>OK, Now I'm done</a>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-12">
+		<h1 id="pagetitle" class="pagetitle doctitle"  contenteditable="true">{{ doc.name }}</h1>
+	</div>
+</div>
+
+
+
+<div class="row">
+	<div class="col-md-8">
+		<small>
+			Click on the document to begin editing. This editor understands and saves to <a href="https://daringfireball.net/projects/markdown/basics" target="_blank" >markdown</a>. <a href="http://brettterpstra.com//2011/08/31/why-markdown-a-two-minute-explanation/" target="_blank" >Why markdown?</a>
+		</small>
+		<div id="documenteditor" class=" editable documentcontent">{{ doc.description | safe }}</div>
+	</div>
+
+	<div class="col-md-4">
+
+			<h5>Actions </h5>
+
+			<input type="text" onClick="this.select();" id="tempvalue" value="add comment to your change"></input>
+		
+			<a href='#' class='savedocument button'>Save Document</a>
+
+			<hr>
+
+			<h5>Part of Collections:</h5>
+
+		
+
+				<select name="people" id="selectgroups" multiple="multiple" tabindex="-1" class="">
+				{% for group in groups %}
+				<option value="{{group.id}}" {% if group.selected %}selected="selected"{% endif %}>{{group.name}}</option>
+				{% endfor %}
+				</select>
+     
+            	{% csrf_token %}
+			
+
+
+
+
+			
+
+
+
+			<hr>
+
+
+
+
+			<h5>Attached Files</h5>
+
+
+			<div id="attachedfiles" data-load-url="/docs/{{doc.id}}/files">
+				{% include "docs/docs/files.html" %}    
+			</div>
+
+
+			<a href='#' class='uploadfile button'>Add File</a>
+
+
+			<hr>
+
+
+	</div>
+
+</div>
+
+
+
+
+<form id="documentform" class="linear" method="post" action="/docs/{{doc_id}}/edit" enctype="multipart/form-data">
+     
+            
+	<input type="text" value="{{ doc.name }}" name="name" maxlength="250" id="id_name">
+
+	<input type="text" value="Comment..." name="comment" maxlength="250" id="id_comment">
+
+    <label for="id_description">Description:</label>: <textarea rows="10" name="description" id="id_description" cols="40">{{ doc.description | safe}}</textarea>
+    
+    <select name="groups" id="id_groups" multiple="multiple" tabindex="-1" class="">
+	</select>
+    
+<input type="submit" class="button" value="Save doc">
+{% csrf_token %}
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+{% block javascripts %}
+<script src="/static/components/jquery-ui/jquery-ui.js"></script>
+<script src="/static/components/rangy/rangy-core.js"></script>
+
+<link rel="stylesheet" href="/static/components/jquery-ui/jquery-ui.css">
+
+
+<script src="/static/components/showdown/showdown.js"></script>
+
+
+<script src="/static/components/he/he.js"></script>
+<script src="/static/components/to-markdown/to-markdown.js"></script>
+
+
+<script src="/static/components/pen/pen.js"></script>
+<script src="/static/components/pen/markdown.js"></script>
+<link rel="stylesheet" href="/static/components/pen/pen.css" />
+
+<script src="/static/docs/editor/app.js"></script>
+
+<link rel="stylesheet" href="/static/docs/docs.css">
+
+
+{% endblock %}

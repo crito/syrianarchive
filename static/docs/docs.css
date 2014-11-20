@@ -1,0 +1,23 @@
+
+.documentcontent{
+	padding:2em;
+	background-color:white;
+	font-size:1.1em;
+	box-shadow:1px 1px 1px rgba(0,0,0,.5);
+}
+
+#documentform{
+	visibility:hidden;
+}
+
+.editable{
+	border-top:3px solid red;
+}
+
+.doctitle{
+	text-align:left;
+}
+
+.halloimage-dialog{
+	z-index:4000;
+}

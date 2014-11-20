@@ -1,0 +1,144 @@
+
+{% extends "profiles/index.html" %}
+
+{% block breadcrumb %}
+	{{ block.super }}
+	| <a class="breadcrumb" href = "/accounts/{{ profile.id }}"> {{ profile.display_name }} </a>
+{% endblock %}
+
+
+{% block main %}
+
+<div class="row">
+	<div class="col-md-12">
+		<h1 class="pagetitle">{{ profile.display_name }} </h1>
+
+
+		<div class="progress">
+
+
+			{% for project in project_map.projects %}
+			{% if project.hours > 0 %}
+				  <div class="progress-bar" style="width: {{project.percent}}%;{% if project.color %}background-color:{{project.color}}{% endif %}">
+				     {{ project.name }}
+				  </div>
+			{% endif %}
+			{% endfor %}
+
+		</div>
+
+
+		<small>
+		
+
+		from <strong>{{project_map.startrange}}</strong> to <strong>{{project_map.endrange}}</strong> <small><a href='timedistribution'>more details and options on time distribution</a></small>
+		</small>
+
+
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-12">
+
+	</div>
+</div>
+
+<hr>
+
+<div class="row">
+	<div class="col-md-6">
+		<h3>Bio / Work</h3>
+		<div class="descriptiontext">
+			<p>
+				{{ profile.biography|safe }}
+			</p>
+		</div>
+	</div>
+
+	<div class="col-md-1">
+	</div>
+
+	<div class="col-md-5">
+
+
+		<h4>Details</h4>
+			<li>{{ profile.contact }}</li>
+			<li>{{ profile.website }}</li>
+			<li>{{ profile.location }}</li>
+
+
+
+
+		<h4>Untracked Hours</h4>
+		<a href='/time/calendar'><strong>
+			{% if untracked_hours > 0 %}
+				On the current contract:<br/>
+				{{untracked_hours}} untracked hours (track them!)
+			{% elif untracked_hours < 0 %}
+				On the current contract:<br/>
+				{{ untracked_hours }} TOIL hours (ignore the negative, will fix this later)
+			{% else %}
+				No untracked Hours, great job!
+			{% endif %}
+			
+		</strong></a>
+
+		<h4>Contract Status</h4>
+		{% if time_left_on_contract.days_left %}
+		<div class="progress">
+		  <div class="progress-bar" role="progressbar" aria-valuenow="{{ time_left_on_contract.percent }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ time_left_on_contract.percent }}%;">
+		    
+		  </div>
+
+		  {{ time_left_on_contract.days_left }} Days left
+
+		</div>
+		{% else %}
+			<a href="add_contract">Not on Contract (add one)</a>
+		{% endif %}
+
+
+
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-12">
+		{% if current_contracts or old_contracts %}
+			<h3>Contracts</h3>
+			
+			{% if current_contracts %}
+				<h4>Current Contracts</h4>
+				<ul>
+				{% for contract in current_contracts %}
+					<li>{{ contract.startdate }} - {{ contract.enddate }}</li>
+				{% endfor %}
+				</ul>
+			{% endif %}
+			
+			{% if old_contracts %}
+				<h4>Old Contracts</h4>
+				<ul>
+				{% for contract in old_contracts %}
+					<li>{{ contract.startdate }} - {{ contract.enddate }}</li>
+				{% endfor %}
+				</ul>
+			{% endif %}
+		{% endif %}
+		
+		
+	</div>
+</div>
+	
+
+<div class="row">
+	<div class="col-md-6">
+		<div class="footactions">
+			<a href = "/accounts/edit">edit account</a> | 
+			<a href="/accounts/password/reset">reset password</a>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

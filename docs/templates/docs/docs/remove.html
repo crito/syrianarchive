@@ -1,0 +1,32 @@
+{% extends "docs/docs/index.html" %}
+
+
+{% block breadcrumb %}
+	{{ block.super }}
+	| <a class="breadcrumb" href = "/docs/{{doc_id}}"> {{ doc.name }} </a>
+	| <a class="breadcrumb" href = "/docs/{{doc_id}}/remove"> Remove </a>
+{% endblock %}
+
+{% block main %}
+
+<div class="row">
+	<div class="col-md-12">
+		<h1 class="pagetitle">{{ doc.name }} | Delete</h1>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-12">
+		<h2>Delete doc {{ doc.name }}???</h2>
+		<h6>never gonna get this back</h6>
+
+		<form enctype="multipart/form-data" action="/docs/{{doc_id}}/remove" method="post">
+
+		Are zou Sure?
+
+		<input type="submit" value="Delete" />
+		{% csrf_token %}
+		</form>
+	</div>
+</div>
+{% endblock %}
