@@ -4,7 +4,7 @@
 
 {% block main %}
 
-
+<div class="container pagetitle dbtitle">
 
 	<div class="row">
 		<div class="col-md-12">
@@ -12,9 +12,13 @@
 		</div>
 	</div>
 
+</div>
+
+
 	<div class="row database-table">
 		<div class="profile col-md-12">
-			<table class="table table-striped">
+			<table id="database" class="table table-striped table-bordered" cellspacing="0" width="100%">
+			<thead>
 				<tr>
 					<th>Name</th>
 					<th>Reference Code</th>
@@ -24,6 +28,19 @@
 					<th>Link</th>
 
 				</tr>
+			<thead>
+			<tfoot>
+				<tr>
+					<th>Name</th>
+					<th>Reference Code</th>
+					<th>Staff ID</th>
+					<th>Graphic Content</th>
+					<th>Location</th>
+					<th>Link</th>
+
+				</tr>
+			<tfoot>
+			<tbody>
 				{% for entry in entries %}
 					<tr>
 						<td>
@@ -52,8 +69,27 @@
 				
 					</tr>
 				{% endfor %}
+			<tbody>
 			</table>
 		</div>
 	</div>
 
+{% endblock %}
+
+
+{% block javascripts %}
+<script src="/static/components/datatables/datatables.js"></script>
+<script src="/static/components/datatables/datatables-bootstrap.js"></script>
+<link rel="stylesheet" href="/static/components/datatables/datatables-bootstrap.css">
+
+
+<script type="text/javascript">
+	jQuery(document).ready(function() {
+	    jQuery('#database').dataTable({
+        "paging":   false,
+        "ordering": false,
+        //"info":     false
+    });
+	} );
+</script>
 {% endblock %}

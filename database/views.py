@@ -11,9 +11,8 @@ import time
 
 # Create your views here.
 
-@login_required
 def index(request):
-	
-	entries = DatabaseEntry.objects.all()
-	
-	return render(request, 'database/index.html',{'entries':entries,})
+	if request.user.is_authenticated():
+		entries = DatabaseEntry.objects.all()
+		return render(request, 'database/index.html',{'entries':entries,})
+	return render(request, 'database/loginrequired.html')

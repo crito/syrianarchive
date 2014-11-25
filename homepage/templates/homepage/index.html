@@ -6,53 +6,50 @@
 
 {% block main %}
 
+<div class="container">
 
-<div class="row">
-	<div class="col-md-12">
-		<h1 class="pagetitle"><i class="fa fa-home"></i> Syrian Archive</h1>
-	</div>
-</div>
-
-<hr>
-
-
-<div class="row">
-	<div class="col-md-8">
-		
-		{% for announcement in announcements %}
-			<div class="announcement" >
-				<h2>{{ announcement.name|safe }}</h2>
-				{{ announcement.description|safe }}
-			</div>
-		{% endfor %}
-		
+	<div class="row">
+		<div class="col-md-12">
+			<h1 class="pagetitle"><i class="fa fa-home"></i> Syrian Archive</h1>
+		</div>
 	</div>
 
-	<div class="col-md-4">
-		<h3>Links</h3>
-		{% for link in links %}
+	<hr>
+
+
+	<div class="row">
+		<div class="col-md-8">
+			
+			{% for announcement in announcements %}
+				<div class="announcement" >
+					<h2>{{ announcement.name|safe }}</h2>
+					{{ announcement.description|safe }}
+				</div>
+			{% endfor %}
+			
+		</div>
+
+		<div class="col-md-4">
+			<h3>Links</h3>
+			{% for link in links %}
+				<hr>
+				<a href="{{ link.link }}" target='_blank'>
+				<div class="resource">
+						
+						<h4>{{ link.name }}</h4>
+						{{ link.description }}
+				</div>
+				</a>
+
+
+			{% endfor %}
 			<hr>
-			<a href="{{ link.link }}" target='_blank'>
-			<div class="resource">
-					
-					<h4>{{ link.name }}</h4>
-					{{ link.description }}
-			</div>
-			</a>
-
-
-		{% endfor %}
-		<hr>
+		</div>
 	</div>
-</div>
-
-
-
-
-<div class="row">
-
 
 </div>
+
+
 
 
 
