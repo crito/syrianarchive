@@ -34,7 +34,8 @@ body{
 .dbtitle{}
 
 thead, tfoot {
-background-color: #DB6600;
+background-color: #555
+;
 font-size: 1.2em;
 color: white;
 }
