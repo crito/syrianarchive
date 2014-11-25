@@ -19,7 +19,7 @@ class Section(models.Model):
 			return 'ghost user'
 
 	def save(self, *args, **kwargs):
-		super(Announcement, self).save(*args, **kwargs)
+		super(Section, self).save(*args, **kwargs)
 
 
 
