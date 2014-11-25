@@ -15,7 +15,7 @@ h1,h2,h3,h4,p{
 }
 
 body{
-	background-color:#eee;
+	background-color:#ddd;
 }
 
 .navbar-main{
@@ -32,3 +32,21 @@ body{
 }
 
 .dbtitle{}
+
+thead, tfoot {
+background-color: orange;
+font-size: 1.2em;
+color: white;
+}
+
+tr.even {
+background-color: whitesmoke;
+}
+
+div.navbar-collapse.collapse {
+margin-left: -1em;
+}
+
+div#database_filter {
+margin-right: 1em;
+}
