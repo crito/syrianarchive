@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+
+
+{% block main %}
+
+
+
+	<div class="row">
+		<div class="col-md-12">
+			<h1 class="pagetitle">Database</h1>
+		</div>
+	</div>
+
+	<div class="row database-table">
+		<div class="profile col-md-12">
+			<table class="table table-striped">
+				<tr>
+					<th>Name</th>
+					<th>Reference Code</th>
+					<th>Staff ID</th>
+					<th>Graphic Content</th>
+					<th>Location</th>
+					<th>Link</th>
+
+				</tr>
+				{% for entry in entries %}
+					<tr>
+						<td>
+							<a href="/accounts/{{entry.id }}">{{ entry.name }}</a>
+						</td>
+						<td>
+							{{ entry.reference_code }}
+						</td>
+						<td>
+							{{ entry.staff_id }}
+						</td>
+						<td>
+							{{ entry.graphic_content }}
+						</td>
+						<td>
+							{{ entry.location_name }}
+						</td>
+						<td>
+							{{ entry.online_link }}
+						</td>
+
+				
+					
+						
+					
+				
+					</tr>
+				{% endfor %}
+			</table>
+		</div>
+	</div>
+
+{% endblock %}

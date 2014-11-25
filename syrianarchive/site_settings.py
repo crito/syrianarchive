@@ -29,10 +29,10 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_summernote',
-    'south',
-    'reversion',
-    'profiles',
-    'docs',
+    'database',
+    #'reversion',
+    #'profiles',
+    #'docs',
     'homepage',
 )
 
@@ -129,9 +129,9 @@ SUMMERNOTE_CONFIG = {
 
 
 
-ROOT_URLCONF = 'folkroutes.urls'
+ROOT_URLCONF = 'syrianarchive.urls'
 
-WSGI_APPLICATION = 'folkroutes.wsgi.application'
+WSGI_APPLICATION = 'syrianarchive.wsgi.application'
 
 
 LANGUAGE_CODE = 'en-us'

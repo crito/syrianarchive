@@ -4,11 +4,18 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
-<title>{% block title %}{% endblock %} TTC Collective </title>
+<title>{% block title %}{% endblock %} Syrian Archive </title>
 
+
+<link rel="shortcut icon" type="image/jpg" href="{{STATIC_URL}}/favicon.ico"/>
 <!-- Jquery, webdev crutch -->
 <script src="/static/bootstrap/js/jquery.js"></script>
 
+<!-- Bootstrap -->
+<link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+<link href="/static/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
+<script type="text/javascript" src="/static/bootstrap/js/bootstrap.min.js"></script>
+<!-- <link href="/static/css/bootstrap-theme.min.css" rel="stylesheet" media="screen"> -->
 
 <link href='https://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
 
@@ -34,14 +41,47 @@
 </head>
 <body>
 
-	<a href='#'>Home</a>
-	<a href='#'>Calendar</a>
-	<a href='#'>News</a>
-	<a href='#'>What is this?</a>
+
+	<div class='notifications bottom-right'></div>
+
+    <div class="navbar navbar-fixed-top navbar-main">
+      <div class="navbar-inner">
+        <div class="container ">
+               		<button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse" type="button">
+               		MENU
+					</button>
+
+       	<div class="navbar-collapse collapse">
 
 
-				{% block breadcrumb %}
-				{% endblock %}
+        	<ul class="nav navbar-nav">
+		        <li><a href="/"><i class="fa fa-home"></i> Home</a></li>
+		    </ul>
+
+		    <ul class="nav navbar-nav">
+		        <li><a href="/database"><i class="fa fa-database"></i> Database</a></li>
+		    </ul>
+
+		    <ul class="nav navbar-nav">
+		        <li><a href="//media.syrianarchive.org"><i class="fa fa-caret-square-o-right "></i> Media Library</a></li>
+		    </ul>
+
+ 			<ul class="nav navbar-nav">
+		        <li><a href="/"><i class="fa fa-question"></i> About</a></li>
+		    </ul>
+
+      	</div>
+ 		</div>
+      </div>
+    </div>
+
+
+<br>
+<br>
+<br>
+
+	<div class="container main">
+
 
 
 
@@ -51,7 +91,7 @@
 
 	</div>
 
-
+<div class="footer"></div>
 {% block javascripts %}{% endblock %}
 
 </body>

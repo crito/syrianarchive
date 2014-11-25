@@ -13,3 +13,17 @@
 html,body{
 	font-family: 'goudy';
 }
+
+body{
+	background-color:#ddd;
+}
+
+.navbar-main{
+	background-color:white;
+    border-bottom:1px solid #aaa;
+}
+
+.table{
+    font-family:sans-serif;
+    font-size:.8em;
+}
