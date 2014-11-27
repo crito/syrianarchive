@@ -52,7 +52,7 @@ class DatabaseEntry(models.Model):
 	international_instrument = models.ManyToManyField(InternationalInstrument, null=True, blank=True)
 	media_content_type = models.ManyToManyField(MediaContentType, null=True, blank=True)
 	landmarks = models.TextField(max_length=5000, null=True, blank=True)
-	weather = models.TextField(max_length=5000, null=True, blank=True)
+	weather_in_media = models.TextField(max_length=5000, null=True, blank=True)
 
 
 	

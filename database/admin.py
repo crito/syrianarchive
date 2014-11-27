@@ -39,7 +39,7 @@ class DatabaseEntryAdmin(SummernoteModelAdmin):
             	'recording_date',
             	'location_name', 
             	('location_latitude','location_longitude',),
-            	'edited',
+            	'edited',	
             	('file_size','duration',),
             	'chain_of_custody_notes_public',
             	'media_content_type',
