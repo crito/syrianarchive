@@ -49,7 +49,7 @@ class DatabaseEntryAdmin(SummernoteModelAdmin):
             	'keywords',
             	'international_instrument',
             	'landmarks',
-            	'weather',
+            	'weather_in_media',
             )
         }),
         ('Private Fields', {
