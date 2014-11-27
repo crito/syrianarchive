@@ -51,3 +51,13 @@ margin-left: -1em;
 div#database_filter {
 margin-right: 1em;
 }
+
+
+th i.fa{
+
+    margin-left:0em;
+    position:absolute;
+    opacity:.3;
+    font-size: 2em;
+    color: orange;
+}

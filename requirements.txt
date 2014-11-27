@@ -4,3 +4,4 @@ django-summernote
 django-reversion
 html2text
 pillow
+django-grapelli

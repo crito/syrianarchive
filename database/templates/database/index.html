@@ -20,14 +20,15 @@
 			<table id="database" class="table table-striped " cellspacing="0" width="100%">
 			<thead>
 				<tr>
-					
 					<th>Name</th>
 					<th><i class="fa fa-barcode "></i> Reference Code</th>
-					<th><i class="fa fa-user "></i> Staff ID</th>
-					<th><i class="fa fa-crosshairs "></i> Graphic Content</th>
+					<th><i class="fa fa-calendar "></i> Recording Date</th>
 					<th><i class="fa fa-map-marker "></i> Location</th>
-					<th><i class="fa fa-link "></i Link</th>
-
+					<th><i class="fa fa-map-word "></i> Content Type</th>
+					<th><i class="fa fa-map-book "></i> Languages</th>
+					<th><i class="fa fa-map-question "></i> Finding Aides</th>
+					<th><i class="fa fa-crosshairs "></i> Graphic Content</th>
+					<th><i class="fa fa-map-letter "></i> Keywords</th>
 				</tr>
 
 				
@@ -36,39 +37,46 @@
 				<tr>
 					<th>Name</th>
 					<th><i class="fa fa-barcode "></i> Reference Code</th>
-					<th><i class="fa fa-user "></i> Staff ID</th>
-					<th><i class="fa fa-crosshairs "></i> Graphic Content</th>
+					<th><i class="fa fa-calendar "></i> Recording Date</th>
 					<th><i class="fa fa-map-marker "></i> Location</th>
-					<th><i class="fa fa-link "></i Link</th>
-
+					<th><i class="fa fa-map-word "></i> Content Type</th>
+					<th><i class="fa fa-map-book "></i> Languages</th>
+					<th><i class="fa fa-map-question "></i> Finding Aides</th>
+					<th><i class="fa fa-crosshairs "></i> Graphic Content</th>
+					<th><i class="fa fa-map-letter "></i> Keywords</th>
 				</tr>
 			<tfoot>
 			<tbody>
 				{% for entry in entries %}
 					<tr>
-						<td>
-							<a href="/accounts/{{entry.id }}">{{ entry.name }}</a>
-						</td>
-						<td>
-							{{ entry.reference_code }}
-						</td>
-						<td>
-							{{ entry.staff_id }}
-						</td>
-						<td>
-							{{ entry.graphic_content }}
-						</td>
-						<td>
-							{{ entry.location_name }}
-						</td>
-						<td>
-							{% if entry.online_link %}
-							<a href="{{ entry.online_link }}" target="_blank">
-								<i class="fa fa-link "></i>
-							</a>
-							{% endif %}
-						</td>
 
+					<td>
+						{{entry.name}}
+					</td>
+            		<td>
+            			{{entry.reference_code}}
+            		</td>
+            		<td>
+            			{{entry.recording_date}}
+            		</td>
+            		<td>
+            			{{entry.location_name}}
+            		</td>
+            		<td>
+            			{{entry.content_type}}
+            		</td>
+            		<td>
+            			{{entry.languages}}
+            		</td>
+            		<td>
+            			{{entry.finding_aids}}
+            		</td>
+            		<td>
+            			{{entry.graphic_content}}
+            		</td>
+            		<td>
+            			{{entry.keywords}}
+            		</td>
 				
 					
 						
