@@ -38,7 +38,7 @@ class DatabaseEntry(models.Model):
 	description = models.TextField(max_length=5000, null=True, blank=True)
 	recording_date = models.DateTimeField(default=datetime.now, null=True, blank=True)
 	location_name = models.CharField(max_length=250, null=True, blank=True)
-	location_place = models.ManyToManyField(LocationPlace, null=True, blank=True)
+	location_choice_place = models.ManyToManyField(LocationPlace, null=True, blank=True)
 	location_latitude = models.CharField(max_length=250, null=True, blank=True)
 	location_longitude = models.CharField(max_length=250, null=True, blank=True)
 	edited = models.NullBooleanField(null=True, blank=True)
