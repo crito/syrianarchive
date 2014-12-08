@@ -63,7 +63,7 @@
             			{{entry.location_name}}
             		</td>
             		<td>
-            			{% for ctype in entry.media_content_type %}
+            			{% for ctype in entry.media_content_type.all %}
             				{{ ctype.name }}
             			{% endfor %}
             		</td>
