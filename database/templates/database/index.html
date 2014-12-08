@@ -63,7 +63,9 @@
             			{{entry.location_name}}
             		</td>
             		<td>
-            			{{entry.media_content_type[0].name}}
+            			{% for ctype in entry.media_content_type %}
+            				{{ ctype.name }}
+            			{% endfor %}
             		</td>
             		<td>
             			{{entry.languages}}
