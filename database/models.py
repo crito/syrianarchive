@@ -72,6 +72,7 @@ class DatabaseEntry(models.Model):
 	location_of_original = models.CharField(max_length=250, null=True, blank=True)
 	online = models.NullBooleanField(null=True, blank=True)
 	online_link = models.CharField(max_length=250, null=True, blank=True)
+	online_link_mediadrop = models.CharField(max_length=250, null=True, blank=True)
 	online_title = models.CharField(max_length=250, null=True, blank=True)
 	date_of_acquisition = models.DateField(default=datetime.now)
 	acquired_from = models.CharField(max_length=250, null=True, blank=True)
