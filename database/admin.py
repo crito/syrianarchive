@@ -25,7 +25,7 @@ class DatabaseEntryAdmin(SummernoteModelAdmin):
 		'staff_id',
 		'recording_date',
 		'online',
-		'location_name',
+		'location_notes',
 		'priority',
 		)
 	fieldsets = (
