@@ -25,7 +25,6 @@ class DatabaseEntryAdmin(SummernoteModelAdmin):
 		'staff_id',
 		'recording_date',
 		'online',
-		'location_notes',
 		'priority',
 		)
 	fieldsets = (
@@ -38,7 +37,6 @@ class DatabaseEntryAdmin(SummernoteModelAdmin):
             	'reference_code', 
             	'recording_date',
             	'place',
-            	'location_notes', 
             	('location_latitude','location_longitude',),
             	'edited',	
             	('file_size','duration',),
