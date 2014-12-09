@@ -19,6 +19,14 @@ class SourceConnectionAdmin(admin.ModelAdmin):
 class LocationPlaceAdmin(admin.ModelAdmin):
 	pass
 
+@admin.register(Device)
+class DeviceAdmin(admin.ModelAdmin):
+	pass
+
+@admin.register(ViolationType)
+class ViolationTypeAdmin(admin.ModelAdmin):
+	pass
+
 @admin.register(DatabaseEntry)
 class DatabaseEntryAdmin(SummernoteModelAdmin):
 	formfield_overrides = {
@@ -46,8 +54,12 @@ class DatabaseEntryAdmin(SummernoteModelAdmin):
             	('file_size','duration',),
             	'chain_of_custody_notes_public',
             	'media_content_type',
+            	'device_used',
             	'languages',
             	'finding_aids',
+            	'cloths_and_uniforms',
+            	'type_of_violation',
+            	'device_used',
             	'graphic_content',
             	'keywords',
             	'international_instrument',

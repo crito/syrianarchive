@@ -26,8 +26,16 @@ class SourceConnection(models.Model):
 
 class LocationPlace(models.Model):
 	name = models.CharField(max_length=250)
+	def __unicode__(self):
+		return self.name
 
 class Device(models.Model):
+	name = models.CharField(max_length=250)
+
+	def __unicode__(self):
+		return self.name
+
+class ViolationType(models.Model):
 	name = models.CharField(max_length=250)
 
 	def __unicode__(self):
@@ -38,8 +46,10 @@ class DatabaseEntry(models.Model):
 	#public
 	name = models.CharField(max_length=250)
 	reference_code = models.CharField(max_length=250, null=True, blank=True)
+	cloths_and_uniforms = models.CharField(max_length=250, null=True, blank=True)
 	description = models.TextField(max_length=5000, null=True, blank=True)
 	recording_date = models.DateTimeField(default=datetime.now, null=True, blank=True)
+	type_of_violation = models.ManyToManyField(ViolationType, null=True, blank=True)
 	location = models.ManyToManyField(LocationPlace, null=True, blank=True)
 	location_latitude = models.CharField(max_length=250, null=True, blank=True)
 	location_longitude = models.CharField(max_length=250, null=True, blank=True)
