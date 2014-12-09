@@ -60,7 +60,9 @@
             			{{entry.recording_date}}
             		</td>
             		<td>
-            			<b>{{entry.location_name}}</b>
+            			<b>{% for loc in entry.location.all %}
+            				{{ loc.name }}
+            			{% endfor %}</b>
             			({{entry.location_latitude}}, {{entry.location_longitude}})
             		</td>
             		<td>
