@@ -15,6 +15,10 @@ class MediaContentTypeAdmin(admin.ModelAdmin):
 class SourceConnectionAdmin(admin.ModelAdmin):
 	pass
 
+@admin.register(LocationPlace)
+class LocationPlaceAdmin(admin.ModelAdmin):
+	pass
+
 @admin.register(DatabaseEntry)
 class DatabaseEntryAdmin(SummernoteModelAdmin):
 	formfield_overrides = {
