@@ -27,6 +27,9 @@ class SourceConnection(models.Model):
 class LocationPlace(models.Model):
 	name = models.CharField(max_length=250)
 
+class Device(models.Model):
+	name = models.CharField(max_length=250)
+
 	def __unicode__(self):
 		return self.name
 
@@ -43,6 +46,7 @@ class DatabaseEntry(models.Model):
 	edited = models.NullBooleanField(null=True, blank=True)
 	file_size = models.CharField(max_length=250, null=True, blank=True)
 	duration = models.CharField(max_length=250, null=True, blank=True)
+	device_used = models.ManyToManyField(Device, null=True, blank=True)
 	chain_of_custody_notes_public = models.TextField(max_length=5000, null=True, blank=True)
 	LANGS=(
 		('AR','Arabic'),
