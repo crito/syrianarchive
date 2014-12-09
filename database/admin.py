@@ -36,7 +36,7 @@ class DatabaseEntryAdmin(SummernoteModelAdmin):
             	'description',
             	'reference_code', 
             	'recording_date',
-            	'place',
+            	'location',
             	('location_latitude','location_longitude',),
             	'edited',	
             	('file_size','duration',),
