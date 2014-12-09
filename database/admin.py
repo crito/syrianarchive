@@ -59,7 +59,6 @@ class DatabaseEntryAdmin(SummernoteModelAdmin):
             	'finding_aids',
             	'cloths_and_uniforms',
             	'type_of_violation',
-            	'device_used',
             	'graphic_content',
             	'keywords',
             	'international_instrument',
