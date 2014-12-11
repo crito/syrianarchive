@@ -62,8 +62,11 @@ class DatabaseEntryAdmin(SummernoteModelAdmin):
             	'graphic_content',
             	'keywords',
             	'international_instrument',
+            	'international_instrument_notes',
             	'landmarks',
             	'weather_in_media',
+            	'weapons_used',
+            	'urls_and_news',
             )
         }),
         ('Private Fields', {

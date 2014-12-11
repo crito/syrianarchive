@@ -70,9 +70,13 @@ class DatabaseEntry(models.Model):
 	graphic_content = models.NullBooleanField(null=True, blank=True)
 	keywords = models.CharField(max_length=250, null=True, blank=True)
 	international_instrument = models.ManyToManyField(InternationalInstrument, null=True, blank=True)
+	international_instrument_notes = models.TextField(max_length=5000, null=True, blank=True)
 	media_content_type = models.ManyToManyField(MediaContentType, null=True, blank=True)
 	landmarks = models.TextField(max_length=5000, null=True, blank=True)
 	weather_in_media = models.TextField(max_length=5000, null=True, blank=True)
+	weapons_used = models.TextField(max_length=5000, null=True, blank=True)
+	urls_and_news = models.TextField(max_length=5000, null=True, blank=True)
+
 
 
 	
