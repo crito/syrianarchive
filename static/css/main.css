@@ -34,10 +34,13 @@ body{
 .dbtitle{}
 
 thead, tfoot {
-background-color: #555
-;
-font-size: 1.2em;
+background-color: #555;
+font-size: .8em;
 color: white;
+}
+
+thead th, tfoot th{
+    border-right:1px solid white;
 }
 
 tr.even {
