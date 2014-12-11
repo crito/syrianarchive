@@ -21,29 +21,38 @@
 			<thead>
 				<tr>
 					<th>Name</th>
-					<th><i class="fa fa-barcode "></i> Reference Code</th>
+					<th>Description</th>
 					<th><i class="fa fa-calendar "></i> Recording Date</th>
 					<th><i class="fa fa-map-marker "></i> Location</th>
+					<th>Edited</th>
 					<th><i class="fa fa-map-word "></i> Content Type</th>
+					<th>Device Used</th>
 					<th><i class="fa fa-map-book "></i> Languages</th>
-					<th><i class="fa fa-map-question "></i> Finding Aides</th>
+					<th>Type of Violation</th>
+					<th>Weapons Used</th>
 					<th><i class="fa fa-crosshairs "></i> Graphic Content</th>
-					<th><i class="fa fa-map-letter "></i> Keywords</th>
+					<th>Landmarks</th>
+					<th>Weather</th>
+					<th>Links</th>
 				</tr>
-
 				
 			<thead>
 			<tfoot>
 				<tr>
 					<th>Name</th>
-					<th><i class="fa fa-barcode "></i> Reference Code</th>
+					<th>Description</th>
 					<th><i class="fa fa-calendar "></i> Recording Date</th>
 					<th><i class="fa fa-map-marker "></i> Location</th>
+					<th>Edited</th>
 					<th><i class="fa fa-map-word "></i> Content Type</th>
+					<th>Device Used</th>
 					<th><i class="fa fa-map-book "></i> Languages</th>
-					<th><i class="fa fa-map-question "></i> Finding Aides</th>
+					<th>Type of Violation</th>
+					<th>Weapons Used</th>
 					<th><i class="fa fa-crosshairs "></i> Graphic Content</th>
-					<th><i class="fa fa-map-letter "></i> Keywords</th>
+					<th>Landmarks</th>
+					<th>Weather</th>
+					<th>Links</th>
 				</tr>
 			<tfoot>
 			<tbody>
@@ -54,7 +63,7 @@
 						{{entry.name}}
 					</td>
             		<td>
-            			{{entry.reference_code}}
+            			{{entry.description}}
             		</td>
             		<td>
             			{{entry.recording_date}}
@@ -66,7 +75,15 @@
             			({{entry.location_latitude}}, {{entry.location_longitude}})
             		</td>
             		<td>
-            			{% for ctype in entry.media_content_type.all %}
+            			{{entry.edited}}
+            		</td>
+            		<td>
+            			{% for ctype in entry.content_type.all %}
+            				{{ ctype.name }}
+            			{% endfor %}
+            		</td>
+            		<td>
+            			{% for ctype in entry.device_used.all %}
             				{{ ctype.name }}
             			{% endfor %}
             		</td>
@@ -74,19 +91,26 @@
             			{{entry.languages}}
             		</td>
             		<td>
-            			{{entry.finding_aids}}
+            			{% for ctype in entry.type_of_violation.all %}
+            				{{ ctype.name }}
+            			{% endfor %}
             		</td>
+            		<td>
+            			{{entry.weapons_used}}
             		<td>
             			{{entry.graphic_content}}
             		</td>
             		<td>
-            			{{entry.keywords}}
+            			{{entry.landmarks}}
             		</td>
-				
+            		<td>
+            			{{entry.weather}}
+            		</td>
+            		<td>
+            			{{entry.online_link}}
+            			{{entry.online_link_mediadrop}}
+            		</td>
 					
-						
-					
-				
 					</tr>
 				{% endfor %}
 			<tbody>
