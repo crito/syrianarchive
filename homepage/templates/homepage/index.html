@@ -18,8 +18,10 @@
 			{% for announcement in announcements %}
 				<div class="announcement" >
 				{% if lang == 'ar' %}
+					<span dir="rtl">
 					<h2>{{ announcement.arabic_name|safe }}</h2>
 					{{ announcement.arabic_description|safe }}
+					</span>
 				{% else %}
 					<h2>{{ announcement.name|safe }}</h2>
 					{{ announcement.description|safe }}
