@@ -22,7 +22,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
-    'grappelli',
+    'modeltranslation',
+    #'grappelli',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -30,16 +31,15 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_summernote',
+    'rosetta',
     'database',
-    #'reversion',
-    #'profiles',
-    #'docs',
     'homepage',
 )
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'solid_i18n.middleware.SolidLocaleMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -134,14 +134,7 @@ ROOT_URLCONF = 'syrianarchive.urls'
 
 WSGI_APPLICATION = 'syrianarchive.wsgi.application'
 
-
-LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'UTC'
-
-USE_I18N = True
-
-USE_L10N = True
 
 USE_TZ = True
 
@@ -150,3 +143,29 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+# Path to locale folder
+LOCALE_PATHS = (
+   BASE_PATH + '/locale',
+)
+
+# The language your website is starting in
+LANGUAGE_CODE = 'en'
+
+# The languages you are supporting
+LANGUAGES = (
+    ('en', 'English'),   # You need to include your LANGUAGE_CODE language
+    ('ar', 'Arabic'),
+)
+
+# Use internationalization
+USE_I18N = True
+
+# Use localization
+USE_L10N = True
+
+# Optional. If you want to use redirects, set this to True
+SOLID_I18N_USE_REDIRECTS = False
+
+SOLID_I18N_DEFAULT_PREFIX_REDIRECT = True

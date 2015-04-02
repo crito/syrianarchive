@@ -5,36 +5,38 @@
 {% endblock %}
 
 {% block main %}
+<div class=" mainrow">
 
 <div class="container">
 
 
-	<hr>
 
 
-	<div class="row">
-		<div class="col-md-8">
+
+	<div class="row ">
+		<div class="col-md-8 mainbar">
+
+
 			
 			{% for announcement in announcements %}
 				<div class="announcement" >
 				{% if lang == 'ar' %}
 					<span dir="rtl">
 					<h2>{{ announcement.arabic_name|safe }}</h2>
-					{{ announcement.arabic_description|safe }}
+					<p>{{ announcement.arabic_description|safe }}</p>p>
 					</span>
 				{% else %}
 					<h2>{{ announcement.name|safe }}</h2>
-					{{ announcement.description|safe }}
+					<p>{{ announcement.description|safe }}</p>
 				{% endif %}
 				</div>
 			{% endfor %}
 			
 		</div>
 
-		<div class="col-md-4">
+		<div class="col-md-4 sidebar">
 			<h3>Links</h3>
 			{% for link in links %}
-				<hr>
 				<a href="{{ link.link }}" target='_blank'>
 				<div class="resource">
 						
@@ -45,7 +47,6 @@
 
 
 			{% endfor %}
-			<hr>
 		</div>
 	</div>
 
@@ -53,6 +54,7 @@
 
 
 
+</div>
 
 
 

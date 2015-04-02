@@ -5,3 +5,6 @@ django-reversion
 html2text
 pillow
 django-grapelli
+solid_i18n
+django-rosetta
+django-modeltranslation

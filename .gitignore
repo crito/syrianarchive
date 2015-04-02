@@ -12,4 +12,4 @@ whoosh_index
 migrations
 media
 django-summernote
-
+locale/*
