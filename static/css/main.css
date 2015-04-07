@@ -15,13 +15,13 @@ h1,h2,h3,h4,h5,h6,p{
 }
 
 body{
-	background-color:rgba(51, 51, 51, 0.05);
-    font-size:17px;
+	background-color:#fff;
+    font-size:16px;
 }
 
 .navbar-main{
 	background-color:white;
-    border-bottom:1px solid #aaa;
+    /*border-bottom:1px solid #aaa;*/
 }
 
 .database-table{
@@ -69,24 +69,24 @@ th i.fa{
 
 .sidebar{
     min-height:800px;
-        background-color: #DFDFDF;
+        background-color: #334C4D;
+    z-index: 5;
 
 }
 
 .mainbar{
-    background-color:#fdfdfd;
+    background-color:#fff;
     min-height:800px;
-    border-top:1px solid white;
-    border-right:1px solid white;
-    border-top:2px solid orange;
     padding-top:2em;
-   
+    box-shadow: 1px 1px 1px black;
+   z-index: 10;
 }
 
 .mainrow{
+    /*
       -webkit-box-shadow: 0 -8px 6px -6px rgba(0,0,0,.3);
      -moz-box-shadow:   0 -8px 6px -6px rgba(0,0,0,.3);
-          box-shadow:   0 -8px 6px -6px rgba(0,0,0,.3);
+          box-shadow:   0 -8px 6px -6px rgba(0,0,0,.3);*/
         position:relative;
         z-index:20;
 
@@ -108,7 +108,25 @@ a{
 }
 
 .navbar{
+    /*
     -webkit-box-shadow: 0 8px 6px -6px rgba(0,0,0,.3);
      -moz-box-shadow: 0 8px 6px -6px rgba(0,0,0,.3);
           box-shadow: 0 8px 6px -6px rgba(0,0,0,.3);
+          */
+          background-color:#334C4D;
+}
+
+.navbar a{
+    color:#A68B59;
+    font-weight: bold;
+}
+
+#langswitcher{
+    background-color:#A68B59;
+    color:white;
+    font-weight:bold;
+    border:none;
+    padding: .5em;
+    font-size: .8em;
+    box-shadow: 1px 1px 1px black;
 }

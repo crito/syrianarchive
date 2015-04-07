@@ -74,13 +74,29 @@
 		        <li><a href="/"><i class="fa fa-question"></i> About</a></li>
 		    </ul>
 
-		    <ul class="nav navbar-nav">
-		        <li><a href="/ar"><i class="fa fa-question"></i>العربية</a></li>
-		    </ul>
-
 		    <ul class="nav navbar-nav navbar-right">
-		    {% get_current_language as LANGUAGE_CODE %}
-			<li>{{ LANGUAGE_CODE }}</li>
+
+				<form action="{% url 'set_language' %}" method="post">
+				{% csrf_token %}
+					<input name="uhuh" type="hidden" />
+			    	{% ifequal LANGUAGE_CODE 'en' %}
+			    	<select name="language" style="display:none;">
+			    		<option value="ar" selected="selected" type="hidden" >
+				    		العربيّة (ar)
+						</option>
+					</select>
+					<button  id="langswitcher"  type="submit" value="" >العربيّة (ar)</button>
+					{% else %}
+					<select name="language" style="display:none;">
+						<option value="en" selected="selected" type="hidden" >
+				    		English (en)
+						</option>
+					</select>
+					<button id="langswitcher" type="submit" value="" >English (en)</button>
+					{% endifequal %}
+				</form>
+
+
 			</ul>
 
 		   
@@ -91,7 +107,7 @@
     </div>
 
 {% ifequal LANGUAGE_CODE 'en' %}
-	<img class="logo" src="/static/img/nsmail-1.png" width="100%" />
+	<img class="logo" src="/static/img/syarch.png" width="100%" />
 {% else %}
 	<img class="logo" src="/static/img/arabic.png" width="100%" />
 {% endifequal %}

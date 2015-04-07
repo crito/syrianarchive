@@ -39,12 +39,21 @@ INSTALLED_APPS = (
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'solid_i18n.middleware.SolidLocaleMiddleware',
+    'solid_i18n.middleware.LocaleMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
+
+TEMPLATE_CONTEXT_PROCESSORS = ("django.contrib.auth.context_processors.auth",
+"django.core.context_processors.debug",
+"django.core.context_processors.i18n",
+"django.core.context_processors.media",
+"django.core.context_processors.static",
+"django.core.context_processors.tz",
+"django.contrib.messages.context_processors.messages")
+
 
 
 
@@ -165,7 +174,3 @@ USE_I18N = True
 # Use localization
 USE_L10N = True
 
-# Optional. If you want to use redirects, set this to True
-SOLID_I18N_USE_REDIRECTS = False
-
-SOLID_I18N_DEFAULT_PREFIX_REDIRECT = True
