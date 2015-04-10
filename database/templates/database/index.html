@@ -13,10 +13,25 @@
 	</div>
 
 </div>
+<!-- database filters-->
+
+	<div class="row">
+		<div class="col-md-12">
+			    <form action="" method="get">
+			        {{ violationfilter.form.as_p }}
+			        <input type="submit" />
+			    </form>
+			    {% for obj in violationfilter %}
+			        {{ obj.name }}<br />
+			    {% endfor %}
+		</div>
+	</div>
+
 
 
 	<div class="row database-table">
 		<div class="profile col-md-12">
+
 			<table id="database" class="table table-striped " cellspacing="0" width="100%">
 			<thead>
 				<tr>
@@ -122,7 +137,7 @@
 
 
 {% block javascripts %}
-<script src="/static/components/datatables/datatables.js"></script>
+<!--<script src="/static/components/datatables/datatables.js"></script>
 <script src="/static/components/datatables/datatables-bootstrap.js"></script>
 <link rel="stylesheet" href="/static/components/datatables/datatables-bootstrap.css">
 
@@ -135,5 +150,5 @@
         //"info":     false
     });
 	} );
-</script>
+</script>-->
 {% endblock %}

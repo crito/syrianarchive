@@ -3,6 +3,7 @@ from database.models import *
 from django_summernote.admin import SummernoteModelAdmin
 from django.forms import CheckboxSelectMultiple
 
+
 @admin.register(InternationalInstrument)
 class InternationalInstrumentEntryAdmin(admin.ModelAdmin):
 	pass
@@ -104,3 +105,4 @@ class DatabaseEntryAdmin(SummernoteModelAdmin):
 		if not change:
 			obj.creator = request.user
 		obj.save()
+

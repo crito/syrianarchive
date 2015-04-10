@@ -1,9 +1,9 @@
 from django.db import models
-from django import forms
 from django.contrib.auth.models import User
 from django.contrib.admin import widgets
 from datetime import datetime
 import time
+import django_filters
 
 class InternationalInstrument(models.Model):
 	name = models.CharField(max_length=250)
@@ -49,14 +49,14 @@ class DatabaseEntry(models.Model):
 	cloths_and_uniforms = models.CharField(max_length=250, null=True, blank=True)
 	description = models.TextField(max_length=5000, null=True, blank=True)
 	recording_date = models.DateTimeField(default=datetime.now, null=True, blank=True)
-	type_of_violation = models.ManyToManyField(ViolationType, null=True, blank=True)
-	location = models.ManyToManyField(LocationPlace, null=True, blank=True)
+	type_of_violation = models.ManyToManyField(ViolationType, blank=True)
+	location = models.ManyToManyField(LocationPlace, blank=True)
 	location_latitude = models.CharField(max_length=250, null=True, blank=True)
 	location_longitude = models.CharField(max_length=250, null=True, blank=True)
 	edited = models.NullBooleanField(null=True, blank=True)
 	file_size = models.CharField(max_length=250, null=True, blank=True)
 	duration = models.CharField(max_length=250, null=True, blank=True)
-	device_used = models.ManyToManyField(Device, null=True, blank=True)
+	device_used = models.ManyToManyField(Device, blank=True)
 	chain_of_custody_notes_public = models.TextField(max_length=5000, null=True, blank=True)
 	LANGS=(
 		('AR','Arabic'),
@@ -69,9 +69,9 @@ class DatabaseEntry(models.Model):
 	finding_aids = models.CharField(max_length=250, null=True, blank=True)
 	graphic_content = models.NullBooleanField(null=True, blank=True)
 	keywords = models.CharField(max_length=250, null=True, blank=True)
-	international_instrument = models.ManyToManyField(InternationalInstrument, null=True, blank=True)
+	international_instrument = models.ManyToManyField(InternationalInstrument, blank=True)
 	international_instrument_notes = models.TextField(max_length=5000, null=True, blank=True)
-	media_content_type = models.ManyToManyField(MediaContentType, null=True, blank=True)
+	media_content_type = models.ManyToManyField(MediaContentType,  blank=True)
 	landmarks = models.TextField(max_length=5000, null=True, blank=True)
 	weather_in_media = models.TextField(max_length=5000, null=True, blank=True)
 	weapons_used = models.TextField(max_length=5000, null=True, blank=True)
@@ -115,7 +115,7 @@ class DatabaseEntry(models.Model):
 	priority = models.CharField(max_length=250, null=True, blank=True, choices=PRIORITY_LIST)
 	notes = models.TextField(max_length=5000, null=True, blank=True)
 	added_date = models.DateField(default=datetime.now)
-	source_connection = models.ManyToManyField(SourceConnection, null=True, blank=True)
+	source_connection = models.ManyToManyField(SourceConnection, blank=True)
 	creator = models.ForeignKey(User, null=True, blank=True)
 
 	def __unicode__(self):
@@ -137,4 +137,12 @@ class DatabaseEntry(models.Model):
 		super(DatabaseEntry, self).save(*args, **kwargs)
 
 
+class DatabaseFilterViolation(django_filters.FilterSet):
+	class Meta:
+		model = ViolationType
+		fields = ['name']
 
+class DatabaseFilterLocation(django_filters.FilterSet):
+	class Meta:
+		model = LocationPlace
+		fields = ['name']
