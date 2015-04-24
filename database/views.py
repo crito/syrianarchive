@@ -19,7 +19,7 @@ def index(request):
 	if request.user.is_authenticated():
     		f = DatabaseFilter(request.GET, queryset=DatabaseEntry.objects.all())
     	
-    		return render_to_response('database/index.html', {'filter': f})
+    		return render(request, 'database/index.html', {'filter': f})
 	
 	return render(request, 'database/loginrequired.html')
 

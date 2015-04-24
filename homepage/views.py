@@ -10,8 +10,8 @@ from django.contrib.auth.decorators import login_required
 
 
 
-def index(request, lang='en'):
+def index(request):
 	announcements = Section.objects.all()
 	links = FrontPageLink.objects.all()
-	return render(request, 'homepage/index.html', {'announcements' : announcements, 'links':links,'lang':lang,})
+	return render(request, 'homepage/index.html', {'announcements' : announcements, 'links':links,})
 

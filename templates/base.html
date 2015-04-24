@@ -77,7 +77,7 @@
 		    <ul class="nav navbar-nav navbar-right">
 
 				<form action="{% url 'set_language' %}" method="post">
-				{% csrf_token %}
+				
 					<input name="uhuh" type="hidden" />
 			    	{% ifequal LANGUAGE_CODE 'en' %}
 			    	<select name="language" style="display:none;">
@@ -94,6 +94,7 @@
 					</select>
 					<button id="langswitcher" type="submit" value="" >English (en)</button>
 					{% endifequal %}
+					{% csrf_token %}
 				</form>
 
 
@@ -111,8 +112,6 @@
 {% else %}
 	<img class="logo" src="/static/img/arabic.png" width="100%" />
 {% endifequal %}
-
-
 
 
 		{% block main %}

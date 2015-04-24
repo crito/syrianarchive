@@ -1,20 +1,22 @@
 {% extends "base.html" %}
 
+{% load i18n %}
 
 
 {% block main %}
 
 
-	<div class="row">
+	<div class="row titlerow">
 		<div class="col-md-12">
-			<h1 class="pagetitle">Database</h1>
+			<h1 class="pagetitle">{% trans "Database" %}</h1>
 		</div>
 	</div>
 
 <!-- database filters-->
 
-	<div class="row">
+	<div class="row filterrow">
 		<div class="col-md-12 filterwrapper">
+		{% trans "Filter By" %}
 			    <form id="filter" action="" method="get">
 			       {{ filter.form.as_p }}
 			        <input type="submit" />
@@ -26,16 +28,15 @@
 
 	<div class="row database-table">
 		<div class="profile col-md-12">
-
 			<table id="database" class="table table-striped " cellspacing="0" width="100%">
 			<thead>
 				<tr>
-					<th>Name</th>
-					<th>Description</th>
-					<th><i class="fa fa-calendar "></i> Recording Date</th>
-					<th><i class="fa fa-map-marker "></i> Location</th>
-					<th>Type of Violation</th>
-					<th>Thumbnail</th>
+					<th>{% trans "Name" %}</th>
+					<th>{% trans "Description" %}</th>
+					<th><i class="fa fa-calendar "></i>{% trans "Recording Date" %}</th>
+					<th><i class="fa fa-map-marker "></i>{% trans "Location" %}</th>
+					<th>{% trans "Type of Violation" %}</th>
+					<th>{% trans "Thumbnail" %}</th>
 				</tr>
 				
 			<thead>

@@ -27,7 +27,18 @@ body{
     width:100%;
 }
 
+.titlerow{
+    background-color:orange;
+    font-weight: bold;
+    color: white;
+    padding:1em;
+}
 
+.filterrow{
+    background-color:teal;
+    color:white;
+    padding:1em;
+}
 
 .navbar-main{
 	background-color:white;
