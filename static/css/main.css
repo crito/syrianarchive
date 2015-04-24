@@ -19,9 +19,19 @@ body{
     font-size:16px;
 }
 
+
+
+
+
+.container{
+    width:100%;
+}
+
+
+
 .navbar-main{
 	background-color:white;
-    /*border-bottom:1px solid #aaa;*/
+    border:0px solid white;
 }
 
 .database-table{
@@ -69,17 +79,16 @@ th i.fa{
 
 .sidebar{
     min-height:800px;
-        background-color: #334C4D;
+        background-color: #efefef;
     z-index: 5;
 
 }
 
 .mainbar{
-    background-color:#fff;
+    background-color:#fefefe;
     min-height:800px;
     padding-top:2em;
-    box-shadow: 1px 1px 1px black;
-   z-index: 10;
+       z-index: 10;
 }
 
 .mainrow{
@@ -97,29 +106,13 @@ th i.fa{
     position:relative;
 }
 
-a{
-    color:#cf4c0c;
-}
-
 
 
 .footer{
     background-color: #aaa;
 }
 
-.navbar{
-    /*
-    -webkit-box-shadow: 0 8px 6px -6px rgba(0,0,0,.3);
-     -moz-box-shadow: 0 8px 6px -6px rgba(0,0,0,.3);
-          box-shadow: 0 8px 6px -6px rgba(0,0,0,.3);
-          */
-          background-color:#334C4D;
-}
 
-.navbar a{
-    color:#A68B59;
-    font-weight: bold;
-}
 
 #langswitcher{
     background-color:#A68B59;
@@ -128,7 +121,7 @@ a{
     border:none;
     padding: .5em;
     font-size: .8em;
-    box-shadow: 1px 1px 1px black;
+    height:50px;
 }
 
 /* database filters */
