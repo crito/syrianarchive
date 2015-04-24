@@ -5,3 +5,4 @@ html2text
 pillow
 django-rosetta
 django-modeltranslation
+django-filter
