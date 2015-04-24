@@ -130,3 +130,13 @@ a{
     font-size: .8em;
     box-shadow: 1px 1px 1px black;
 }
+
+/* database filters */
+
+#filter input{
+    width: 100px !important;
+}
+
+#filter p{
+    float: left;
+}

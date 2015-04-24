@@ -2,8 +2,10 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.contrib.admin import widgets
 from datetime import datetime
+from django.core.validators import MinValueValidator, MaxValueValidator
 import time
 import django_filters
+
 
 class InternationalInstrument(models.Model):
 	name = models.CharField(max_length=250)
@@ -68,6 +70,7 @@ class DatabaseEntry(models.Model):
 	languages = models.CharField(max_length=250, null=True, blank=True, choices=LANGS)
 	finding_aids = models.CharField(max_length=250, null=True, blank=True)
 	graphic_content = models.NullBooleanField(null=True, blank=True)
+	#gender_or_sex = models.NullBooleanField(null=True, blank=True)
 	keywords = models.CharField(max_length=250, null=True, blank=True)
 	international_instrument = models.ManyToManyField(InternationalInstrument, blank=True)
 	international_instrument_notes = models.TextField(max_length=5000, null=True, blank=True)
@@ -76,7 +79,16 @@ class DatabaseEntry(models.Model):
 	weather_in_media = models.TextField(max_length=5000, null=True, blank=True)
 	weapons_used = models.TextField(max_length=5000, null=True, blank=True)
 	urls_and_news = models.TextField(max_length=5000, null=True, blank=True)
-
+	'''
+	reliability_score = models.IntegerField(
+        			default=1,
+        			validators=[
+            			MaxValueValidator(100),
+            			MinValueValidator(1)
+        			]
+     			)
+	related_incidents = models.ManyToManyField("DatabaseEntry", blank=True)
+	'''
 
 
 	
@@ -137,12 +149,13 @@ class DatabaseEntry(models.Model):
 		super(DatabaseEntry, self).save(*args, **kwargs)
 
 
-class DatabaseFilterViolation(django_filters.FilterSet):
+class DatabaseFilter(django_filters.FilterSet):
 	class Meta:
-		model = ViolationType
-		fields = ['name']
-
-class DatabaseFilterLocation(django_filters.FilterSet):
-	class Meta:
-		model = LocationPlace
-		fields = ['name']
+		model = DatabaseEntry
+		fields = ['type_of_violation','location',]
+	'''
+	def __init__(self, *args, **kwargs):
+		super(DatabaseFilter, self).__init__(*args, **kwargs)
+		self.filters['type_of_violation'].extra.update({'empty_label': 'All Violation Types'})
+		#self.filters['location'].extra.update({'empty_label':'All Locations'})
+	'''

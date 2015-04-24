@@ -16,14 +16,11 @@
 <!-- database filters-->
 
 	<div class="row">
-		<div class="col-md-12">
-			    <form action="" method="get">
-			        {{ violationfilter.form.as_p }}
+		<div class="col-md-12 filterwrapper">
+			    <form id="filter" action="" method="get">
+			       {{ filter.form.as_p }}
 			        <input type="submit" />
 			    </form>
-			    {% for obj in violationfilter %}
-			        {{ obj.name }}<br />
-			    {% endfor %}
 		</div>
 	</div>
 
@@ -39,43 +36,18 @@
 					<th>Description</th>
 					<th><i class="fa fa-calendar "></i> Recording Date</th>
 					<th><i class="fa fa-map-marker "></i> Location</th>
-					<th>Edited</th>
-					<th><i class="fa fa-map-word "></i> Content Type</th>
-					<th>Device Used</th>
-					<th><i class="fa fa-map-book "></i> Languages</th>
 					<th>Type of Violation</th>
-					<th>Weapons Used</th>
-					<th><i class="fa fa-crosshairs "></i> Graphic Content</th>
-					<th>Landmarks</th>
-					<th>Weather</th>
-					<th>Links</th>
+					<th>Thumbnail</th>
 				</tr>
 				
 			<thead>
-			<tfoot>
-				<tr>
-					<th>Name</th>
-					<th>Description</th>
-					<th><i class="fa fa-calendar "></i> Recording Date</th>
-					<th><i class="fa fa-map-marker "></i> Location</th>
-					<th>Edited</th>
-					<th><i class="fa fa-map-word "></i> Content Type</th>
-					<th>Device Used</th>
-					<th><i class="fa fa-map-book "></i> Languages</th>
-					<th>Type of Violation</th>
-					<th>Weapons Used</th>
-					<th><i class="fa fa-crosshairs "></i> Graphic Content</th>
-					<th>Landmarks</th>
-					<th>Weather</th>
-					<th>Links</th>
-				</tr>
-			<tfoot>
+
 			<tbody>
-				{% for entry in entries %}
+				{% for entry in filter %}
 					<tr>
 
 					<td>
-						{{entry.name}}
+						<a href="/database/{{entry.id}}" >{{entry.name}}</a>
 					</td>
             		<td>
             			{{entry.description}}
@@ -89,41 +61,14 @@
             			{% endfor %}</b>
             			({{entry.location_latitude}}, {{entry.location_longitude}})
             		</td>
-            		<td>
-            			{{entry.edited}}
-            		</td>
-            		<td>
-            			{% for ctype in entry.content_type.all %}
-            				{{ ctype.name }}
-            			{% endfor %}
-            		</td>
-            		<td>
-            			{% for ctype in entry.device_used.all %}
-            				{{ ctype.name }}
-            			{% endfor %}
-            		</td>
-            		<td>
-            			{{entry.languages}}
-            		</td>
+.
             		<td>
             			{% for ctype in entry.type_of_violation.all %}
             				{{ ctype.name }}
             			{% endfor %}
-            		</td>
+			</td>
             		<td>
-            			{{entry.weapons_used}}
-            		<td>
-            			{{entry.graphic_content}}
-            		</td>
-            		<td>
-            			{{entry.landmarks}}
-            		</td>
-            		<td>
-            			{{entry.weather}}
-            		</td>
-            		<td>
-            			{{entry.online_link}}
-            			{{entry.online_link_mediadrop}}
+            			Thumbnails to come
             		</td>
 					
 					</tr>

@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+
+
+{% block main %}
+
+
+<div class="container pagetitle dbtitle">
+
+	<div class="row">
+		<div class="col-md-12">
+			<p><a href="/database">Return to Database</a></p>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-12">
+			<h1 class="pagetitle">{{incident.name}}</h1>
+		</div>
+	</div>
+
+
+
+</div>
+
+<div class="container fields">
+<div class="row">
+
+	<div id="fieldsprinted">
+	</div>
+
+
+</div>
+
+</div>
+{% endblock %}
+
+
+{% block javascripts %}
+<!--<script src="/static/components/datatables/datatables.js"></script>
+<script src="/static/components/datatables/datatables-bootstrap.js"></script>
+<link rel="stylesheet" href="/static/components/datatables/datatables-bootstrap.css">
+
+
+<script type="text/javascript">
+	jQuery(document).ready(function() {
+	    jQuery('#database').dataTable({
+        "paging":   false,
+        //ordering": false,
+        //"info":     false
+    });
+	} );
+</script>-->
+{% endblock %}

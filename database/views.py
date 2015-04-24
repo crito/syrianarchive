@@ -1,4 +1,4 @@
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, render, render_to_response
 from django.contrib.auth import authenticate, login
 from django.http import HttpResponseRedirect, Http404
 from django.contrib.auth import logout
@@ -14,40 +14,19 @@ from .models import *
 import time
 
 
-# Create your views here.
-'''
-def user(request):
-	if request.user.is_authenticated():
-		authenticated = yes
-	else: 
-		authenticated = no
-
-	return authenticated
-
-
-class IndexView(generic.TemplateView):
-
-	template_name = "database/index.html"
-
-
-	def get_context_data(self, **kwargs):
-
-	
-		context = super(IndexView, self).get_context_data(**kwargs)
-		context['entries'] = DatabaseEntry.objects.all()
-		context['violationfilter'] = DatabaseFilterViolation(queryset=ViolationType.objects.all())
-		context['locationfilter'] = DatabaseFilterLocation(queryset=LocationPlace.objects.all())
-		return context
-
-
-'''
 
 def index(request):
 	if request.user.is_authenticated():
-		entries = DatabaseEntry.objects.all()
-		violationfilter = DatabaseFilterViolation(request.GET, queryset=ViolationType.objects.all())
-		locationfilter = DatabaseFilterLocation(request.GET, queryset=LocationPlace.objects.all())
+    		f = DatabaseFilter(request.GET, queryset=DatabaseEntry.objects.all())
+    	
+    		return render_to_response('database/index.html', {'filter': f})
+	
+	return render(request, 'database/loginrequired.html')
 
-		return render(request, 'database/index.html',{'entries':entries,'violationfilter':violationfilter,'locationfilter':locationfilter,})
+def detail(request, slug):
+	if request.user.is_authenticated():
+    		
+    		incident = get_object_or_404(DatabaseEntry, pk=slug )
+		return render(request, 'database/incident.html', {'incident': incident, 'slug':slug})
 	return render(request, 'database/loginrequired.html')
 
