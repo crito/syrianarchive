@@ -13,3 +13,4 @@ media
 django-summernote
 locale/*
 venv/*
+mydatabase
