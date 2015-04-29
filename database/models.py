@@ -79,7 +79,6 @@ class DatabaseEntry(models.Model):
 	weather_in_media = models.TextField(max_length=5000, null=True, blank=True)
 	weapons_used = models.TextField(max_length=5000, null=True, blank=True)
 	urls_and_news = models.TextField(max_length=5000, null=True, blank=True)
-	'''
 	reliability_score = models.IntegerField(
         			default=1,
         			validators=[
@@ -88,7 +87,6 @@ class DatabaseEntry(models.Model):
         			]
      			)
 	related_incidents = models.ManyToManyField("DatabaseEntry", blank=True)
-	'''
 
 
 	
