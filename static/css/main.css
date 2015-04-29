@@ -118,6 +118,14 @@ th i.fa{
     height:50px;
 }
 
+/* database entry */
+
+.section{
+    border: 1px solid grey;
+    padding: 10px;
+    margin: 20px 0;
+}
+
 /* database filters */
 
 #filter input{
