@@ -5,7 +5,7 @@ h1,h2,h3,h4,h5,h6{
 }
 
 p{
-	font-family: 'Droid Sans', Sans;
+	font-family: 'Noto Sans', Sans;
 }
 
 h1,h2,h3,h4,h5,h6,p{
@@ -134,11 +134,124 @@ th i.fa{
     float: left;
 }
 
+.tintedrow{
+        background-color: rgba(0,0,0,.3);
+        position: relative;
+            color:white;
+}
+
+.tintedrow h1{
+    color:white;
+}
+
+.controe{
+    font-size:2em;
+    font-weight:bold;
+    position: relative;
+    padding-top:10%;
+}
+
+.controe h1{
+    color: white;
+    font-size: 5em;
+    line-height: .8em;
+
+}
+
+.righthomecol{
+    padding-top:10%;
+}
+
+.righthomecol h1{
+    text-align: left;
+    
+}
 
 
-.homerow{
+
+a.blocklink{
+    background-color: black;
+    color:white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.backrow{
     height:100%;
     min-height: 800px;
     background-color:black;
     background-image: url('/static/img/after.png');
+    background-size: cover;
+    position:fixed;
+    width: 100%;
+    margin-left: -1em;
+    margin-right: -1em;
+}
+
+.frontrow{
+    height:100%;
+    min-height: 800px;
+    background-color:black;
+    background-image: url('/static/img/before.png');
+    background-size: cover;
+    animation-name: backchange;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+    animation-direction: alternate;
+
+    -webkit-animation-name: backchange;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: 10s;
+    -webkit-animation-direction: alternate;
+
+    position:fixed;
+    width:100%;
+
+        margin-left: -1em;
+    margin-right: -1em;
+
+}
+
+
+
+@keyframes backchange{
+     0% {
+  opacity:1;
+}
+45% {
+opacity:1;
+}
+55% {
+opacity:0;
+}
+100% {
+opacity:0;
+}
+}
+
+@-webkit-keyframes backchange{
+     0% {
+  opacity:1;
+}
+45% {
+opacity:1;
+}
+55% {
+opacity:0;
+}
+100% {
+opacity:0;
+}
 }

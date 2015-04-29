@@ -4,19 +4,61 @@
 	{{ block.super }}
 {% endblock %}
 
+{% block logo %}
+{% endblock %}
+
 {% block main %}
 
-<div class="container">
 
 
 
+	<div class=" backrow">
+	</div>
+
+	<div class=" frontrow">
+		   
+	</div>
+
+	<div class= "row controe tintedrow">
+		 <div class="col-md-3 homecol">
+		</div>
+		<div class="col-md-6 homecol">
+
+			<h1>Syrian Archive</h1>
+			<p>An archive of war crimes in Syria</p>
+		</div>
+
+		<div class="col-md-3 homecol">
+			<a class="blocklink" href="/about">About</a> <br>
+			<a class="blocklink" href="/database">Database</a> <br>
+			<a class="blocklink" href="/media">Media</a> <br>
+			<a class="blocklink" href="/database">Blog</a> <br>
+		</div>
+	</div>
+
+	<div class="row tintedrow">
+			 <div class="col-md-6 homecol">
+
+				{% for section in sections %}
+					<h1>{{ section.name }}</h1>
+					{{ section.description }}
+				{% endfor %}
+
+			</div>
 
 
-	<div class="row homerow">
+			 <div class="col-md-6 righthomecol">
 
-	<div>
+				
+					<h1>Recent Entries</h1>
+				
+			</div>
+		
+		
 
-</div>
+	</div>
+	
+	
 
 
 

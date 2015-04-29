@@ -106,12 +106,15 @@
  		</div>
       </div>
     </div>
+{% block logo %}
+	{% ifequal LANGUAGE_CODE 'en' %}
+		<img class="logo" src="/static/img/syarch.png" width="100%" />
+	{% else %}
+		<img class="logo" src="/static/img/arabic.png" width="100%" />
+	{% endifequal %}
+{% endblock %}
 
-{% ifequal LANGUAGE_CODE 'en' %}
-	<img class="logo" src="/static/img/syarch.png" width="100%" />
-{% else %}
-	<img class="logo" src="/static/img/arabic.png" width="100%" />
-{% endifequal %}
+<div class="container">
 
 
 		{% block main %}
@@ -119,12 +122,6 @@
 		{% endblock %}
 
 
-<div class="container footer">
-	<div class="row ">
-	<div class="col-md-4">
-			<h5>Some</h5>
-			footer stuff
-	</div>
 </div>
 {% block javascripts %}{% endblock %}
 
