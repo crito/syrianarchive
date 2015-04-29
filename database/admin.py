@@ -2,6 +2,8 @@ from django.contrib import admin
 from database.models import *
 from django_summernote.admin import SummernoteModelAdmin
 from django.forms import CheckboxSelectMultiple
+from modeltranslation.admin import TranslationAdmin
+
 
 
 @admin.register(InternationalInstrument)
@@ -29,7 +31,7 @@ class ViolationTypeAdmin(admin.ModelAdmin):
 	pass
 
 @admin.register(DatabaseEntry)
-class DatabaseEntryAdmin(SummernoteModelAdmin):
+class DatabaseEntryAdmin(TranslationAdmin):
 	formfield_overrides = {
         models.ManyToManyField: {'widget': CheckboxSelectMultiple},
     }
@@ -100,6 +102,7 @@ class DatabaseEntryAdmin(SummernoteModelAdmin):
         }),
 
     )
+
     
 	def save_model(self, request, obj, form, change):
 		if not change:

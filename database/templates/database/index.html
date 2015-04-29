@@ -19,7 +19,7 @@
 		{% trans "Filter By" %}
 			    <form id="filter" action="" method="get">
 			       {{ filter.form.as_p }}
-			        <input type="submit" />
+			        <input type="submit" value="Go"/>
 			    </form>
 		</div>
 	</div>
@@ -60,7 +60,7 @@
             			{% endfor %}</b>
             			({{entry.location_latitude}}, {{entry.location_longitude}})
             		</td>
-.
+
             		<td>
             			{% for ctype in entry.type_of_violation.all %}
             				{{ ctype.name }}
@@ -81,18 +81,5 @@
 
 
 {% block javascripts %}
-<!--<script src="/static/components/datatables/datatables.js"></script>
-<script src="/static/components/datatables/datatables-bootstrap.js"></script>
-<link rel="stylesheet" href="/static/components/datatables/datatables-bootstrap.css">
 
-
-<script type="text/javascript">
-	jQuery(document).ready(function() {
-	    jQuery('#database').dataTable({
-        "paging":   false,
-        //ordering": false,
-        //"info":     false
-    });
-	} );
-</script>-->
 {% endblock %}
