@@ -7,11 +7,6 @@
 
 <div class="container pagetitle dbtitle">
 
-	<div class="row">
-		<div class="col-md-12">
-			<p><a href="/database">Return to Database</a></p>
-		</div>
-	</div>
 
 	<div class="row">
 		<div class="col-md-12">
@@ -25,10 +20,31 @@
 
 <div class="container fields">
 <div class="row">
+	<div class="col-md-12">
+		<div id="fieldsprinted">
 
-	<div id="fieldsprinted">
+		<p><strong>Description</strong>: {{incident.description}}</p>
+
+		<p><strong>Reference Code</strong>: {{incident.reference_code}}</p>
+		<p><strong>Recording Date</strong>: {[incident.recording_date]}</p>
+		<p><strong>Type of Violation</strong>: {{incident.type_of_violation}}</p>
+		<p><strong>Location</strong>: {{incident.location}}</p>
+		<p><strong>Location Latitude</strong>: {{incident.location_latitude}}</p>
+		<p><strong>Location Longitude</strong>: {{incident.location_longitude}}</p>
+		<p><strong>Clothes and Uniforms</strong>: {{incident.cloths_and_uniforms}}</p>
+		<p><strong>Edited Date</strong>: {{incident.edited}}</p>
+		<p><strong>File Size</strong>: {{incident.file_size}}</p>
+		<p><strong>Duration</strong>: {{incident.duration}}</p>
+		<p><strong>Device used to record</strong>: {{incident.device_used}}</p>
+		<p><strong>Chain of Custody Notes</strong>: {{incident.chain_of_custody_notes_public}}</p>
+		<p><strong>Languages</strong>: {{incident.languages}}</p>
+		<p><strong>Finding Aids</strong>: {{incident.finding_aids}}</p>
+		<p><strong>Contains Graphic Content</strong>: {{incident.graphic_content}}</p>
+		<p><strong>Related to gender or sex?</strong>: {{incident.gender_or_sex}}</p>
+
+
+		</div>
 	</div>
-
 
 </div>
 

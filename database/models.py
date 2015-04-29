@@ -70,7 +70,7 @@ class DatabaseEntry(models.Model):
 	languages = models.CharField(max_length=250, null=True, blank=True, choices=LANGS)
 	finding_aids = models.CharField(max_length=250, null=True, blank=True)
 	graphic_content = models.NullBooleanField(null=True, blank=True)
-	#gender_or_sex = models.NullBooleanField(null=True, blank=True)
+	gender_or_sex = models.NullBooleanField(null=True, blank=True)
 	keywords = models.CharField(max_length=250, null=True, blank=True)
 	international_instrument = models.ManyToManyField(InternationalInstrument, blank=True)
 	international_instrument_notes = models.TextField(max_length=5000, null=True, blank=True)
