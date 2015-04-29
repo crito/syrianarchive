@@ -5,7 +5,6 @@
 {% endblock %}
 
 {% block main %}
-<div class=" mainrow">
 
 <div class="container">
 
@@ -13,48 +12,14 @@
 
 
 
-	<div class="row ">
-		<div class="col-md-8 mainbar">
+	<div class="row homerow">
 
-
-			
-			{% for announcement in announcements %}
-				<div class="announcement" >
-				{% if lang == 'ar' %}
-					<span dir="rtl">
-					<h2>{{ announcement.arabic_name|safe }}</h2>
-					<p>{{ announcement.arabic_description|safe }}</p>p>
-					</span>
-				{% else %}
-					<h2>{{ announcement.name|safe }}</h2>
-					<p>{{ announcement.description|safe }}</p>
-				{% endif %}
-				</div>
-			{% endfor %}
-			
-		</div>
-
-		<div class="col-md-4 sidebar">
-			<h3>Links</h3>
-			{% for link in links %}
-				<a href="{{ link.link }}" target='_blank'>
-				<div class="resource">
-						
-						<h4>{{ link.name }}</h4>
-						{{ link.description }}
-				</div>
-				</a>
-
-
-			{% endfor %}
-		</div>
-	</div>
+	<div>
 
 </div>
 
 
 
-</div>
 
 
 
