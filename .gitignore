@@ -9,7 +9,6 @@ syrianarchive/wsgi.py
 /media/avatars/*
 whoosh_index
 .idea
-migrations
 media
 django-summernote
 locale/*
