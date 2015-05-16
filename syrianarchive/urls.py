@@ -18,7 +18,6 @@ urlpatterns = patterns('',
     #url(r'^grappelli/', include('grappelli.urls')),
     url(r'^summernote/', include('django_summernote.urls')),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^translate/', include('rosetta.urls')),
     #url(r'^docs/', include('docs.urls')),
     #url(r'^accounts/', include('profiles.urls')),
 )
