@@ -6,3 +6,4 @@ pillow
 django-rosetta
 django-modeltranslation
 django-filter
+rosetta
