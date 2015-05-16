@@ -41,7 +41,7 @@
 
 				{% for section in sections %}
 					<h1>{{ section.name }}</h1>
-					{{ section.description }}
+					{{ section.description|safe }}
 				{% endfor %}
 
 			</div>
