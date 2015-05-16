@@ -23,7 +23,6 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = (
     'modeltranslation',
-    #'grappelli',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -31,7 +30,6 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_summernote',
-    'rosetta',
     'database',
     'homepage',
 )
