@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load i18n %}
 
 
 {% block main %}
@@ -25,70 +25,78 @@
 
 		<div class="section">
 
-		<p><strong>Reference Code</strong>: {{incident.reference_code}}</p>
+		<p><strong>{% trans "Reference Code" %}</strong>: {{incident.reference_code}}</p>
 
-		<p><strong>Description</strong>: {{incident.description}}</p>
+		<p><strong>{% trans "Description" %}</strong>: {{incident.description}}</p>
 
-		<p><strong>Recording Date</strong>: {{incident.recording_date}}</p>
+		<p><strong>{% trans "Recording Date" %}</strong>: {{incident.recording_date}}</p>
 		
-		<p><strong>Contains Graphic Content</strong>: {{incident.graphic_content}}</p>
-		<p><strong>Keywords</strong>: {{incident.keywords}}</p>
+		<p><strong>{% trans "Contains Graphic Content" %}</strong>: {{incident.graphic_content}}</p>
+		<p><strong>{% trans "Keywords" %}</strong>: {{incident.keywords}}</p>
 
-		<p><strong>Languages</strong>: {{incident.languages}}</p>
+		<p><strong>{% trans "Languages" %}</strong>: {{incident.languages}}</p>
 
 		</div>
 
 		<div class="section">
-		<p><strong>Location</strong>: {% for locations in incident.location.all %}
+		<p><strong>{% trans "Location" %}</strong>: {% for locations in incident.location.all %}
 		{{locations}}<br>
 		{% endfor %}</p>
-		<p><strong>Location Latitude</strong>: {{incident.location_latitude}}</p>
-		<p><strong>Location Longitude</strong>: {{incident.location_longitude}}</p>
-		<p><strong>Landmarks</strong>: {{incident.landmarks}}</p>
-		<p><strong>Weather in Media</strong>: {{incident.weather_in_media}}</p>
+		<p><strong>{% trans "Location Latitude" %}</strong>: {{incident.location_latitude}}</p>
+		<p><strong>{% trans "Location Longitude" %}</strong>: {{incident.location_longitude}}</p>
+		<p><strong>{% trans "Landmarks" %}</strong>: {{incident.landmarks}}</p>
+		<p><strong>{% trans "Weather in Media" %}</strong>: {{incident.weather_in_media}}</p>
 		</div>
 
 		<div class="section">
-		<p><strong>Type of Violation</strong>: {% for incidents in incident.type_of_violation.all %}
-								{{incidents}}<br>
-							{% endfor %}
+		<p><strong>{% trans "Type of Violation" %}</strong>: 
+            {% for incidents in incident.type_of_violation.all %}
+				{{incidents}}<br>
+			{% endfor %}
 
 		</p>
-		<p><strong>Clothes and Uniforms</strong>: {{incident.cloths_and_uniforms}}</p>
-		<p><strong>Related to gender or sex?</strong>: {{incident.gender_or_sex}}</p>
-		<p><strong>Weapons Used</strong>: {{incident.weapons_used}}</p>
+		<p><strong>{% trans "Clothes and Uniforms" %}</strong>: {{incident.cloths_and_uniforms}}</p>
+		<p><strong>{% trans "Related to gender or sex?" %}</strong>: {{incident.gender_or_sex}}</p>
+		<p><strong>{% trans "Weapons Used" %}</strong>: {{incident.weapons_used}}</p>
 
 		</div>
 
 		<div class="section">
-		<p><strong>Edited Date</strong>: {{incident.edited}}</p>
-		<p><strong>File Size</strong>: {{incident.file_size}}</p>
-		<p><strong>Duration</strong>: {{incident.duration}}</p>
-		<p><strong>Device used to record</strong>: {% for device in incident.device_used.all %}
-		{{device}}<br>
-		{% endfor %}</p>
-			<p><strong>Media Content Type</strong>: {% for media in incident.media_content_type.all %}
-		{{media}}<br>
-		{% endfor %}
+		<p><strong>{% trans "Edited Date" %}</strong>: {{incident.edited}}</p>
+		<p><strong>{% trans "File Size" %}</strong>: {{incident.file_size}}</p>
+		<p><strong>{% trans "Duration" %}</strong>: {{incident.duration}}</p>
+		<p><strong>{% trans "Device used to record" %}</strong>: 
+            {% for device in incident.device_used.all %}
+		      {{device}}<br>
+		    {% endfor %}</p>
+		<p><strong>{% trans "Media Content Type" %}</strong>: 
+            {% for media in incident.media_content_type.all %}
+		      {{media}}<br>
+		      {% endfor %}
 		</p>
 
 		</div>
 
 		<div class="section">
-		<p><strong>Chain of Custody Notes</strong>: {{incident.chain_of_custody_notes_public}}</p>
-		<p><strong>Finding Aids</strong>: {{incident.finding_aids}}</p>
+		<p><strong>{% trans "Chain of Custody Notes" %}</strong>: {{incident.chain_of_custody_notes_public}}</p>
+		<p><strong>{% trans "Finding Aids" %}</strong>: {{incident.finding_aids}}</p>
 
-		<p><strong>International Instrument</strong>: {% for instrument in incident.international_instrument.all %}{{instrument}}{% endfor %}</br></p>
-		<p><strong>International Instrument Notes</strong>: {{incident.international_instrument_notes}}</p>
+		<p><strong>{% trans "International Instrument" %}</strong>: 
+            {% for instrument in incident.international_instrument.all %}
+                {{instrument}}
+            {% endfor %}</br></p>
+		<p><strong>{% trans "International Instrument Notes" %}</strong>: {{incident.international_instrument_notes}}</p>
 		
 		</div>
 
 		<div class="section">
 
-		<p><strong>URLs and News</strong>: {{incident.urls_and_news}}</p>
-		<p><strong>Reliability Score</strong>: {{incident.reliability_score}}</p>
-		<p><strong>Related Incidents</strong>: {% for incident in incident.related_incidents.all%}
-		{{incident}}<br>{% endfor %}</p>
+		<p><strong>{% trans "URLs and News" %}</strong>: {{incident.urls_and_news}}</p>
+		<p><strong>{% trans "Reliability Score" %}</strong>: {{incident.reliability_score}}</p>
+		<p><strong>{% trans "Related Incidents" %}</strong>: 
+            {% for incident in incident.related_incidents.all%}
+		      {{incident}}<br>
+            {% endfor %}</p>
 		</div>
 	</div>
 
