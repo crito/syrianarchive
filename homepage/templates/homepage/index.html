@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% load i18n %}
+
 {% block breadcrumb %}
 	{{ block.super }}
 {% endblock %}
@@ -31,14 +33,14 @@
                     <span class="charwrapper char-A char-7">A</span><span class="charwrapper char-r char-8">r</span><span class="charwrapper char-c char-9">c</span><span class="charwrapper char-h char-10">h</span><span class="charwrapper char-i char-11">i</span><span class="charwrapper char-v char-12">v</span><span class="charwrapper char-e char-13">e</span>
                 </div>
              </h1>
-			<p>Preserving open source documentation of human rights violations in Syria.</p>
+			<p>{% trans "Preserving open source documentation of human rights violations in Syria." %}</p>
 		</div>
 
 		<div class="col-md-3 homecol">
-			<a class="blocklink" href="/about">About</a> <br>
-			<a class="blocklink" href="/database">Database</a> <br>
-			<a class="blocklink" href="/media">Media</a> <br>
-			<a class="blocklink" href="/database">Blog</a> <br>
+			<a class="blocklink" href="/about">{% trans "About" %}</a> <br>
+			<a class="blocklink" href="/database">{% trans "Database" %}</a> <br>
+			<a class="blocklink" href="/media">{% trans "Media" %}</a> <br>
+			<a class="blocklink" href="/database">{% trans "Blog" %}</a> <br>
 		</div>
 	</div>
 
@@ -58,7 +60,7 @@
 			 <div class="col-md-6 righthomecol">
 
 				
-					<h1>Recent Entries</h1>
+					<h1>{% trans "Recent Entries" %}</h1>
 				
 			</div>
 		

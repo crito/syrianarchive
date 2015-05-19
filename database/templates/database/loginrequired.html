@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load i18n %}
 
 
 {% block main %}
@@ -8,14 +8,14 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-12">
-			<h1 class="pagetitle">Database</h1>
+			<h1 class="pagetitle">{% trans "Database" %}</h1>
 		</div>
 	</div>
 
 	<div class="row">
 		<div class="profile col-md-12">
-			<p>The Database is still under construction.</p>
-			<p>Please log in to see it</p>
+			<p>{% trans "The Database is still under construction." %}</p>
+			<p>{% trans "Please log in to see it" %}</p>
 		</div>
 	</div>
 </div>
