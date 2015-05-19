@@ -32,7 +32,7 @@ INSTALLED_APPS = (
     'django_summernote',
     'database',
     'homepage',
-    'pages',
+    'page',
 )
 
 MIDDLEWARE_CLASSES = (

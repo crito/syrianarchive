@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+
+{% block main %}
+
+
+    <div class="row titlerow">
+        <div class="col-md-12">
+            <h1 class="pagetitle">{{page.title}}</h1>
+        </div>
+    </div>
+
+
+     <div class="row bodyrow">
+        <div class="col-md-8">
+           {{page.body|safe}}
+        </div>
+         <div class="col-md-4">
+         {% for page in linked_pages %}
+           {{page}}
+         {% endfor %}
+        </div>
+    </div>
+
+
+{% endblock %}
+
