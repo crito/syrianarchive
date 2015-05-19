@@ -4,7 +4,7 @@ from django_summernote.admin import SummernoteModelAdmin
 from modeltranslation.admin import TranslationAdmin
 
 
-class SectionAdmin(TranslationAdmin):
+class SectionAdmin(TranslationAdmin, SummernoteModelAdmin):
 	class Media:
 		js = (
 			'http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js',
@@ -14,9 +14,5 @@ class SectionAdmin(TranslationAdmin):
 		css = {
 			'screen': ('modeltranslation/css/tabbed_translation_fields.css',),
 		}
-
-@admin.register(FrontPageLink)
-class FrontPageLinkAdmin(SummernoteModelAdmin):
-	pass
 
 admin.site.register(Section, SectionAdmin)

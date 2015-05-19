@@ -24,7 +24,13 @@
 		</div>
 		<div class="col-md-6 homecol">
 
-			<h1>Syrian Archive</h1>
+            <h1>
+                <div class="textlogo">
+                    <span class="charwrapper char-s char-1">S</span><span class="charwrapper char-y char-2">y</span><span class="charwrapper char-r char-3">r</span><span class="charwrapper char-i char-4">i</span><span class="charwrapper char-a char-5">a</span><span class="charwrapper char-n char-6">n</span>
+                    <br>
+                    <span class="charwrapper char-A char-7">A</span><span class="charwrapper char-r char-8">r</span><span class="charwrapper char-c char-9">c</span><span class="charwrapper char-h char-10">h</span><span class="charwrapper char-i char-11">i</span><span class="charwrapper char-v char-12">v</span><span class="charwrapper char-e char-13">e</span>
+                </div>
+             </h1>
 			<p>Preserving open source documentation of human rights violations in Syria.</p>
 		</div>
 
@@ -36,12 +42,14 @@
 		</div>
 	</div>
 
-	<div class="row tintedrow">
-			 <div class="col-md-6 homecol">
+	<div class="row tintedrow darkerrow">
+			 <div class="col-md-6 homecol sectionscol">
 
 				{% for section in sections %}
+                <div class="section-front">
 					<h1>{{ section.name }}</h1>
 					{{ section.description|safe }}
+                </div>
 				{% endfor %}
 
 			</div>

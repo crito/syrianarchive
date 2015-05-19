@@ -1,4 +1,13 @@
 
+
+
+
+
+
+
+
+
+
 h1,h2,h3,h4,h5,h6{
     font-family: 'Droid Sans', Sans;
 
@@ -12,6 +21,40 @@ body{
 	background-color:#fff;
     font-size:16px;
 }
+
+
+
+
+
+
+
+
+
+.textlogo {
+line-height: .8em;
+font-family: 'Droid Sans', Sans;
+}
+
+.char-10 {
+margin-left: -.06em;
+}
+.char-8 {
+margin-right: -.1em;
+}
+.char-7 {
+margin-left: .1em;
+}
+.char-13 {
+margin-left: -.05em;
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -168,7 +211,6 @@ th i.fa{
     text-align: right;
 
 }
-
 
 
 a.blocklink{
