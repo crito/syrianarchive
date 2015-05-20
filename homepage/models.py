@@ -8,9 +8,6 @@ from django_summernote.widgets import SummernoteWidget, SummernoteInplaceWidget
 class Section(models.Model):
 	name = models.CharField(max_length=250)
 	description = models.TextField(max_length=5000, null=True, blank=True)
-	arabic_name = models.CharField(max_length=250, null=True, blank=True)
-	arabic_description = models.TextField(max_length=5000, null=True, blank=True)
-
 
 	def __unicode__(self):
 		return self.name
