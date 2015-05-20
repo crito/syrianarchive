@@ -2,16 +2,10 @@ from homepage.models import *
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
-
-
-
-
-# Create your views here.
-
-
+from page.models import *
 
 def index(request):
-	announcements = Section.objects.all()
-	links = FrontPageLink.objects.all()
-	return render(request, 'homepage/index.html', {'sections' : announcements, 'links':links,})
+    sections = Section.objects.all()
+    blog_posts = Post.objects.all()
+    return render(request, 'homepage/index.html', {'sections' : sections, 'blog_posts':blog_posts,})
 

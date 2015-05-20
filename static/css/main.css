@@ -210,11 +210,12 @@ th i.fa{
 
 .righthomecol{
     padding-top:10%;
-}
-
-.righthomecol h1{
     text-align: right;
 
+}
+
+.righthomecol a h4{
+    color:white;
 }
 
 
