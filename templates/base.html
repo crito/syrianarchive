@@ -15,7 +15,6 @@
 
 <!-- Bootstrap -->
 <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-<link href="/static/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
 <script type="text/javascript" src="/static/bootstrap/js/bootstrap.min.js"></script>
 
 
@@ -37,6 +36,13 @@
 
 
 <link href="/static/css/main.css" rel="stylesheet" media="screen">
+{% ifequal LANGUAGE_CODE 'en' %}
+
+                    {% else %}
+<link href="/static/css/main_rtl.css" rel="stylesheet" media="screen">
+<link href="/static/bootstrap/css/bootstrap-rtl.min.css" rel="stylesheet" media="screen">
+
+                    {% endifequal %}
 
 <link href='//fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic|Montserrat' rel='stylesheet' type='text/css'>
 
