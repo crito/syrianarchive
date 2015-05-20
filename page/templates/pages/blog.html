@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+
+{% block main %}
+
+
+    <div class="row titlerow">
+        <div class="col-md-12">
+            <h1 class="pagetitle">{% trans "Blog" %}</h1>
+        </div>
+    </div>
+
+
+     <div class="row bodyrow">
+        <div class="col-md-8">
+           {% for blog in blog_posts %}
+            <a href="{% url 'blog_detail' blog.url %}" title="{{ blog.title }}">
+                <h2>{{ blog.title }}</h2>
+            </a>
+            <p> {{ blog.short_description }}</p>
+            {% endfor %}
+        </div>
+    </div>
+
+
+{% endblock %}
+

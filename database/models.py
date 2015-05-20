@@ -6,7 +6,6 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 import time
 import django_filters
 
-
 class InternationalInstrument(models.Model):
 	name = models.CharField(max_length=250)
 	number = models.CharField(max_length=250)
@@ -157,3 +156,13 @@ class DatabaseFilter(django_filters.FilterSet):
 		self.filters['type_of_violation'].extra.update({'empty_label': 'All Violation Types'})
 		#self.filters['location'].extra.update({'empty_label':'All Locations'})
 	'''
+
+
+
+
+class Video(models.Model):
+    url = models.CharField(max_length=250)
+    database_entry = models.OneToOneField(DatabaseEntry, related_name="video")
+
+    def __unicode__(self):
+        return self.url
