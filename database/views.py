@@ -10,18 +10,28 @@ from django.views import generic
 from datetime import datetime, timedelta
 from django_filters.views import FilterView
 from django_filters.filterset import FilterSet, filterset_factory
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import *
 import time
 
 
 
 def index(request):
-	if request.user.is_authenticated():
-    		f = DatabaseFilter(request.GET, queryset=DatabaseEntry.objects.all())
-    	
-    		return render(request, 'database/index.html', {'filter': f})
+    if request.user.is_authenticated():
+        f = DatabaseFilter(request.GET, queryset=DatabaseEntry.objects.all())
+        paginator = Paginator(f,20)
+        page = request.GET.get('page')
+        try:
+            entries = paginator.page(page)
+        except PageNotAnInteger:
+            # If page is not an integer, deliver first page.
+            entries = paginator.page(1)
+        except EmptyPage:
+            # If page is out of range (e.g. 9999), deliver last page of results.
+            entries = paginator.page(paginator.num_pages)
+        return render(request, 'database/index.html', {'entries': entries, 'filter':f})
 	
-	return render(request, 'database/loginrequired.html')
+    return render(request, 'database/loginrequired.html')
 
 def detail(request, slug):
 	if request.user.is_authenticated():
