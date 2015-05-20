@@ -28,9 +28,16 @@
 
             <h1>
                 <div class="textlogo">
-                    <span class="charwrapper char-s char-1">S</span><span class="charwrapper char-y char-2">y</span><span class="charwrapper char-r char-3">r</span><span class="charwrapper char-i char-4">i</span><span class="charwrapper char-a char-5">a</span><span class="charwrapper char-n char-6">n</span>
-                    <br>
-                    <span class="charwrapper char-A char-7">A</span><span class="charwrapper char-r char-8">r</span><span class="charwrapper char-c char-9">c</span><span class="charwrapper char-h char-10">h</span><span class="charwrapper char-i char-11">i</span><span class="charwrapper char-v char-12">v</span><span class="charwrapper char-e char-13">e</span>
+                    {% ifequal LANGUAGE_CODE 'en' %}
+                        <span class="charwrapper char-s char-1">S</span><span class="charwrapper char-y char-2">y</span><span class="charwrapper char-r char-3">r</span><span class="charwrapper char-i char-4">i</span><span class="charwrapper char-a char-5">a</span><span class="charwrapper char-n char-6">n</span>
+                        <br>
+                        <span class="charwrapper char-A char-7">A</span><span class="charwrapper char-r char-8">r</span><span class="charwrapper char-c char-9">c</span><span class="charwrapper char-h char-10">h</span><span class="charwrapper char-i char-11">i</span><span class="charwrapper char-v char-12">v</span><span class="charwrapper char-e char-13">e</span>
+                    {% else %}
+
+                        {% trans "Syrian Archive" %}
+                    {% endifequal %}
+                    
+
                 </div>
              </h1>
 			<p>{% trans "Preserving open source documentation of human rights violations in Syria." %}</p>
