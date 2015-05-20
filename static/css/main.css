@@ -171,12 +171,17 @@ th i.fa{
 
 /* database filters */
 
-#filter input{
-    width: 100px !important;
+#filter .select2-input{
+    width: 25em !important;
 }
 
-#filter p{
-    float: left;
+#filter input[type="submit"]{
+    background-color:orange;
+    font-size:3em;
+    border:0px solid transparent;
+    position:absolute;
+    right:1em;
+    top:1em;
 }
 
 .tintedrow{

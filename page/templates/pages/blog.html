@@ -18,7 +18,7 @@
             <a href="{% url 'blog_detail' blog.url %}" title="{{ blog.title }}">
                 <h2>{{ blog.title }}</h2>
             </a>
-            <p> {{ blog.short_description }}</p>
+            <p> {{ blog.short_description|safe }}</p>
             {% endfor %}
         </div>
     </div>
