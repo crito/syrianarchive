@@ -15,3 +15,7 @@ class Page(models.Model):
     def save(self, *args, **kwargs):
         super(Page, self).save(*args, **kwargs)
 
+class BlogPost(Page):
+    main_image = models.ImageField(null=True,blank=True, upload_to="blog_images")
+    pass
+
