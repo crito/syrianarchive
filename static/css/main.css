@@ -22,34 +22,11 @@ body{
     font-size:16px;
 }
 
-body, html, .container.main{
+body, html{
     height:100%;
 }
 
 
-
-
-
-
-
-
-.textlogo {
-line-height: .8em;
-font-family: 'Droid Sans', Sans;
-}
-
-.char-10 {
-margin-left: -.06em;
-}
-.char-8 {
-margin-right: -.1em;
-}
-.char-7 {
-margin-left: .1em;
-}
-.char-13 {
-margin-left: -.05em;
-}
 
 
 
@@ -85,11 +62,6 @@ margin-left: -.05em;
     border:0px solid white;
 }
 
-.footer{
-    background-color:#eee;
-    font-weight: bold;
-    position: relative;
-}
 
 thead, tfoot {
 background-color: #555;
@@ -193,59 +165,6 @@ th i.fa{
     top:1em;
 }
 
-.tintedrow{
-        background-color: rgba(0,0,0,.3);
-        position: relative;
-            color:white;
-}
-
-.tintedrow h1{
-    color:white;
-}
-
-.aboutrow{
-    background-color:#222;
-    position: relative;
-    color:white;
-}
-
-.controe{
-    font-size:2em;
-    font-weight:bold;
-    position: relative;
-    padding-top:10%;
-    min-height:90%;
-}
-
-.controe h1{
-    color: white;
-    font-size: 5em;
-    line-height: .8em;
-
-}
-
-.righthomecol{
-    padding-top:10%;
-    text-align: right;
-
-}
-
-.righthomecol a h4{
-    color:white;
-}
-
-
-a.blocklink{
-    background-color: black;
-    color:white;
-}
-
-
-
-
-
-
-
 
 
 
@@ -284,75 +203,3 @@ background-color: rgba(0,0,0,.5);
 
 
 
-
-
-
-.backrow{
-    height:100%;
-    min-height: 800px;
-    background-color:black;
-    background-image: url('/static/img/after.png');
-    background-size: cover;
-    position:fixed;
-    width: 100%;
-    margin-left: -1em;
-    margin-right: -1em;
-}
-
-.frontrow{
-    height:100%;
-    min-height: 800px;
-    background-color:black;
-    background-image: url('/static/img/before.png');
-    background-size: cover;
-    animation-name: backchange;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-    animation-duration: 10s;
-    animation-direction: alternate;
-
-    -webkit-animation-name: backchange;
-    -webkit-animation-timing-function: ease-in-out;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-duration: 10s;
-    -webkit-animation-direction: alternate;
-
-    position:fixed;
-    width:100%;
-
-        margin-left: -1em;
-    margin-right: -1em;
-
-}
-
-
-
-@keyframes backchange{
-     0% {
-  opacity:1;
-}
-45% {
-opacity:1;
-}
-55% {
-opacity:0;
-}
-100% {
-opacity:0;
-}
-}
-
-@-webkit-keyframes backchange{
-     0% {
-  opacity:1;
-}
-45% {
-opacity:1;
-}
-55% {
-opacity:0;
-}
-100% {
-opacity:0;
-}
-}

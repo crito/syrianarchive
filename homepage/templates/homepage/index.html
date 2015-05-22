@@ -9,22 +9,26 @@
 {% block logo %}
 {% endblock %}
 
-{% block main %}
 
+{% block jumbo %}
 
+<div class="container jumbo">
 
+    <div class=" backrow">
+    </div>
 
-	<div class=" backrow">
-	</div>
+    <div class=" frontrow">
+           
+    </div>
 
-	<div class=" frontrow">
-		   
-	</div>
+    <div class=" tintrow">
+           
+    </div>
 
-	<div class= "row controe tintedrow">
-		 <div class="col-md-3 homecol">
-		</div>
-		<div class="col-md-6 homecol">
+    <div class= "row controe tintedrow">
+         <div class="col-md-3 homecol">
+        </div>
+        <div class="col-md-6 homecol">
 
             <h1>
                 <div class="textlogo">
@@ -40,18 +44,28 @@
 
                 </div>
              </h1>
-			<p>{% trans "Preserving open source documentation of human rights violations in Syria." %}</p>
-		</div>
+            <p>{% trans "Preserving open source documentation of human rights violations in Syria." %}</p>
+        </div>
 
-		<div class="col-md-3 homecol">
+        <div class="col-md-3 homecol">
         <!--
-			<a class="blocklink" href="/p/page/about">{% trans "About" %}</a> <br>
-			<a class="blocklink" href="/database">{% trans "Violation Database" %}</a> <br>
-			<a class="blocklink" href="/media">{% trans "Video Collections" %}</a> <br>
-			<a class="blocklink" href="/blog">{% trans "Join Us" %}</a> <br>
-        -->
-		</div>
-	</div>
+            <a class="blocklink" href="/p/page/about">{% trans "About" %}</a> <br>
+            <a class="blocklink" href="/database">{% trans "Violation Database" %}</a> <br>
+            <a class="blocklink" href="/media">{% trans "Video Collections" %}</a> <br>
+            <a class="blocklink" href="/blog">{% trans "Join Us" %}</a> <br>
+        --> 
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+
+
+{% block main %}
+
+
+
 
 
 
@@ -96,4 +110,10 @@
 
 
 
+{% endblock %}
+
+
+
+{% block javascripts %}
+<link rel="stylesheet" href="/static/css/homepage.css">
 {% endblock %}

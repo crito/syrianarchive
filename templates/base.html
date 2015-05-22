@@ -153,6 +153,10 @@
 -->
 {% endblock %}
 
+{% block jumbo %}
+        {% endblock %}
+
+
 <div class="container main">
 
 
@@ -166,13 +170,8 @@
 
 
 <div class="container">
-      <div class="navbar-inner row footer">
-                    <button class="navbar-toggle" data-target=".navbar-collapse2" data-toggle="collapse2" type="button">
-                    MENU
-                    </button>
-
-        <div class="navbar-collapse2 collapse2">
-
+      <div class=" row footer">
+        <div class="col-md-12">
             <ul class="nav navbar-nav">
                 <li>
                     <a href="/p/page/terms" title="terms of use">{% trans "Terms of Use" %}</a>
@@ -199,6 +198,7 @@
                 </li>
             </ul>
         </div>
+    </div>
 </div>
 
 
