@@ -19,9 +19,14 @@
            {{page.body|safe}}
         </div>
          <div class="col-md-4">
-         {% for page in linked_pages %}
-           {{page}}
-         {% endfor %}
+            <h3>{% trans "Related Pages" %}</h3>
+            <ul class="linkedpages">
+             {% for linked_page in linked_pages %}
+                    <li><a href="{% url 'page_detail' linked_page.url %}">
+                        {{linked_page.title}}
+                    </a></li>
+             {% endfor %}
+            </ul>
         </div>
     </div>
 
