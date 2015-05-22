@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-19 18:32+0000\n"
+"POT-Creation-Date: 2015-05-22 17:35+0000\n"
 "PO-Revision-Date: 2015-04-03 19:21+0000\n"
 "Last-Translator:   <sadh@fdsauh.dsa>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,59 +22,59 @@ msgstr ""
 
 #: database/templates/database/incident.html:28
 msgid "Reference Code"
-msgstr ""
+msgstr "رقم الكود"
 
 #: database/templates/database/incident.html:30
-#: database/templates/database/index.html:35
+#: database/templates/database/index.html:36
 msgid "Description"
-msgstr ""
+msgstr "التفاصيل"
 
 #: database/templates/database/incident.html:32
-#: database/templates/database/index.html:36
+#: database/templates/database/index.html:37
 msgid "Recording Date"
-msgstr ""
+msgstr "تاريخ التسجيل"
 
 #: database/templates/database/incident.html:34
 msgid "Contains Graphic Content"
-msgstr ""
+msgstr "يحوي مشاهد مؤلمة"
 
 #: database/templates/database/incident.html:35
 msgid "Keywords"
-msgstr ""
+msgstr "الكلمات المفتاحية"
 
 #: database/templates/database/incident.html:37
 msgid "Languages"
-msgstr ""
+msgstr "اللغات"
 
 #: database/templates/database/incident.html:42
-#: database/templates/database/index.html:37
+#: database/templates/database/index.html:38
 msgid "Location"
-msgstr ""
+msgstr "المحافظة"
 
 #: database/templates/database/incident.html:45
 msgid "Location Latitude"
-msgstr ""
+msgstr "الموقع العرضي"
 
 #: database/templates/database/incident.html:46
 msgid "Location Longitude"
-msgstr ""
+msgstr "الموقع الطولي"
 
 #: database/templates/database/incident.html:47
 msgid "Landmarks"
-msgstr ""
+msgstr "المعالم"
 
 #: database/templates/database/incident.html:48
 msgid "Weather in Media"
-msgstr ""
+msgstr "الطقس"
 
 #: database/templates/database/incident.html:52
-#: database/templates/database/index.html:38
+#: database/templates/database/index.html:39
 msgid "Type of Violation"
-msgstr ""
+msgstr "نوع الإنتهاك"
 
 #: database/templates/database/incident.html:58
 msgid "Clothes and Uniforms"
-msgstr ""
+msgstr "الملابس والزي الرسمي"
 
 #: database/templates/database/incident.html:59
 msgid "Related to gender or sex?"
@@ -82,109 +82,124 @@ msgstr ""
 
 #: database/templates/database/incident.html:60
 msgid "Weapons Used"
-msgstr ""
+msgstr "السلاح المستخدم"
 
 #: database/templates/database/incident.html:65
+#, fuzzy
+#| msgid "Edited"
 msgid "Edited Date"
-msgstr ""
+msgstr "تم تعديل الملف"
 
 #: database/templates/database/incident.html:66
 msgid "File Size"
-msgstr ""
+msgstr "حجم الملف"
 
 #: database/templates/database/incident.html:67
 msgid "Duration"
-msgstr ""
+msgstr "المدة"
 
 #: database/templates/database/incident.html:68
 msgid "Device used to record"
-msgstr ""
+msgstr "الجهاز المستخدم للتسجيل"
 
 #: database/templates/database/incident.html:72
 msgid "Media Content Type"
-msgstr ""
+msgstr "نوع محتوى الميديا"
 
 #: database/templates/database/incident.html:81
 msgid "Chain of Custody Notes"
-msgstr ""
+msgstr "ملاحظات حول تسلسل العهدة"
 
 #: database/templates/database/incident.html:82
 msgid "Finding Aids"
-msgstr ""
+msgstr "المواد المرتبطة"
 
 #: database/templates/database/incident.html:84
 msgid "International Instrument"
-msgstr ""
+msgstr "الآلية القانونية"
 
 #: database/templates/database/incident.html:88
 msgid "International Instrument Notes"
-msgstr ""
+msgstr "ملاحظات حول الآلية القانونية"
 
 #: database/templates/database/incident.html:94
 msgid "URLs and News"
-msgstr ""
+msgstr "روابط"
 
 #: database/templates/database/incident.html:95
 msgid "Reliability Score"
-msgstr ""
+msgstr "الموثوقية"
 
 #: database/templates/database/incident.html:96
 msgid "Related Incidents"
-msgstr ""
+msgstr "الأحداث المرتبطة"
 
 #: database/templates/database/index.html:11
 #: database/templates/database/loginrequired.html:11
-#: homepage/templates/homepage/index.html:41 templates/base.html:67
-msgid "Database"
-msgstr "eeeeeeeeeee"
+#: homepage/templates/homepage/index.html:48 templates/base.html:73
+msgid "Violation Database"
+msgstr "قاعدة بيانات الإنتهاكات"
 
 #: database/templates/database/index.html:19
 msgid "Filter By"
-msgstr ""
+msgstr "صنف حسب"
 
-#: database/templates/database/index.html:34
+#: database/templates/database/index.html:35
 msgid "Name"
-msgstr ""
+msgstr "الإسم"
 
-#: database/templates/database/index.html:39
+#: database/templates/database/index.html:40
 msgid "Thumbnail"
-msgstr ""
+msgstr "صورة مصغرة"
 
 #: database/templates/database/loginrequired.html:17
 msgid "The Database is still under construction."
-msgstr ""
+msgstr "قاعدة البيانات قيد الإنشاء"
 
 #: database/templates/database/loginrequired.html:18
 msgid "Please log in to see it"
-msgstr ""
+msgstr "الرجاء تسجيل الدخول"
 
-#: homepage/templates/homepage/index.html:36
-msgid ""
-"Preserving open source documentation of human rights violations in Syria."
-msgstr ""
-
-#: homepage/templates/homepage/index.html:40
-msgid "About"
-msgstr ""
-
-#: homepage/templates/homepage/index.html:42
-msgid "Media"
-msgstr ""
+#: homepage/templates/homepage/index.html:37 templates/base.html:123
+msgid "Syrian Archive"
+msgstr "الأرشيف السوري"
 
 #: homepage/templates/homepage/index.html:43
+msgid ""
+"Preserving open source documentation of human rights violations in Syria."
+msgstr "لأرشفة انتهاكات حقوق الإنسان"
+
+#: homepage/templates/homepage/index.html:47 templates/base.html:81
+msgid "About"
+msgstr "حول الأرشيف"
+
+#: homepage/templates/homepage/index.html:49 templates/base.html:77
+msgid "Media"
+msgstr "ميديا"
+
+#: homepage/templates/homepage/index.html:50 page/templates/pages/blog.html:10
+#: templates/base.html:85
 msgid "Blog"
-msgstr ""
+msgstr "مدونة"
 
-#: homepage/templates/homepage/index.html:63
+#: homepage/templates/homepage/index.html:70
 msgid "Recent Entries"
-msgstr ""
+msgstr "آخر المدخلات"
 
-#: syrianarchive/urls.py:17
+#: syrianarchive/urls.py:21
 #, fuzzy
-#| msgid "Database"
+#| msgid "Violation Database"
 msgid "^database/"
-msgstr "eeeeeeeeeee"
+msgstr "قاعدة بيانات الإنتهاكات"
 
-#: templates/base.html:63
+#: templates/base.html:69
 msgid "Home"
-msgstr "arabic home"
+msgstr "الصفحة الرئيسية"
+
+#, fuzzy
+#~| msgid "Violation Database"
+#~ msgid "Database"
+#~ msgstr "قاعدة بيانات الإنتهاكات"
+
+#~ msgid "Gender"
+#~ msgstr "النوع الإجتماعي"

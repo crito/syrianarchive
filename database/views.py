@@ -29,6 +29,9 @@ def index(request):
         except EmptyPage:
             # If page is out of range (e.g. 9999), deliver last page of results.
             entries = paginator.page(paginator.num_pages)
+
+        print f
+        
         return render(request, 'database/index.html', {'entries': entries, 'filter':f})
 	
     return render(request, 'database/loginrequired.html')

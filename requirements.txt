@@ -3,7 +3,5 @@ django-summernote
 django-reversion
 html2text
 pillow
-django-rosetta
 django-modeltranslation
 django-filter
-rosetta
