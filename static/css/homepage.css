@@ -1,6 +1,6 @@
 
 .container.jumbo{
-    min-height:90%;
+    min-height:95%;
 }
 
 
@@ -42,7 +42,7 @@ margin-left: -.05em;
     background-color:#222;
     color:white;
     position: relative;
-
+    padding-bottom:2em;
 }
 
 .controe{
@@ -51,6 +51,19 @@ margin-left: -.05em;
     padding-top:10%;
     height:100%;
 }
+
+
+.collaboratorrow{
+    background-color:#e3e3e3;
+    position: relative;
+}
+
+
+
+
+
+
+
 
 .controe h1{
     color: white;
