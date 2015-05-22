@@ -88,6 +88,7 @@
                     {% for blog in blog_posts %}
                         <a href="{% url 'blog_detail' blog.url %}" title="{{ blog.title }}">
                             <h4>{{blog.title}}</h4>
+                        </a>
                     {% endfor %}
 				
 			</div>
