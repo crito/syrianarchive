@@ -6,10 +6,26 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
-<title>{% block title %}{% endblock %} Syrian Archive </title>
+<title>{% block title %}{% endblock %} {% trans "Syrian Archive" %} </title>
 
 
-<link rel="shortcut icon" type="image/jpg" href="{{STATIC_URL}}/favicon.ico"/>
+<link rel="apple-touch-icon" sizes="57x57" href="/static/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/static/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/static/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/static/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/static/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/static/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/static/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/static/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/static/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/static/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/static/favicon/favicon-16x16.png">
+<link rel="manifest" href="/static/favicon/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
 
 <script src="/static/bootstrap/js/jquery.js"></script>
 
@@ -69,20 +85,25 @@
 		        <li><a href="/"><i class="fa fa-home"></i> {% trans "Home" %}</a></li>
 		    </ul>
 
+            <ul class="nav navbar-nav">
+                <li><a href="/p/page/about"><i class="fa fa-question"></i> {% trans "About" %}</a></li>
+            </ul>
+
 		    <ul class="nav navbar-nav">
 		        <li><a href="/database"><i class="fa fa-database"></i> {% trans "Violation Database" %}</a></li>
 		    </ul>
 
 		    <ul class="nav navbar-nav">
-		        <li><a href="/media"><i class="fa fa-caret-square-o-right "></i>{% trans "Media" %}</a></li>
-		    </ul>
-
- 			<ul class="nav navbar-nav">
-		        <li><a href="/p/page/about"><i class="fa fa-question"></i>{% trans "About" %}</a></li>
+		        <li><a href="/media"><i class="fa fa-caret-square-o-right "></i> {% trans "Video Collections" %}</a></li>
 		    </ul>
 
             <ul class="nav navbar-nav">
-                <li><a href="/blog"><i class="fa fa-list"></i>{% trans "Blog" %}</a></li>
+                <li><a href="/map"><i class="fa fa-map-marker "></i> {% trans "Syria Map" %}</a></li>
+            </ul>
+ 			
+
+            <ul class="nav navbar-nav">
+                <li><a href="/p/page/join"><i class="fa fa-plus-square-o"></i> {% trans "Join Us" %}</a></li>
             </ul>
 
 		    <ul class="nav navbar-nav navbar-right">
@@ -132,7 +153,7 @@
 -->
 {% endblock %}
 
-<div class="container">
+<div class="container main">
 
 
 		{% block main %}
@@ -141,6 +162,46 @@
 
 
 </div>
+
+
+
+<div class="container">
+      <div class="navbar-inner row footer">
+                    <button class="navbar-toggle" data-target=".navbar-collapse2" data-toggle="collapse2" type="button">
+                    MENU
+                    </button>
+
+        <div class="navbar-collapse2 collapse2">
+
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="/p/page/terms" title="terms of use">{% trans "Terms of Use" %}</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="/p/page/privacy" title="privacy policy">{% trans "Privacy Policy" %}</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="/p/page/copyright" title="terms of use">{% trans "Copyright" %}</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="/p/page/disclaimer" title="terms of use">{% trans "Disclaimer" %}</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="/p/page/contact" title="terms of use">{% trans "Contact" %}</a>
+                </li>
+            </ul>
+        </div>
+</div>
+
+
 {% block javascripts %}{% endblock %}
 
 </body>

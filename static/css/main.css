@@ -22,6 +22,9 @@ body{
     font-size:16px;
 }
 
+body, html, .container.main{
+    height:100%;
+}
 
 
 
@@ -80,6 +83,12 @@ margin-left: -.05em;
 .navbar-main{
 	background-color:white;
     border:0px solid white;
+}
+
+.footer{
+    background-color:#eee;
+    font-weight: bold;
+    position: relative;
 }
 
 thead, tfoot {
@@ -194,11 +203,18 @@ th i.fa{
     color:white;
 }
 
+.aboutrow{
+    background-color:#222;
+    position: relative;
+    color:white;
+}
+
 .controe{
     font-size:2em;
     font-weight:bold;
     position: relative;
     padding-top:10%;
+    min-height:90%;
 }
 
 .controe h1{
