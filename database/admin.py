@@ -31,17 +31,18 @@ class ViolationTypeAdmin(admin.ModelAdmin):
 
 @admin.register(DatabaseEntry)
 class DatabaseEntryAdmin(TranslationAdmin):
-	formfield_overrides = {
+    formfield_overrides = {
         models.ManyToManyField: {'widget': CheckboxSelectMultiple},
     }
-	list_display = ('name', 
+    list_filter = ['staff_id', 'type_of_violation', 'location', 'media_content_type','priority','creator','added_date']
+    list_display = ('name', 
 		'graphic_content',
 		'staff_id',
 		'recording_date',
 		'online',
 		'priority',
 		)
-	fieldsets = (
+    fieldsets = (
         ('Required Fields', {
             'fields': ('name',)
         }),
@@ -103,8 +104,8 @@ class DatabaseEntryAdmin(TranslationAdmin):
     )
 
     
-	def save_model(self, request, obj, form, change):
-		if not change:
-			obj.creator = request.user
-		obj.save()
+    def save_model(self, request, obj, form, change):
+        if not change:
+            obj.creator = request.user
+        obj.save()
 
