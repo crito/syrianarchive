@@ -29,7 +29,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_summernote',
+    'ckeditor',
     'database',
     'homepage',
     'page',
@@ -140,7 +140,6 @@ SUMMERNOTE_CONFIG = {
 
 
 
-
 ROOT_URLCONF = 'syrianarchive.urls'
 
 WSGI_APPLICATION = 'syrianarchive.wsgi.application'
@@ -176,3 +175,20 @@ USE_I18N = True
 # Use localization
 USE_L10N = True
 
+
+
+CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
+CKEDITOR_UPLOAD_PATH = MEDIA_ROOT + "uploads/"
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'Custom',
+        'toolbar_Custom': [
+            ['Bold', 'Italic', 'Underline', 'Image', 'Table'],
+            ['Format'],
+            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
+            ['Link', 'Unlink'],
+            ['RemoveFormat', 'Source']
+        ]
+    }
+}

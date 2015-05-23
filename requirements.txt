@@ -1,5 +1,5 @@
 MySQL-python
-django-summernote
+django-ckeditor
 django-reversion
 html2text
 pillow

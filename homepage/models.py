@@ -22,6 +22,7 @@ class Section(models.Model):
 
 
 
+
 class FrontPageLink(models.Model):
 	name = models.CharField(max_length=250)
 	image = models.ImageField(upload_to='frontpagelinks', max_length=100, null=True, blank=True)

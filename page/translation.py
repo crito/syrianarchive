@@ -7,5 +7,6 @@ class PageTranslationOptions(TranslationOptions):
 translator.register(Page, PageTranslationOptions)
 
 class PostTranslationOptions(TranslationOptions):
-    pass
+    fields = ('short_description',)
+
 translator.register(Post, PostTranslationOptions)
