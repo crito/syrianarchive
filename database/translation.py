@@ -13,9 +13,28 @@ class DatabaseEntryTranslationOptions(TranslationOptions):
 
     	)
 
+class InternationalInstrumentTranslationOptions(TranslationOptions):
+    fields = ('name',)
+
 class MediaContentTypeTranslationOptions(TranslationOptions):
-    fields = ('name', 
-    	)
+    fields = ('name',)
+
+class SourceConnectionTranslationOptions(TranslationOptions):
+    fields = ('name',)
+
+class LocationPlaceTranslationOptions(TranslationOptions):
+    fields = ('name',)
+
+class DeviceTranslationOptions(TranslationOptions):
+    fields = ('name',)
+
+class ViolationTypeTranslationOptions(TranslationOptions):
+    fields = ('name',)
 
 translator.register(DatabaseEntry, DatabaseEntryTranslationOptions)
 translator.register(MediaContentType, MediaContentTypeTranslationOptions)
+translator.register(InternationalInstrument, InternationalInstrumentTranslationOptions)
+translator.register(SourceConnection, SourceConnectionTranslationOptions)
+translator.register(LocationPlace, LocationPlaceTranslationOptions)
+translator.register(Device, DeviceTranslationOptions)
+translator.register(ViolationType, ViolationTypeTranslationOptions)
