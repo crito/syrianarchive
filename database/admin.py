@@ -6,27 +6,27 @@ from modeltranslation.admin import TranslationAdmin
 
 
 @admin.register(InternationalInstrument)
-class InternationalInstrumentEntryAdmin(admin.ModelAdmin):
+class InternationalInstrumentEntryAdmin(TranslationAdmin):
 	pass
 
 @admin.register(MediaContentType)
-class MediaContentTypeAdmin(admin.ModelAdmin):
+class MediaContentTypeAdmin(TranslationAdmin):
 	pass
 
 @admin.register(SourceConnection)
-class SourceConnectionAdmin(admin.ModelAdmin):
+class SourceConnectionAdmin(TranslationAdmin):
 	pass
 
 @admin.register(LocationPlace)
-class LocationPlaceAdmin(admin.ModelAdmin):
+class LocationPlaceAdmin(TranslationAdmin):
 	pass
 
 @admin.register(Device)
-class DeviceAdmin(admin.ModelAdmin):
+class DeviceAdmin(TranslationAdmin):
 	pass
 
 @admin.register(ViolationType)
-class ViolationTypeAdmin(admin.ModelAdmin):
+class ViolationTypeAdmin(TranslationAdmin):
 	pass
 
 @admin.register(DatabaseEntry)
