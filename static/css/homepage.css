@@ -5,7 +5,14 @@
 
 
 
+.aboutrow, .collaboratorrow{
+  font-size: 1.4em;
+}
 
+.section-front h2, .collaboratorrow h2{
+    font-size: 2em;
+    font-weight: bold;
+}
 
 
 .textlogo {
@@ -42,14 +49,20 @@ margin-left: -.05em;
     background-color:#222;
     color:white;
     position: relative;
-    padding-bottom:2em;
     background-image: url(/static/img/climbing.png);
     background-attachment: fixed;
     background-size: cover;
-    box-shadow: 0px 5px 5px rgba(0,0,0,.5), 0px -5px 5px rgba(0,0,0,.5);
-    border-top: 2px solid black;
+    box-shadow: 0px 5px 5px rgba(0,0,0,.3), 0px -5px 5px rgba(0,0,0,.3);
+    border-top: 1px solid black;
     -webkit-transform: translateZ(0);
 }
+
+.sectionscol {
+  background-color: rgba(0,0,0,.4);
+    padding-bottom:2em;
+
+}
+
 .container.main{
     -webkit-transform: translateZ(0);
 
