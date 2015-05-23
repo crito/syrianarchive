@@ -4,7 +4,7 @@ from django_summernote.admin import SummernoteModelAdmin
 from modeltranslation.admin import TranslationAdmin
 
 
-class PageAdmin(TranslationAdmin, SummernoteModelAdmin):
+class PageAdmin(SummernoteModelAdmin, TranslationAdmin):
     class Media:
         js = (
             '//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js',

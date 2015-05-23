@@ -16,9 +16,11 @@
 
      <div class="row bodyrow">
         <div class="col-md-8">
-           {{page.body|safe}}
+            <div class="pagebody">
+                {{page.body|safe}}
+            </div>
         </div>
-         <div class="col-md-4">
+         <div class="col-md-4 sidebar">
             <h3>{% trans "Related Pages" %}</h3>
             <ul class="linkedpages">
              {% for linked_page in linked_pages %}

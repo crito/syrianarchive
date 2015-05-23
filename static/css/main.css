@@ -97,9 +97,19 @@ th i.fa{
 
 .sidebar{
     min-height:800px;
-        background-color: #efefef;
+    background-color: #f9f9f9;
     z-index: 5;
 
+}
+
+.pagebody{
+    padding: 1em;
+}
+
+.linkedpages li{
+    font-weight: bold;
+    list-style: none;
+    margin-left: 0;
 }
 
 .mainbar{

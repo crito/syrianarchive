@@ -99,7 +99,7 @@ TEMPLATE_DIRS = (
 
 SUMMERNOTE_CONFIG = {
     # Using SummernoteWidget - iframe mode
-    'iframe': False,  # or set False to use SummernoteInplaceWidget - no iframe mode
+    'iframe': True,  # or set False to use SummernoteInplaceWidget - no iframe mode
 
     # Using Summernote Air-mode
     'airMode': False,

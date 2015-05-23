@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-22 19:39+0000\n"
+"POT-Creation-Date: 2015-05-22 21:09+0000\n"
 "PO-Revision-Date: 2015-04-03 19:21+0000\n"
 "Last-Translator:   <sadh@fdsauh.dsa>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -206,6 +206,12 @@ msgstr "لأرشفة انتهاكات حقوق الإنسان"
 #: page/templates/pages/blog.html:4 page/templates/pages/blog.html.py:12
 msgid "Blog"
 msgstr "مدونة"
+
+#: page/templates/pages/page.html:22
+#, fuzzy
+#| msgid "Related Incidents"
+msgid "Related Pages"
+msgstr "الأحداث المرتبطة"
 
 #: syrianarchive/urls.py:21
 #, fuzzy
