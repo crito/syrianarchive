@@ -19,6 +19,9 @@
 line-height: .8em;
 font-family: 'Droid Sans', Sans;
 }
+span.charwrapper, .textlogo {
+  text-shadow: 1px 1px 1px rgba(0,0,0,.5);
+}
 
 .char-10 {
 margin-left: -.06em;
