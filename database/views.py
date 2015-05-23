@@ -13,6 +13,7 @@ from django_filters.filterset import FilterSet, filterset_factory
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import *
 import time
+from pprint import pprint
 
 
 
@@ -30,9 +31,15 @@ def index(request):
             # If page is out of range (e.g. 9999), deliver last page of results.
             entries = paginator.page(paginator.num_pages)
 
-        print f
+        pprint(f)
+
+        current_path = request.get_full_path()
+
+        print request.GET
+        print f.form.as_p
+        print f.qs
         
-        return render(request, 'database/index.html', {'entries': entries, 'filter':f})
+        return render(request, 'database/index.html', {'entries': entries, 'filter':f, "current_path":current_path})
 	
     return render(request, 'database/loginrequired.html')
 

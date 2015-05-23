@@ -26,7 +26,6 @@
 	</div>
 
 
-
 	<div class="row database-table">
 		<div class="profile">
 
@@ -83,7 +82,7 @@
         <div class="pagination">
             <span class="step-links">
                 {% if entries.has_previous %}
-                    <a href="?page={{ entries.previous_page_number }}">previous</a>
+                    <a href="{{current_path}}?page={{ entries.previous_page_number }}">previous</a>
                 {% endif %}
 
                 <span class="current">
@@ -91,7 +90,7 @@
                 </span>
 
                 {% if entries.has_next %}
-                    <a href="?page={{ entries.next_page_number }}">next</a>
+                    <a href="{{current_path}}?page={{ entries.next_page_number }}">next</a>
                 {% endif %}
             </span>
         </div>
