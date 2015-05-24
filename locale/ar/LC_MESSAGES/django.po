@@ -59,11 +59,11 @@ msgstr "المحافظة"
 
 #: database/templates/database/incident.html:47
 msgid "Location Latitude"
-msgstr "الموقع العرضي"
+msgstr "احداثيات الموقع العرضي"
 
 #: database/templates/database/incident.html:48
 msgid "Location Longitude"
-msgstr "الموقع الطولي"
+msgstr "احداثيات الموقع الطولي"
 
 #: database/templates/database/incident.html:49
 msgid "Landmarks"
@@ -83,8 +83,8 @@ msgid "Clothes and Uniforms"
 msgstr "الملابس والزي الرسمي"
 
 #: database/templates/database/incident.html:61
-msgid "Related to gender or sex?"
-msgstr ""
+msgid "Sex"
+msgstr "الجنس"
 
 #: database/templates/database/incident.html:62
 msgid "Weapons Used"
@@ -150,15 +150,15 @@ msgstr "قاعدة بيانات الإنتهاكات"
 
 #: database/templates/database/index.html:20
 msgid "Filter By"
-msgstr "صنف حسب"
+msgstr "فيما يلي الخيارات المتاحة للبحث حسب"
 
 #: database/templates/database/index.html:36
-msgid "Name"
-msgstr "الإسم"
+msgid "Title"
+msgstr "العنوان"
 
 #: database/templates/database/index.html:41
-msgid "Thumbnail"
-msgstr "صورة مصغرة"
+msgid "Video"
+msgstr "الفيديو"
 
 #: database/templates/database/loginrequired.html:18
 msgid "The Database is still under construction."
@@ -184,38 +184,29 @@ msgstr "حول الأرشيف"
 
 #: homepage/templates/homepage/index.html:54 templates/base.html:97
 msgid "Video Collections"
-msgstr ""
+msgstr "الفيديو"
 
 #: homepage/templates/homepage/index.html:55 templates/base.html:106
 msgid "Join Us"
-msgstr ""
+msgstr "انضم  إلينا"
 
 #: homepage/templates/homepage/index.html:86
 msgid "Recent Entries"
 msgstr "آخر المدخلات"
 
 #: homepage/templates/homepage/index.html:100
-#, fuzzy
-#| msgid ""
-#| "Preserving open source documentation of human rights violations in Syria."
-msgid ""
-"We collaborate with organisations and media agencies that document and "
-"report human rights violations in Syria"
-msgstr "لأرشفة انتهاكات حقوق الإنسان"
+msgid "We collaborate with organisations and media agencies that document and report human rights violations in Syria"
+msgstr "نحن نتعاون مع منظمات المجتمع المدني والمراكز الإعلامية التي ترصد وتوثق إنتهاكات حقوق الإنسان في سوريا"
 
 #: page/templates/pages/blog.html:4 page/templates/pages/blog.html.py:12
 msgid "Blog"
 msgstr "مدونة"
 
 #: page/templates/pages/page.html:22
-#, fuzzy
-#| msgid "Related Incidents"
 msgid "Related Pages"
 msgstr "الأحداث المرتبطة"
 
 #: syrianarchive/urls.py:21
-#, fuzzy
-#| msgid "Violation Database"
 msgid "^database/"
 msgstr "قاعدة بيانات الإنتهاكات"
 
@@ -225,27 +216,27 @@ msgstr "الصفحة الرئيسية"
 
 #: templates/base.html:101
 msgid "Syria Map"
-msgstr ""
+msgstr "خريطة سوريا"
 
 #: templates/base.html:177
 msgid "Terms of Use"
-msgstr ""
+msgstr "شروط الاستخدام"
 
 #: templates/base.html:182
 msgid "Privacy Policy"
-msgstr ""
+msgstr "سياسة الخصوصية"
 
 #: templates/base.html:187
 msgid "Copyright"
-msgstr ""
+msgstr "حقوق النشر"
 
 #: templates/base.html:192
 msgid "Disclaimer"
-msgstr ""
+msgstr "إخلاء المسؤولية"
 
 #: templates/base.html:197
 msgid "Contact"
-msgstr ""
+msgstr "إتصل بنا"
 
 #~ msgid "Media"
 #~ msgstr "ميديا"
