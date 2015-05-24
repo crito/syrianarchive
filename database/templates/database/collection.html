@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{{ collection.name }} - {% endblock %}
+
+
+{% block main %}
+
+    <style type="text/css">
+
+    </style>
+
+
+    <div class="row titlerow">
+        <div class="col-md-12">
+            <h1 class="pagetitle">{{ collection.name }}</h1>
+        </div>
+    </div>
+
+    <div class="row">
+       {% for video in videos %}
+            <h3>{{ video.name }}</h3>
+        {% endfor %}
+    </div>
+
+{% endblock %}

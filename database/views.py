@@ -44,3 +44,11 @@ def detail(request, slug):
 		return render(request, 'database/incident.html', {'incident': incident, 'slug':slug})
 	return render(request, 'database/loginrequired.html')
 
+def collections(request):
+    collections = Collection.objects.all()
+    return render(request, 'database/collections.html', {'collections':collections})
+
+def collection(request, id):
+    collection = get_object_or_404(Collection, pk=id)
+    videos = collection.video_set.all()
+    return render(request, 'database/collection.html', {'collection':collection, 'videos':videos})
