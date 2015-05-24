@@ -3,7 +3,13 @@ from database.models import *
 from django.forms import CheckboxSelectMultiple
 from modeltranslation.admin import TranslationAdmin
 
+@admin.register(Collection)
+class CollectionAdmin(TranslationAdmin):
+    pass
 
+@admin.register(Video)
+class VideoAdmin(admin.ModelAdmin):
+    pass
 
 @admin.register(InternationalInstrument)
 class InternationalInstrumentEntryAdmin(TranslationAdmin):

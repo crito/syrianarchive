@@ -5,6 +5,7 @@ from datetime import datetime
 from django.core.validators import MinValueValidator, MaxValueValidator
 import time
 import django_filters
+from django.db.models.signals import post_save
 
 class InternationalInstrument(models.Model):
 	name = models.CharField(max_length=250)
@@ -158,11 +159,31 @@ class DatabaseFilter(django_filters.FilterSet):
 	'''
 
 
-
+class Collection(models.Model):
+	name = models.CharField(max_length=250)
+	description = models.CharField(max_length=8000, null=True, blank=True)
+	image = models.ImageField(upload_to="collection_images", null=True, blank=True)
 
 class Video(models.Model):
-    url = models.CharField(max_length=250)
-    database_entry = models.OneToOneField(DatabaseEntry, related_name="video")
+	name = models.CharField(max_length=250, default="Add Name")
+	url = models.CharField(max_length=250)
+	database_entry = models.OneToOneField(DatabaseEntry, related_name="video", blank=True, null=True)
+	thumbnail = models.ImageField(upload_to="thumbnails", null=True, blank=True)
+	collections = models.ManyToManyField(Collection, blank=True)
 
-    def __unicode__(self):
-        return self.url
+	def __unicode__(self):
+		return self.url
+
+def create_database_entry(sender, instance, created, **kwargs):
+	''' if the database entry was not added for the video, create a new one!'''
+	if instance and created:
+		video = instance
+		db_entry = video.database_entry
+		try:
+			db_entry.name
+		except:
+			temp_db_entry = DatabaseEntry.objects.create(name=video.name)
+			video.database_entry = temp_db_entry
+			video.save()
+
+post_save.connect(create_database_entry, sender=Video)

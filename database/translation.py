@@ -31,6 +31,9 @@ class DeviceTranslationOptions(TranslationOptions):
 class ViolationTypeTranslationOptions(TranslationOptions):
     fields = ('name',)
 
+class CollectionTranslationOptions(TranslationOptions):
+    fields = ('name', 'description')
+
 translator.register(DatabaseEntry, DatabaseEntryTranslationOptions)
 translator.register(MediaContentType, MediaContentTypeTranslationOptions)
 translator.register(InternationalInstrument, InternationalInstrumentTranslationOptions)
@@ -38,3 +41,4 @@ translator.register(SourceConnection, SourceConnectionTranslationOptions)
 translator.register(LocationPlace, LocationPlaceTranslationOptions)
 translator.register(Device, DeviceTranslationOptions)
 translator.register(ViolationType, ViolationTypeTranslationOptions)
+translator.register(Collection, CollectionTranslationOptions)
