@@ -36,11 +36,12 @@ margin-left: .1em;
 margin-left: -.05em;
 }
 
-
+.container.main{
+    -webkit-transform: translateZ(0x)
+}
 
 
 .tintedrow{
-        position: relative;
             color:white;
 }
 
@@ -51,13 +52,18 @@ margin-left: -.05em;
 .aboutrow{
     background-color:#222;
     color:white;
-    position: relative;
     background-image: url(/static/img/climbing.png);
+    background-position: center center;
+    position: relative;
     background-attachment: fixed;
     background-size: cover;
     box-shadow: 0px 5px 5px rgba(0,0,0,.3), 0px -5px 5px rgba(0,0,0,.3);
     border-top: 1px solid black;
-    -webkit-transform: translateZ(0);
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    .aboutrow{ 
+        background-attachment: scroll;
+    }
 }
 
 .sectionscol {
@@ -80,15 +86,20 @@ margin-left: -.05em;
 
 .collaboratorrow{
     background-color:#e3e3e3;
-    position: relative;
         padding-bottom:2em;
     padding-top:2em;
-
+    position: relative;
     background-image: url(/static/img/holding.png);
-    background-attachment: fixed;
+    background-position: center center;
+    background-attachment: fixed;    
     background-size: cover;
 }
 
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    .collaboratorrow{ 
+        background-attachment: scroll;
+    }
+}
 
 
 

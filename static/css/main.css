@@ -119,15 +119,6 @@ th i.fa{
        z-index: 10;
 }
 
-.mainrow{
-    /*
-      -webkit-box-shadow: 0 -8px 6px -6px rgba(0,0,0,.3);
-     -moz-box-shadow:   0 -8px 6px -6px rgba(0,0,0,.3);
-          box-shadow:   0 -8px 6px -6px rgba(0,0,0,.3);*/
-        position:relative;
-        z-index:20;
-
-}
 
 .logo{
     z-index:1;
