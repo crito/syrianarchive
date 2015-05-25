@@ -5,3 +5,4 @@ html2text
 pillow
 django-modeltranslation
 django-filter
+suit

@@ -12,13 +12,16 @@ from django_filters.views import FilterView
 from django_filters.filterset import FilterSet, filterset_factory
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import *
+from .forms import *
 import time
 from pprint import pprint
 
 
 
+
 def index(request):
     if request.user.is_authenticated():
+        '''
         f = DatabaseFilter(request.GET, queryset=DatabaseEntry.objects.all())
         paginator = Paginator(f,20)
         page = request.GET.get('page')
@@ -30,12 +33,39 @@ def index(request):
         except EmptyPage:
             # If page is out of range (e.g. 9999), deliver last page of results.
             entries = paginator.page(paginator.num_pages)
-
+        '''
         current_path = request.get_full_path()
+        
+        if request.GET.items():
+            if request.method == "GET":
+                form = DatabaseFilterForm(request.GET, request.FILES)
 
-        return render(request, 'database/index.html', {'entries': entries, 'filter':f, "current_path":current_path})
+                if form.is_valid():
+                #page = form.cleaned_data['page']
+                    type_of_violation = form.cleaned_data['type_of_violation']
+                    location = form.cleaned_data['location']
+
+
+                
+                    entries = DatabaseEntry.objects.filter(type_of_violation=type_of_violation).filter(location=location)
+              
+                else:
+                    entries = DatabaseEntry.objects.all()
+
+                    form = DatabaseFilterForm()
+        else:
+            form = DatabaseFilterForm()
+            entries = DatabaseEntry.objects.all()
+    
+        
+        return render(request, 'database/index.html', {'entries': entries, 'form':form, "current_path":current_path})
 	
     return render(request, 'database/loginrequired.html')
+
+
+
+
+
 
 def detail(request, slug):
 	if request.user.is_authenticated():

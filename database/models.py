@@ -146,17 +146,18 @@ class DatabaseEntry(models.Model):
 	def save(self, *args, **kwargs):
 		super(DatabaseEntry, self).save(*args, **kwargs)
 
-
+'''
 class DatabaseFilter(django_filters.FilterSet):
 	class Meta:
 		model = DatabaseEntry
 		fields = ['type_of_violation','location',]
-	'''
+
+	
 	def __init__(self, *args, **kwargs):
 		super(DatabaseFilter, self).__init__(*args, **kwargs)
 		self.filters['type_of_violation'].extra.update({'empty_label': 'All Violation Types'})
 		#self.filters['location'].extra.update({'empty_label':'All Locations'})
-	'''
+'''
 
 
 class Collection(models.Model):

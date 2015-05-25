@@ -7,14 +7,86 @@
 {% block main %}
 
 
-	<div class="row titlerow">
+<!--	<div class="row titlerow">
 		<div class="col-md-12">
 			<h1 class="pagetitle">{% trans "Violation Database" %}</h1>
 		</div>
+	</div>-->
+
+<!-- TEST -->
+ <div class="row filterrow">
+ 	<div class="col-md-12 filterwrapper">
+
+
+		 <form method="get" action="/database">
+		  {% csrf_token %}
+
+
+		  {{ form.errors }}
+{{ form.non_field_errors }}
+
+		  <div class="row">
+
+			  <div class="col-md-6">
+
+			  {{ form.type_of_violation.label_tag }}
+			  {{ form.type_of_violation }}
+
+			  </div>
+
+			  <div class="col-md-6">
+			  {{form.location.label_tag}}
+			  {{form.location}}
+			  </div>
+		  </div>
+<!--
+
+		 <div class="row">
+		 	<div class="timewrap col-md-4">
+				<span>{% trans "Date:" %}</span>
+				<div id="fakedate" class="datepicker date input-append">
+					<input type="text" name="date" id="fakedate" value="">
+					<span class="add-on"><i class="icon-th"></i></span>
+				</div>
+				<div id="realdate" class="datepicker realdate date" >
+					<input type="hidden" name="date" id="id_date" value="">
+					<span class="add-on"></span>
+				</div>
+			</div>
+
+
+			<div class="timewrap col-md-4">
+				<span>{% trans "Start date:" %}</span>
+				<div id="fakestartdate" class="datepicker date input-append">
+					<input type="text" name="startdate" id="fakestartdate" value="">
+					<span class="add-on"><i class="icon-th"></i></span>
+				</div>
+				<div id="realstartdate" class="datepicker realdate date" >
+					<input type="hidden" name="startdate" id="id_startdate" value="">
+					<span class="add-on"></span>
+				</div>
+			</div>
+
+			<div class="timewrap col-md-4">
+				<span>{% trans "End date:" %}</span>
+				<div id="fakedate" class="datepicker date input-append">
+					<input type="text" name="enddate" id="fakeenddate" value="">
+					<span class="add-on"><i class="icon-th"></i></span>
+				</div>
+				<div id="realdate" class="datepicker realdate date" >
+					<input type="hidden" name="enddate" id="id_date" value="">
+					<span class="add-on"></span>
+				</div>
+			</div>
+		</div>-->
+
+		  <input type="submit" value="Filter!" />
+		  <input type="reset" value="Reset Filter"/>
+		  </form>
 	</div>
-
+</div>
 <!-- database filters-->
-
+<!--
 	<div class="row filterrow">
 		<div class="col-md-12 filterwrapper">
 		{% trans "Filter By" %}
@@ -23,7 +95,7 @@
 			        <input type="submit" value="Go"/>
 			    </form>
 		</div>
-	</div>
+	</div>-->
 
 
 	<div class="row database-table">
