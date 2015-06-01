@@ -82,3 +82,7 @@ def collection(request, id):
     collection = get_object_or_404(Collection, pk=id)
     videos = collection.video_set.all()
     return render(request, 'database/collection.html', {'collection':collection, 'videos':videos})
+
+
+def map(request):
+    return render(request, 'database/map.html',{})

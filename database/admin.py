@@ -2,6 +2,7 @@ from django.contrib import admin
 from database.models import *
 from django.forms import CheckboxSelectMultiple
 from modeltranslation.admin import TranslationAdmin
+from leaflet.admin import LeafletGeoAdmin
 
 @admin.register(Collection)
 class CollectionAdmin(TranslationAdmin):
@@ -36,7 +37,7 @@ class ViolationTypeAdmin(TranslationAdmin):
 	pass
 
 @admin.register(DatabaseEntry)
-class DatabaseEntryAdmin(TranslationAdmin):
+class DatabaseEntryAdmin(TranslationAdmin, LeafletGeoAdmin):
     formfield_overrides = {
         models.ManyToManyField: {'widget': CheckboxSelectMultiple},
     }
@@ -58,6 +59,7 @@ class DatabaseEntryAdmin(TranslationAdmin):
             	'reference_code', 
             	'recording_date',
             	'location',
+                'geom',
             	('location_latitude','location_longitude',),
             	'edited',	
             	('file_size','duration',),

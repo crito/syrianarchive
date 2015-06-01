@@ -6,6 +6,7 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 import time
 import django_filters
 from django.db.models.signals import post_save
+from djgeojson.fields import PointField
 
 class InternationalInstrument(models.Model):
 	name = models.CharField(max_length=250)
@@ -55,6 +56,7 @@ class DatabaseEntry(models.Model):
 	location = models.ManyToManyField(LocationPlace, blank=True)
 	location_latitude = models.CharField(max_length=250, null=True, blank=True)
 	location_longitude = models.CharField(max_length=250, null=True, blank=True)
+	geom = PointField(null=True, blank=True)
 	edited = models.NullBooleanField(null=True, blank=True)
 	file_size = models.CharField(max_length=250, null=True, blank=True)
 	duration = models.CharField(max_length=250, null=True, blank=True)

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load leaflet_tags %}
+{% load geojson_tags %}
+
+{% block javascripts %}
+  {% leaflet_js %}
+  {% leaflet_css %}
+{% endblock %}
+
+{% block main %}
+
+    <script type="text/javascript">
+      var collection = {{ qs_results|geojsonfeature|safe }};
+      function map_init (map, options) {
+
+            var dataurl = '{% url "incidents" %}';
+            // Download GeoJSON via Ajax
+            $.getJSON(dataurl, function (data) {
+                // Add GeoJSON layer
+                L.geoJson(data).addTo(map);
+            });
+
+        }
+
+    </script>
+
+    {% leaflet_map "incidents" callback="window.map_init" %}
+
+{% endblock %}
