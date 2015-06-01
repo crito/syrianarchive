@@ -244,3 +244,12 @@ opacity:0;
 .colabcol img{
     border:1px solid #ddd;
 }
+
+.colabcol div.joinus{
+    height:200px;
+    width:100%;
+    background-image: url(/static/img/holding.png);
+    background-size: cover;
+    background-attachment: fixed;
+    box-shadow: inset 1px 1px 1px rgba(0,0,0,.2);
+}
