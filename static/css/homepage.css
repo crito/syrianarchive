@@ -222,3 +222,25 @@ opacity:0;
 opacity:0;
 }
 }
+
+
+
+
+
+
+
+
+.colabcol{
+    background-color: white;
+    display: block;
+    padding:1em;
+    font-weight: bold;
+    box-shadow:1px 1px 1px rgba(0,0,0,.2);
+    opacity: .9;
+}
+.colabcol:hover{
+    opacity:1;
+}
+.colabcol img{
+    border:1px solid #ddd;
+}

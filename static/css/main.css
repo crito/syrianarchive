@@ -60,6 +60,7 @@ body, html{
 .navbar-main{
 	background-color:white;
     border:0px solid white;
+    box-shadow: 2px 2px 7px -4px black;
 }
 
 
