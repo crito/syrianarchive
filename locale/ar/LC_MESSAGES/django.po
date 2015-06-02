@@ -1,3 +1,4 @@
+
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
@@ -8,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-22 21:09+0000\n"
+"POT-Creation-Date: 2015-06-02 18:49+0000\n"
 "PO-Revision-Date: 2015-04-03 19:21+0000\n"
 "Last-Translator:   <sadh@fdsauh.dsa>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,23 +21,30 @@ msgstr ""
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 "X-Translated-Using: django-rosetta 0.7.5\n"
 
+#: database/templates/database/collections.html:4
+#: database/templates/database/collections.html:34
+#, fuzzy
+#| msgid "Video Collections"
+msgid "Collections"
+msgstr "الفيديو"
+
 #: database/templates/database/incident.html:4
 #, fuzzy
 #| msgid "Related Incidents"
 msgid "Incident"
-msgstr "الأحداث المرتبطة"
+msgstr "الحدث"
 
 #: database/templates/database/incident.html:30
 msgid "Reference Code"
 msgstr "رقم الكود"
 
 #: database/templates/database/incident.html:32
-#: database/templates/database/index.html:37
+#: database/templates/database/index.html:108
 msgid "Description"
 msgstr "التفاصيل"
 
 #: database/templates/database/incident.html:34
-#: database/templates/database/index.html:38
+#: database/templates/database/index.html:109
 msgid "Recording Date"
 msgstr "تاريخ التسجيل"
 
@@ -53,7 +61,7 @@ msgid "Languages"
 msgstr "اللغات"
 
 #: database/templates/database/incident.html:44
-#: database/templates/database/index.html:39
+#: database/templates/database/index.html:110
 msgid "Location"
 msgstr "المحافظة"
 
@@ -74,7 +82,7 @@ msgid "Weather in Media"
 msgstr "الطقس"
 
 #: database/templates/database/incident.html:54
-#: database/templates/database/index.html:40
+#: database/templates/database/index.html:111
 msgid "Type of Violation"
 msgstr "نوع الإنتهاك"
 
@@ -93,7 +101,7 @@ msgstr "السلاح المستخدم"
 #: database/templates/database/incident.html:67
 #, fuzzy
 #| msgid "Edited"
-msgid "Edited Date"
+msgid "Edited"
 msgstr "تم تعديل الملف"
 
 #: database/templates/database/incident.html:68
@@ -144,19 +152,31 @@ msgstr "الأحداث المرتبطة"
 #: database/templates/database/index.html:12
 #: database/templates/database/loginrequired.html:4
 #: database/templates/database/loginrequired.html:12
-#: homepage/templates/homepage/index.html:53 templates/base.html:93
+#: homepage/templates/homepage/index.html:53 templates/base.html:110
 msgid "Violation Database"
 msgstr "قاعدة بيانات الإنتهاكات"
 
-#: database/templates/database/index.html:20
+#: database/templates/database/index.html:46
+msgid "Date:"
+msgstr "التاريخ"
+
+#: database/templates/database/index.html:59
+msgid "Start date:"
+msgstr "من بداية تاريخ"
+
+#: database/templates/database/index.html:71
+msgid "End date:"
+msgstr "إلى نهاية تاريخ"
+
+#: database/templates/database/index.html:92
 msgid "Filter By"
 msgstr "فيما يلي الخيارات المتاحة للبحث حسب"
 
-#: database/templates/database/index.html:36
-msgid "Title"
+#: database/templates/database/index.html:107
+msgid "Name"
 msgstr "العنوان"
 
-#: database/templates/database/index.html:41
+#: database/templates/database/index.html:112
 msgid "Video"
 msgstr "الفيديو"
 
@@ -168,83 +188,89 @@ msgstr "قاعدة البيانات قيد الإنشاء"
 msgid "Please log in to see it"
 msgstr "الرجاء تسجيل الدخول"
 
+#: database/templates/database/map.html:15
+#, fuzzy
+#| msgid "Related Incidents"
+msgid "Incident Map"
+msgstr "خريطة الأحداث"
+
 #: homepage/templates/homepage/index.html:41 templates/base.html:9
-#: templates/base.html.py:144
+#: templates/base.html.py:161
 msgid "Syrian Archive"
 msgstr "الأرشيف السوري"
 
 #: homepage/templates/homepage/index.html:47
-msgid ""
-"Preserving open source documentation of human rights violations in Syria."
+#, fuzzy
+#| msgid ""
+#| "Preserving open source documentation of human rights violations in Syria."
+msgid "Preserving documentation of human rights violations."
 msgstr "لأرشفة انتهاكات حقوق الإنسان"
 
-#: homepage/templates/homepage/index.html:52 templates/base.html:89
+#: homepage/templates/homepage/index.html:52 templates/base.html:106
 msgid "About"
 msgstr "حول الأرشيف"
 
-#: homepage/templates/homepage/index.html:54 templates/base.html:97
+#: homepage/templates/homepage/index.html:54 templates/base.html:114
 msgid "Video Collections"
 msgstr "الفيديو"
 
-#: homepage/templates/homepage/index.html:55 templates/base.html:106
+#: homepage/templates/homepage/index.html:55
+#: homepage/templates/homepage/index.html:116 templates/base.html:123
 msgid "Join Us"
 msgstr "انضم  إلينا"
 
-#: homepage/templates/homepage/index.html:86
-msgid "Recent Entries"
-msgstr "آخر المدخلات"
-
-#: homepage/templates/homepage/index.html:100
-msgid "We collaborate with organisations and media agencies that document and report human rights violations in Syria"
+#: homepage/templates/homepage/index.html:92
+msgid ""
+"We collaborate with organisations and media agencies that document and "
+"report human rights violations in Syria"
 msgstr "نحن نتعاون مع منظمات المجتمع المدني والمراكز الإعلامية التي ترصد وتوثق إنتهاكات حقوق الإنسان في سوريا"
+"نحن نتعاون مع منظمات المجتمع المدني والمراكز الإعلامية التي ترصد وتوثق "
+"إنتهاكات حقوق الإنسان في سوريا"
+
+#: homepage/templates/homepage/index.html:98
+msgid "Syrian Press Center"
+msgstr "المركز الصحفي السوري"
+
+#: homepage/templates/homepage/index.html:104
+msgid "Wadi Barada Media Center"
+msgstr "المركز الإعلامي في وادي بردى"
+
+#: homepage/templates/homepage/index.html:110
+msgid "Sounds and Picture"
+msgstr "منظمة صوت وصورة"
 
 #: page/templates/pages/blog.html:4 page/templates/pages/blog.html.py:12
 msgid "Blog"
 msgstr "مدونة"
 
-#: page/templates/pages/page.html:22
+#: page/templates/pages/page.html:24
 msgid "Related Pages"
-msgstr "الأحداث المرتبطة"
+msgstr "الصفحات المرتبطة"
 
-#: syrianarchive/urls.py:21
-msgid "^database/"
-msgstr "قاعدة بيانات الإنتهاكات"
-
-#: templates/base.html:85
+#: templates/base.html:102
 msgid "Home"
 msgstr "الصفحة الرئيسية"
 
-#: templates/base.html:101
+#: templates/base.html:118
 msgid "Syria Map"
-msgstr "خريطة سوريا"
+msgstr "خريطة الأحداث السورية"
 
-#: templates/base.html:177
+#: templates/base.html:194
 msgid "Terms of Use"
 msgstr "شروط الاستخدام"
 
-#: templates/base.html:182
+#: templates/base.html:199
 msgid "Privacy Policy"
 msgstr "سياسة الخصوصية"
 
-#: templates/base.html:187
+#: templates/base.html:204
 msgid "Copyright"
 msgstr "حقوق النشر"
 
-#: templates/base.html:192
+#: templates/base.html:209
 msgid "Disclaimer"
 msgstr "إخلاء المسؤولية"
 
-#: templates/base.html:197
+#: templates/base.html:214
 msgid "Contact"
 msgstr "إتصل بنا"
-
-#~ msgid "Media"
-#~ msgstr "ميديا"
-
-#, fuzzy
-#~| msgid "Violation Database"
-#~ msgid "Database"
-#~ msgstr "قاعدة بيانات الإنتهاكات"
-
-#~ msgid "Gender"
-#~ msgstr "النوع الإجتماعي"

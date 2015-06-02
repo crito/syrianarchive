@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load i18n %}
 {% load leaflet_tags %}
 {% load geojson_tags %}
 
@@ -8,6 +9,13 @@
 {% endblock %}
 
 {% block main %}
+
+  <div class="row titlerow">
+    <div class="col-md-12">
+      <h1 class="pagetitle">{% trans "Incident Map" %}</h1>
+    </div>
+  </div>
+
 
     <script type="text/javascript">
       var collection = {{ qs_results|geojsonfeature|safe }};
@@ -24,6 +32,10 @@
 
     </script>
 
+  <div class="row maprow">
+
     {% leaflet_map "incidents" callback="window.map_init" %}
+
+  </div>
 
 {% endblock %}
