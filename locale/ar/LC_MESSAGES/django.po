@@ -189,8 +189,6 @@ msgid "Please log in to see it"
 msgstr "الرجاء تسجيل الدخول"
 
 #: database/templates/database/map.html:15
-#, fuzzy
-#| msgid "Related Incidents"
 msgid "Incident Map"
 msgstr "خريطة الأحداث"
 
@@ -200,9 +198,6 @@ msgid "Syrian Archive"
 msgstr "الأرشيف السوري"
 
 #: homepage/templates/homepage/index.html:47
-#, fuzzy
-#| msgid ""
-#| "Preserving open source documentation of human rights violations in Syria."
 msgid "Preserving documentation of human rights violations."
 msgstr "لأرشفة انتهاكات حقوق الإنسان"
 
