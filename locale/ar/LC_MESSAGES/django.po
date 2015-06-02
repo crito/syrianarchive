@@ -23,14 +23,10 @@ msgstr ""
 
 #: database/templates/database/collections.html:4
 #: database/templates/database/collections.html:34
-#, fuzzy
-#| msgid "Video Collections"
 msgid "Collections"
 msgstr "الفيديو"
 
 #: database/templates/database/incident.html:4
-#, fuzzy
-#| msgid "Related Incidents"
 msgid "Incident"
 msgstr "الحدث"
 
@@ -99,8 +95,6 @@ msgid "Weapons Used"
 msgstr "السلاح المستخدم"
 
 #: database/templates/database/incident.html:67
-#, fuzzy
-#| msgid "Edited"
 msgid "Edited"
 msgstr "تم تعديل الملف"
 
