@@ -68,11 +68,14 @@ def index(request):
 
 
 def detail(request, slug):
-	if request.user.is_authenticated():
-    		
-    		incident = get_object_or_404(DatabaseEntry, pk=slug )
-		return render(request, 'database/incident.html', {'incident': incident, 'slug':slug})
-	return render(request, 'database/loginrequired.html')
+    if request.user.is_authenticated():
+        incident = get_object_or_404(DatabaseEntry, pk=slug )
+        try:
+            video = incident.video
+        except:
+            video = None
+        return render(request, 'database/incident.html', {'incident': incident, 'slug':slug,'video':video})
+    return render(request, 'database/loginrequired.html')
 
 def collections(request):
     collections = Collection.objects.all()

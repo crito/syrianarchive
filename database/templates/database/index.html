@@ -133,7 +133,6 @@
             			<b>{% for loc in entry.location.all %}
             				{{ loc.name }}
             			{% endfor %}</b>
-            			({{entry.location_latitude}}, {{entry.location_longitude}})
             		</td>
 
             		<td>
@@ -142,35 +141,12 @@
             			{% endfor %}
 			</td>
             		<td>
-            			Thumbnails to come
             		</td>
 					
 					</tr>
 				{% endfor %}
 			<tbody>
 			</table>
-
-
-        <div class="pagination">
-            <span class="step-links">
-                {% if entries.has_previous %}
-                    <a href="?page={{ entries.previous_page_number }}">previous</a>
-                {% endif %}
-
-                <span class="current">
-                    Page {{ entries.number }} of {{ entries.paginator.num_pages }}.
-                </span>
-
-                {% if entries.has_next %}
-                    <a href="?page={{ entries.next_page_number }}">next</a>
-                {% endif %}
-            </span>
-        </div>
-
-
-                
-
-
 
 		</div>
 	</div>

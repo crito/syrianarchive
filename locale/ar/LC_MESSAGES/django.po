@@ -210,11 +210,8 @@ msgstr "انضم  إلينا"
 
 #: homepage/templates/homepage/index.html:92
 msgid ""
-"We collaborate with organisations and media agencies that document and "
-"report human rights violations in Syria"
+"We collaborate with organisations and media agencies that document and report human rights violations in Syria"
 msgstr "نحن نتعاون مع منظمات المجتمع المدني والمراكز الإعلامية التي ترصد وتوثق إنتهاكات حقوق الإنسان في سوريا"
-"نحن نتعاون مع منظمات المجتمع المدني والمراكز الإعلامية التي ترصد وتوثق "
-"إنتهاكات حقوق الإنسان في سوريا"
 
 #: homepage/templates/homepage/index.html:98
 msgid "Syrian Press Center"
