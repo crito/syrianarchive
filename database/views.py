@@ -18,49 +18,54 @@ from pprint import pprint
 
 
 
-
+@login_required
 def index(request):
-    if request.user.is_authenticated():
-        '''
-        f = DatabaseFilter(request.GET, queryset=DatabaseEntry.objects.all())
-        paginator = Paginator(f,20)
-        page = request.GET.get('page')
-        try:
-            entries = paginator.page(page)
-        except PageNotAnInteger:
-            # If page is not an integer, deliver first page.
-            entries = paginator.page(1)
-        except EmptyPage:
-            # If page is out of range (e.g. 9999), deliver last page of results.
-            entries = paginator.page(paginator.num_pages)
-        '''
-        current_path = request.get_full_path()
-        
-        if request.GET.items():
-            if request.method == "GET":
-                form = DatabaseFilterForm(request.GET, request.FILES)
+    current_path = request.get_full_path()
 
-                if form.is_valid():
-                #page = form.cleaned_data['page']
-                    type_of_violation = form.cleaned_data['type_of_violation']
-                    location = form.cleaned_data['location']
+    if request.method == "GET" and request.GET.items():
+        form = DatabaseFilterForm(request.GET, request.FILES)
+        print request.GET.getlist('type_of_violation')
+        if form.is_valid():
+            type_of_violation = form.cleaned_data['type_of_violation']
+            location = form.cleaned_data['location']
+            start_date = form.cleaned_data['startDate']
+            end_date = form.cleaned_data['endDate']
+            page = form.cleaned_data['page']
 
 
-                
-                    entries = DatabaseEntry.objects.filter(type_of_violation=type_of_violation).filter(location=location)
-              
-                else:
-                    entries = DatabaseEntry.objects.all()
+            kwargs = {}
+            print 'type of vio', type_of_violation
+            if type_of_violation:
+                kwargs['type_of_violation'] = type_of_violation
+            print 'loc',location
+            if location:
+                kwargs['location'] = location
+            print 'date', start_date, end_date
+            if start_date and end_date:
+                kwargs['recording_date__range'] = (start_date, end_date)
 
-                    form = DatabaseFilterForm()
-        else:
-            form = DatabaseFilterForm()
             entries = DatabaseEntry.objects.all()
+
+            print 'page', page
+            if page:
+                page = page - 1
+                entries = entries.filter(**kwargs)[page*50:page*50+50]
+            else:
+                entries = entries.filter(**kwargs)[0:50]
+
+        else:
+            print "NOOOPE"
+            entries = DatabaseEntry.objects.all()
+            form = DatabaseFilterForm(request.GET, request.FILES)
+      
+    else:
+        entries = DatabaseEntry.objects.all()
+        form = DatabaseFilterForm(request.GET, request.FILES)
+
+
     
-        
-        return render(request, 'database/index.html', {'entries': entries, 'form':form, "current_path":current_path})
+    return render(request, 'database/index.html', {'entries': entries, 'form':form, "current_path":current_path})
 	
-    return render(request, 'database/loginrequired.html')
 
 
 
