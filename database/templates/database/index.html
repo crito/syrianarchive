@@ -26,34 +26,32 @@
 
 		  <div class="row">
 
-
-			  {{ form.type_of_violation.label_tag }}
+		  	{% trans "Type of Violation" %}
 			  {{ form.type_of_violation }}
 			  <br />
 
-			  {{form.location.label_tag}}
+			  {% trans "Location" %}
 			  {{form.location}}
 			  <br />
 
 
-			  {{form.startDate.label_tag}}
+		  	{% trans "Start Date" %}
 			  {{form.startDate}}
 			  <br />
 
 
-			  {{form.endDate.label_tag}}
+		  	{% trans "End Date" %}
 			  {{form.endDate}}
 			  <br />
 
-			  {{form.page.label_tag}}
+		  	{% trans "Page" %}
 			  {{form.page}}
 
 
 		  </div>
 
 
-		  <input type="submit" value="Filter!" />
-		  <input type="reset" value="Reset Filter"/>
+		  <input type="submit" value="{% trans 'Filter' %}" />
 		  </form>
 	</div>
 </div>
