@@ -36,8 +36,12 @@ class DeviceAdmin(TranslationAdmin):
 class ViolationTypeAdmin(TranslationAdmin):
 	pass
 
+class VideoInline(admin.StackedInline):
+    model = Video
+
 @admin.register(DatabaseEntry)
 class DatabaseEntryAdmin(TranslationAdmin, LeafletGeoAdmin):
+    inlines = (VideoInline,)
     formfield_overrides = {
         models.ManyToManyField: {'widget': CheckboxSelectMultiple},
     }
