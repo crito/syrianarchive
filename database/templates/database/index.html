@@ -24,31 +24,43 @@
 		  {{ form.errors }}
 			{{ form.non_field_errors }}
 
-		  <div class="row">
+			{% trans "Search" %}
+			{{ form.search_terms }}
+			<table>
+				<tr>
+					<td> 
+						{% trans "Type of Violation" %}
+					</td>
+					<td>
+						{{ form.type_of_violation }}
 
-		  	{% trans "Type of Violation" %}
-			  {{ form.type_of_violation }}
-			  <br />
-
-			  {% trans "Location" %}
-			  {{form.location}}
-			  <br />
-
-
-		  	{% trans "Start Date" %}
-			  {{form.startDate}}
-			  <br />
-
-
-		  	{% trans "End Date" %}
-			  {{form.endDate}}
-			  <br />
+					</td>
+					<td> 
+			  			{% trans "Location" %}
+					</td>
+					<td>
+			  			{{form.location}}
+					</td>
+				</tr>
+				<tr>
+					<td> 
+		  				{% trans "Start Date" %}
+					</td>
+					<td>
+					  {{form.startDate}}
+					</td>
+					<td> 
+		  				{% trans "End Date" %}
+					</td>
+					<td>
+			  			{{form.endDate}}
+					</td>
+				</tr>
+			</table>
 
 		  	{% trans "Page" %}
 			  {{form.page}}
 
-
-		  </div>
 
 
 		  <input type="submit" value="{% trans 'Filter' %}" />
@@ -118,7 +130,8 @@
 
 <style type="text/css">
 	input{
-		background-color: transparent;
+		background-color: white;
+		color: black;
 	}
 </style>
 <link href="/static/timetracker/datepicker/css/datepicker3.css" rel="stylesheet" media="screen">
@@ -129,7 +142,7 @@
 (function($){
 	  $(document).ready(function(){
 		$('.datepicker').datepicker({
-	          format: 'dd MM yyyy',
+	          format: 'dd M yyyy',
 	          autoclose : true,
 	          todayBtn: true,
 	          closeBtn: true,

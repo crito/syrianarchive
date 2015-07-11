@@ -51,17 +51,21 @@ class DatabaseEntryAdmin(TranslationAdmin, LeafletGeoAdmin):
 		)
     fieldsets = (
         ('Required Fields', {
-            'fields': ('name',)
+            'fields': ('name',
+                'description',
+                )
+        }),
+        ('Location Fields', {
+            'fields': (
+                'geom',
+                'location',                
+            )
         }),
         ('Public Fields', {
             'fields': (
-            	'description',
             	'reference_code', 
             	'recording_date',
-            	'location',
-                'geom',
-            	('location_latitude','location_longitude',),
-            	'edited',	
+                'edited',
             	('file_size','duration',),
             	'chain_of_custody_notes_public',
             	'media_content_type',

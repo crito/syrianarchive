@@ -50,7 +50,7 @@ class DatabaseEntry(models.Model):
 	name = models.CharField(max_length=250)
 	reference_code = models.CharField(max_length=250, null=True, blank=True)
 	cloths_and_uniforms = models.CharField(max_length=250, null=True, blank=True)
-	description = models.TextField(max_length=5000, null=True, blank=True)
+	description = models.TextField(max_length=5000, null=True, blank=True, default='')
 	recording_date = models.DateTimeField(default=datetime.now, null=True, blank=True)
 	type_of_violation = models.ManyToManyField(ViolationType, blank=True)
 	location = models.ManyToManyField(LocationPlace, blank=True)
@@ -89,9 +89,6 @@ class DatabaseEntry(models.Model):
         			]
      			)
 	related_incidents = models.ManyToManyField("DatabaseEntry", blank=True)
-
-
-	
 
 	#private
 	staff_id = models.CharField(max_length=250, null=True, blank=True)
@@ -132,11 +129,6 @@ class DatabaseEntry(models.Model):
 
 	def __unicode__(self):
 		return self.name
-	def getCreatorID(self):
-		if self.creator:
-			return self.creator.username
-		else:
-			return 'ghost user'
 
 	def to_json_dict(self):
 		data = {
@@ -148,20 +140,6 @@ class DatabaseEntry(models.Model):
 	def save(self, *args, **kwargs):
 		super(DatabaseEntry, self).save(*args, **kwargs)
 
-'''
-class DatabaseFilter(django_filters.FilterSet):
-	class Meta:
-		model = DatabaseEntry
-		fields = ['type_of_violation','location',]
-
-	
-	def __init__(self, *args, **kwargs):
-		super(DatabaseFilter, self).__init__(*args, **kwargs)
-		self.filters['type_of_violation'].extra.update({'empty_label': 'All Violation Types'})
-		#self.filters['location'].extra.update({'empty_label':'All Locations'})
-'''
-
-
 class Collection(models.Model):
 	name = models.CharField(max_length=250)
 	description = models.CharField(max_length=8000, null=True, blank=True)
@@ -169,6 +147,9 @@ class Collection(models.Model):
 
 class Video(models.Model):
 	name = models.CharField(max_length=250, default="Add Name")
+	#source is directory structure
+	source = models.CharField(max_length=250,null=True, blank=True)
+	#filename is url
 	url = models.CharField(max_length=250)
 	database_entry = models.OneToOneField(DatabaseEntry, related_name="video", blank=True, null=True)
 	thumbnail = models.ImageField(upload_to="thumbnails", null=True, blank=True)

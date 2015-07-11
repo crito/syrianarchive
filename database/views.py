@@ -15,6 +15,7 @@ from .models import *
 from .forms import *
 import time
 from pprint import pprint
+from haystack.query import SearchQuerySet
 
 
 
@@ -31,35 +32,43 @@ def index(request):
             start_date = form.cleaned_data['startDate']
             end_date = form.cleaned_data['endDate']
             page = form.cleaned_data['page']
+            search_terms = form.cleaned_data['search_terms']
 
 
             kwargs = {}
-            print 'type of vio', type_of_violation
             if type_of_violation:
+                print type_of_violation, ' aaaaa'
                 kwargs['type_of_violation'] = type_of_violation
-            print 'loc',location
             if location:
                 kwargs['location'] = location
-            print 'date', start_date, end_date
             if start_date and end_date:
                 kwargs['recording_date__range'] = (start_date, end_date)
 
-            entries = DatabaseEntry.objects.all()
+            entries = SearchQuerySet()
 
-            print 'page', page
+            print kwargs, 'kwargs'
+
+            if search_terms:
+                entries = entries.filter(content=search_terms+'~')
+
             if page:
                 page = page - 1
                 entries = entries.filter(**kwargs)[page*50:page*50+50]
             else:
                 entries = entries.filter(**kwargs)[0:50]
 
+            def queryset_gen(search_qs):
+                for item in search_qs:
+                    yield item.object  # This is the line that gets the model instance out of the Search object
+
+            entries = queryset_gen(entries)
+
         else:
-            print "NOOOPE"
-            entries = DatabaseEntry.objects.all()
+            entries = DatabaseEntry.objects.all()[0:50]
             form = DatabaseFilterForm(request.GET, request.FILES)
       
     else:
-        entries = DatabaseEntry.objects.all()
+        entries = DatabaseEntry.objects.all()[0:50]
         form = DatabaseFilterForm(request.GET, request.FILES)
 
 

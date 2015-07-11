@@ -1,5 +1,5 @@
 from os.path import dirname, join, realpath
-
+import os
 from django.conf.global_settings import *
 
 
@@ -31,9 +31,12 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'ckeditor',
     'djgeojson',
     'leaflet',
+    'haystack',
+
     'database',
     'homepage',
     'page',
@@ -227,3 +230,11 @@ SUIT_CONFIG = {
     # misc
     # 'LIST_PER_PAGE': 15
 }
+
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
+        'PATH': os.path.join(os.path.dirname(__file__), 'whoosh_index'),
+    },
+}
+HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'

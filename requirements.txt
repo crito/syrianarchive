@@ -1,8 +1,11 @@
 MySQL-python
 django-ckeditor
 django-reversion
-html2text
 pillow
+whoosh
 django-modeltranslation
 django-filter
-suit
+django-suit
+django-haystack
+django-geojson
+django-leaflet

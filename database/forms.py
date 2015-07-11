@@ -5,6 +5,7 @@ from .models import *
 
 class DatabaseFilterForm(forms.ModelForm):
     # add extra fields that you want
+    search_terms = forms.CharField(required=False,)
     startDate = forms.DateField(
         required=False,
         initial=datetime.today(),
