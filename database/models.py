@@ -150,7 +150,7 @@ class Video(models.Model):
 	#source is directory structure
 	source = models.CharField(max_length=250,null=True, blank=True)
 	#filename is url
-	url = models.CharField(max_length=250)
+	url = models.CharField(max_length=2000)
 	database_entry = models.OneToOneField(DatabaseEntry, related_name="video", blank=True, null=True)
 	thumbnail = models.ImageField(upload_to="thumbnails", null=True, blank=True)
 	collections = models.ManyToManyField(Collection, blank=True)
