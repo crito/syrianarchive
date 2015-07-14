@@ -8,4 +8,3 @@ def index(request):
     sections = Section.objects.all()
     blog_posts = Post.objects.all()
     return render(request, 'homepage/index.html', {'sections' : sections, 'blog_posts':blog_posts,})
-
