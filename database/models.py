@@ -7,6 +7,11 @@ import time
 import django_filters
 from django.db.models.signals import post_save
 from djgeojson.fields import PointField
+from syrianarchive.site_settings import BASE_PATH
+import json
+
+from django.shortcuts import get_object_or_404, render
+
 
 class InternationalInstrument(models.Model):
     name = models.CharField( max_length = 250)
@@ -28,9 +33,33 @@ class SourceConnection(models.Model):
         return self.name
 
 class LocationPlace(models.Model):
-    name = models.CharField( max_length = 250)
+    name        = models.CharField( max_length = 250)
+    region      = models.ForeignKey("LocationPlace", null = True, blank = True)
+    geom        = PointField(null = True, blank = True)
+    latitude    = models.CharField( max_length=250 , null = True , blank = True )
+    longitude   = models.CharField( max_length=250 , null = True , blank = True )
+    dataset_id  = models.IntegerField( null = True , blank = True )
+
     def __unicode__(self):
         return self.name
+
+def import_from_dataset():
+    current_locations = LocationPlace.objects.all()
+    print BASE_PATH
+    with open( BASE_PATH + '/database/data/locations.json', 'rU') as f:
+        locations = json.load(f)
+        for location in locations:
+            print location["name"]
+            region = get_object_or_404(LocationPlace, name = location["name"])
+            new_location = LocationPlace.objects.create(
+                name_en = location["name"],
+                name_ar = location["arabic_name"],
+                region  = region,
+                dataset_id = location["id"],
+                latitude = location["latitude"],
+                longitude = location["longitude"],
+                )
+            print new_location
 
 class Device(models.Model):
     name = models.CharField( max_length = 250)
@@ -138,8 +167,8 @@ class DatabaseEntry(models.Model):
 
     def to_json_dict(self):
         data = {
-        'id' : self.id,
-        'title': self.name,
+            'id' : self.id,
+            'title': self.name,
         }
         return data
 
