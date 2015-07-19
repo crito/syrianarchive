@@ -3,6 +3,10 @@ from database.models import LocationPlace
 from syrianarchive.site_settings import BASE_PATH
 import json
 from django.shortcuts import get_object_or_404, render
+from djgeojson.fields import PointField, PolygonField
+from django.contrib.gis.geos import GEOSGeometry
+from django.contrib.gis.geos import Point, LineString, MultiLineString
+
 
 class Command(BaseCommand):
     help = "Imports locations from json file - Forein keys wont work any more -- deletes old.  for site deploy"
@@ -35,6 +39,13 @@ class Command(BaseCommand):
                 new_location.region = region
                 new_location.save()
 
+                geofield = {'type': 'Point', 'coordinates': [float(new_location.longitude), float(new_location.latitude)]}
+                print "aaaaaaaaa", geofield
+
+                new_location.geom = geofield
+
+                new_location.save()
+
                 print "========================="
                 print "newlocation:"
                 print "name : ", new_location.name_en
@@ -42,6 +53,7 @@ class Command(BaseCommand):
                 print "id : ", new_location.dataset_id
                 print "lat : ", new_location.latitude
                 print "lon : ", new_location.longitude
+                print "geom : ", new_location.geom
                 print "region : ", new_location.region.name
                 print "======================="
 
