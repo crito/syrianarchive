@@ -33,7 +33,7 @@
 		<video src="{{incident.video_url}}" width="100%" height="500px"></video>
 		<div class="section">
 
-				<p><strong>{% trans "Video Url" %}</strong>: {{incident.video_url}}</p>
+				<p><strong>{% trans "Video Url" %}</strong>: {{incident.video_url|safe}}</p>
 		</div>
         {% else %}
             <div class="section">
