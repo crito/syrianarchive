@@ -173,9 +173,13 @@ class DatabaseEntry(models.Model):
 
     def get_location_field(self):
         if self.geom != None:
+            print "here1"
             return json.dumps(self.geom)
         else:
+            print "here2"
             if self.location != None:
+                print "here3"
+                print json.dumps(self.location.geom)
                 return json.dumps(self.location.geom)
 
     def save(self, *args, **kwargs):

@@ -151,7 +151,10 @@
             // Download GeoJSON via Ajax
                 // Add GeoJSON layer
                 var geodata = {{ geofield | safe}};
+                console.log(geodata);
                 L.geoJson(geodata).addTo(map);
+                console.log(geodata.coordinates[0]);
+                map.panTo(new L.LatLng(geodata.coordinates[1], geodata.coordinates[0]));
 
 
         }
