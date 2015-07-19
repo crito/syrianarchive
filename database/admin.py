@@ -8,10 +8,6 @@ from leaflet.admin import LeafletGeoAdmin
 class CollectionAdmin(TranslationAdmin):
     pass
 
-@admin.register(Video)
-class VideoAdmin(admin.ModelAdmin):
-    pass
-
 @admin.register(InternationalInstrument)
 class InternationalInstrumentEntryAdmin(TranslationAdmin):
 	pass
@@ -36,12 +32,8 @@ class DeviceAdmin(TranslationAdmin):
 class ViolationTypeAdmin(TranslationAdmin):
 	pass
 
-class VideoInline(admin.StackedInline):
-    model = Video
-
 @admin.register(DatabaseEntry)
 class DatabaseEntryAdmin(TranslationAdmin, LeafletGeoAdmin):
-    inlines = (VideoInline,)
     formfield_overrides = {
         models.ManyToManyField: {'widget': CheckboxSelectMultiple},
     }
@@ -58,6 +50,14 @@ class DatabaseEntryAdmin(TranslationAdmin, LeafletGeoAdmin):
             'fields': ('name',
                 'description',
                 )
+        }),
+        ('Video Fields', {
+            'fields': (
+                'video_source',
+                'video_url',
+                'thumbnail',
+                'collections'
+            )
         }),
         ('Location Fields', {
             'fields': (

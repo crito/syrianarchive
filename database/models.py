@@ -6,7 +6,8 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 import time
 import django_filters
 from django.db.models.signals import post_save
-from djgeojson.fields import PointField
+from djgeojson.fields import PointField, PolygonField
+import json
 
 
 class InternationalInstrument(models.Model):
@@ -32,6 +33,7 @@ class LocationPlace(models.Model):
     name        = models.CharField( max_length = 250)
     region      = models.ForeignKey("LocationPlace", null = True, blank = True)
     geom        = PointField(null = True, blank = True)
+    region_geom = PolygonField(null = True, blank = True )
     latitude    = models.CharField( max_length=250 , null = True , blank = True )
     longitude   = models.CharField( max_length=250 , null = True , blank = True )
     dataset_id  = models.IntegerField( null = True , blank = True )
@@ -54,7 +56,23 @@ class ViolationType(models.Model):
     def __unicode__(self):
         return self.name
 
+
+
+class Collection(models.Model):
+    name            = models.CharField( max_length = 250)
+    description     = models.CharField( max_length = 8000, null = True, blank = True)
+    image           = models.ImageField(upload_to="collection_images", null = True, blank = True)
+
 class DatabaseEntry(models.Model):
+    '''
+        video fields
+    '''
+    video_source          = models.CharField( max_length = 250, null = True, blank = True)
+    video_url             = models.CharField( max_length = 2000, null = True, blank = True)     #filename is url
+    thumbnail       = models.ImageField(upload_to="thumbnails", null = True, blank = True)
+    collections     = models.ManyToManyField(Collection, blank = True)
+
+
     '''
         Public Fields of the model - made for people to see
     '''
@@ -90,10 +108,10 @@ class DatabaseEntry(models.Model):
     urls_and_news                  = models.TextField( max_length = 5000, null = True, blank = True)
 
     related_incidents              = models.ManyToManyField("DatabaseEntry", blank = True)
-    type_of_violation              = models.ManyToManyField(ViolationType, blank = True)
-    location                       = models.ManyToManyField(LocationPlace, blank = True)
-    device_used                    = models.ManyToManyField(Device, blank = True)
-    media_content_type             = models.ManyToManyField(MediaContentType,  blank = True)
+    type_of_violation              = models.ForeignKey(ViolationType, null = True, blank = True)
+    location                       = models.ForeignKey(LocationPlace, null = True, blank = True)
+    device_used                    = models.ForeignKey(Device, null = True, blank = True)
+    media_content_type             = models.ForeignKey(MediaContentType, null=True,  blank = True)
     international_instrument       = models.ManyToManyField(InternationalInstrument, blank = True)
 
     reliability_score              = models.IntegerField(
@@ -140,7 +158,7 @@ class DatabaseEntry(models.Model):
     priority                        = models.CharField( max_length = 250, null = True, blank = True, choices=PRIORITY_LIST)
     notes                           = models.TextField( max_length = 5000, null = True, blank = True)
     added_date                      = models.DateField(default = datetime.now)
-    source_connection               = models.ManyToManyField(SourceConnection, blank = True)
+    source_connection               = models.ForeignKey(SourceConnection, null = True, blank = True)
     creator                         = models.ForeignKey(User, null = True, blank = True)
 
     def __unicode__(self):
@@ -153,6 +171,13 @@ class DatabaseEntry(models.Model):
         }
         return data
 
+    def get_location_field(self):
+        if self.geom != None:
+            return json.dumps(self.geom)
+        else:
+            if self.location != None:
+                return json.dumps(self.location.geom)
+
     def save(self, *args, **kwargs):
         super(DatabaseEntry, self).save(*args, **kwargs)
 
@@ -160,32 +185,3 @@ class DatabaseEntry(models.Model):
 
 
 
-class Collection(models.Model):
-    name            = models.CharField( max_length = 250)
-    description     = models.CharField( max_length = 8000, null = True, blank = True)
-    image           = models.ImageField(upload_to="collection_images", null = True, blank = True)
-
-class Video(models.Model):
-    name            = models.CharField( max_length = 250, default = "Add Name")
-    source          = models.CharField( max_length = 250, null = True, blank = True)
-    url             = models.CharField( max_length = 2000)     #filename is url
-    database_entry  = models.OneToOneField(DatabaseEntry, related_name="video", blank = True, null = True)
-    thumbnail       = models.ImageField(upload_to="thumbnails", null = True, blank = True)
-    collections     = models.ManyToManyField(Collection, blank = True)
-
-    def __unicode__(self):
-        return self.url
-
-def create_database_entry(sender, instance, created, **kwargs):
-    ''' if the database entry was not added for the video, create a new one!'''
-    if instance and created:
-        video       = instance
-        db_entry    = video.database_entry
-        try:
-            db_entry.name
-        except:
-            temp_db_entry = DatabaseEntry.objects.create(name=video.name)
-            video.database_entry = temp_db_entry
-            video.save()
-
-post_save.connect(create_database_entry, sender=Video)

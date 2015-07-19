@@ -67,11 +67,8 @@ def index(request):
 def detail(request, slug):
     if request.user.is_authenticated():
         incident = get_object_or_404(DatabaseEntry, pk=slug )
-        try:
-            video = incident.video
-        except:
-            video = None
-        return render(request, 'database/incident.html', {'incident': incident, 'slug':slug,'video':video})
+        geofield = incident.get_location_field()
+        return render(request, 'database/incident.html', {'incident': incident, 'slug':slug,'geofield':geofield})
     return render(request, 'database/loginrequired.html')
 
 def collections(request):
@@ -80,7 +77,7 @@ def collections(request):
 
 def collection(request, id):
     collection = get_object_or_404(Collection, pk=id)
-    videos = collection.video_set.all()
+    videos = collection.databaseentry_set.all()
     return render(request, 'database/collection.html', {'collection':collection, 'videos':videos})
 
 

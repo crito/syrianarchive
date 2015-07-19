@@ -18,6 +18,6 @@ class DatabaseEntryIndex(indexes.SearchIndex, indexes.Indexable):
 
     def prepare_violations(self, obj):
         our_string = ""
-        for violation in obj.type_of_violation.all():
-            our_string = our_string + violation.name + " "
+        if obj.type_of_violation != None:
+            our_string = our_string + obj.type_of_violation.name + " "
         return our_string
