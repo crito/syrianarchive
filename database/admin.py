@@ -25,7 +25,7 @@ class SourceConnectionAdmin(TranslationAdmin):
 	pass
 
 @admin.register(LocationPlace)
-class LocationPlaceAdmin(TranslationAdmin):
+class LocationPlaceAdmin(TranslationAdmin, LeafletGeoAdmin):
 	pass
 
 @admin.register(Device)
@@ -46,7 +46,7 @@ class DatabaseEntryAdmin(TranslationAdmin, LeafletGeoAdmin):
         models.ManyToManyField: {'widget': CheckboxSelectMultiple},
     }
     list_filter = ['staff_id', 'type_of_violation', 'location', 'media_content_type','priority','creator','added_date']
-    list_display = ('name', 
+    list_display = ('name',
 		'graphic_content',
 		'staff_id',
 		'recording_date',
@@ -62,12 +62,12 @@ class DatabaseEntryAdmin(TranslationAdmin, LeafletGeoAdmin):
         ('Location Fields', {
             'fields': (
                 'geom',
-                'location',                
+                'location',
             )
         }),
         ('Public Fields', {
             'fields': (
-            	'reference_code', 
+            	'reference_code',
             	'recording_date',
                 'edited',
             	('file_size','duration',),
@@ -128,7 +128,7 @@ class DatabaseEntryAdmin(TranslationAdmin, LeafletGeoAdmin):
                 'screen': ('modeltranslation/css/tabbed_translation_fields.css',),
             }
 
-    
+
     def save_model(self, request, obj, form, change):
         if not change:
             obj.creator = request.user

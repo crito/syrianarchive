@@ -238,3 +238,11 @@ HAYSTACK_CONNECTIONS = {
     },
 }
 HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
+
+#damascus : "latlon": "33.5130695,  36.3095814"
+LEAFLET_CONFIG = {
+    'DEFAULT_CENTER': (33.5130695, 36.3095814),
+    'DEFAULT_ZOOM': 7,
+    'MIN_ZOOM': 3,
+    'MAX_ZOOM': 18,
+}
