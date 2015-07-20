@@ -13,6 +13,12 @@ class Command(BaseCommand):
     def add_arguments(self, parser):
         pass
     def handle(self, *args, **options):
+        print "Imports locations from json file - Forein keys wont work any more -- deletes old.  for site deploy"
+        var = raw_input("warning: this will remove all data from the location database, resetting them to their original state.  are you sure? (yes): ")
+        print "you entered", var
+        if var != "yes":
+            return
+
         current_locations = LocationPlace.objects.all()
         print BASE_PATH
         with open( BASE_PATH + '/database/data/locations.json', 'rU') as f:
