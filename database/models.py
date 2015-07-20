@@ -42,6 +42,10 @@ class LocationPlace(models.Model):
         selfidentify = self.region.name + " : " + self.name
         return selfidentify
 
+    def lat_lon_fields_to_geom(self):
+        geofield = {'type': 'Point', 'coordinates': [float(self.longitude), float(self.latitude)]}
+        self.geom = geofield
+
 
 
 class Device(models.Model):
