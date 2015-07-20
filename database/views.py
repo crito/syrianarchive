@@ -65,11 +65,9 @@ def index(request):
     return render(request, 'database/index.html', {'entries': entries, 'form':form, "current_path":current_path})
 
 def detail(request, slug):
-    if request.user.is_authenticated():
-        incident = get_object_or_404(DatabaseEntry, pk=slug )
-        geofield = incident.get_location_field()
-        return render(request, 'database/incident.html', {'incident': incident, 'slug':slug,'geofield':geofield})
-    return render(request, 'database/loginrequired.html')
+    incident = get_object_or_404(DatabaseEntry, pk=slug )
+    geofield = incident.get_location_field()
+    return render(request, 'database/incident.html', {'incident': incident, 'slug':slug,'geofield':geofield})
 
 def collections(request):
     collections = Collection.objects.all()
