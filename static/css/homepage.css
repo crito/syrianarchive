@@ -61,7 +61,7 @@ margin-left: -.05em;
     border-top: 1px solid black;
 }
 @media screen and (-webkit-min-device-pixel-ratio:0) {
-    .aboutrow{ 
+    .aboutrow{
         background-attachment: scroll;
     }
 }
@@ -91,14 +91,8 @@ margin-left: -.05em;
     position: relative;
     background-image: url(/static/img/holding.png);
     background-position: center center;
-    background-attachment: fixed;    
+    background-attachment: fixed;
     background-size: cover;
-}
-
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-    .collaboratorrow{ 
-        background-attachment: scroll;
-    }
 }
 
 
