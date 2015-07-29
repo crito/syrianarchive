@@ -16,3 +16,9 @@ def blog_detail(request, slug):
 def blog(request):
     blog_posts = Post.objects.all()
     return render(request, 'pages/blog.html', {'blog_posts':blog_posts})
+
+
+def handler404(request):
+    response = render(request, '404.html')
+    response.status_code = 400
+    return response

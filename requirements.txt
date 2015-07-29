@@ -1,3 +1,4 @@
+django
 MySQL-python
 django-ckeditor
 django-reversion
@@ -7,5 +8,5 @@ django-modeltranslation
 django-filter
 django-suit
 django-haystack
-django-geojson
+django-geojson [field]
 django-leaflet

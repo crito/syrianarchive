@@ -12,6 +12,8 @@ from .forms import *
 import time
 from haystack.query import SearchQuerySet
 
+
+@login_required
 def index(request):
     current_path = request.get_full_path()
 
@@ -64,15 +66,18 @@ def index(request):
 
     return render(request, 'database/index.html', {'entries': entries, 'form':form, "current_path":current_path})
 
+@login_required
 def detail(request, slug):
     incident = get_object_or_404(DatabaseEntry, pk=slug )
     geofield = incident.get_location_field()
     return render(request, 'database/incident.html', {'incident': incident, 'slug':slug,'geofield':geofield})
 
+@login_required
 def collections(request):
     collections = Collection.objects.all()
     return render(request, 'database/collections.html', {'collections':collections})
 
+@login_required
 def collection(request, id):
     collection = get_object_or_404(Collection, pk=id)
     videos = collection.databaseentry_set.all()

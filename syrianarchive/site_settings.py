@@ -16,7 +16,7 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["syrianarchive.org",'stage.syrianarchive.org',"http://127.0.0.1:8000/"]
 
 
 # Application definition
@@ -101,6 +101,8 @@ STATICFILES_FINDERS = (
 # Don't forget to use absolute paths, not relative paths.
 TEMPLATE_DIRS = (
     join(BASE_PATH, 'templates'),
+    join(BASE_PATH, 'templates/404.html')
+
 )
 
 
