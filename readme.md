@@ -1,8 +1,5 @@
-## Deploy
+# Syrian Archive
 
-    python manage.py migrate
-
-    python manage.py import_original_locations
 
 ## Dependencies
 
@@ -11,7 +8,36 @@
     python-virtualenv
     geos
     gdal
-    sql
+    some kind of sql
+
+
+## Deploy
+
+    mkdir syarchenv
+    cd syarchenv
+
+    virtualenv -p /usr/bin/python2.7 .
+
+    source bin/activate
+
+    cd syrianarchive
+
+    pip install -r requirements.txt
+
+    python manage.py migrate
+
+    change
+
+    python manage.py import_original_locations
+
+## Contact
+
+General:
+hadi@syrianarchive.org
+
+Tech:
+niko@syrianarchive.org
+
 
 
 
