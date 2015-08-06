@@ -50,7 +50,7 @@ This is the repository holding the django application to manage the database of 
 ## Contact
 
 General:
-hadi@syrianarchive.org
+info@syrianarchive.org
 
 Tech:
 niko@syrianarchive.org
