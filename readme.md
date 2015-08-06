@@ -20,6 +20,8 @@
 
     source bin/activate
 
+    git pull DJANGO INSTALL
+
     cd syrianarchive
 
     pip install -r requirements.txt
