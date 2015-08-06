@@ -93,9 +93,11 @@ class DatabaseEntry(models.Model):
     cloths_and_uniforms            = models.CharField( max_length = 250, null = True, blank = True)
     description                    = models.TextField( max_length = 5000, null = True, blank = True, default = '')
     recording_date                 = models.DateTimeField(default = datetime.now, null = True, blank = True)
+
     location_latitude              = models.CharField( max_length = 250, null = True, blank = True)
     location_longitude             = models.CharField( max_length = 250, null = True, blank = True)
     geom                           = PointField(null = True, blank = True)
+
     edited                         = models.NullBooleanField(null = True, blank = True)
     file_size                      = models.CharField( max_length = 250, null = True, blank = True)
     duration                       = models.CharField( max_length = 250, null = True, blank = True)

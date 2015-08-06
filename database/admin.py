@@ -63,6 +63,8 @@ class DatabaseEntryAdmin(TranslationAdmin, LeafletGeoAdmin):
             'fields': (
                 'geom',
                 'location',
+                'location_latitude',
+                'location_longitude',
             )
         }),
         ('Public Fields', {
