@@ -1,12 +1,11 @@
-django
-MySQL-python
-django-ckeditor
-django-reversion
-pillow
-whoosh
-django-modeltranslation
-django-filter
-django-suit
-django-haystack
-django-geojson [field]
-django-leaflet
+django==1.8.3
+MySQL-python==1.2.5
+django-ckeditor==4.5.0
+django-reversion==1.8.7
+pillow==2.9.0
+whoosh==2.7.0
+django-modeltranslation==0.10
+django-suit==0.2.14
+django-haystack==2.4.0
+django-geojson [field]==2.8.1
+django-leaflet==0.16.0
