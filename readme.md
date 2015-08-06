@@ -25,19 +25,31 @@ This is the repository holding the django application to manage the database of 
 
 ## Deploy
 
+    # set up the virtual environment
     mkdir syarchenv
     cd syarchenv
 
     virtualenv -p /usr/bin/python2.7 .
 
+    # enter the virtualenv
     source bin/activate
 
-    git pull DJANGO INSTALL
+    # clone the syrianarchive django bit
+    git clone DJANGO INSTALL
 
     cd syrianarchive
 
     #install python dependencies
     pip install -r requirements.txt
+
+    #set up the databases
+
+    create databases
+      make sure the default character set is utf8!!!
+      see: https://dev.mysql.com/doc/refman/5.0/en/charset-applications.html
+
+    change sample_settings.py to settings.py
+    put in DB credentials
 
     #create the tables in the database
     python manage.py migrate
