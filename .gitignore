@@ -14,3 +14,5 @@ django-summernote
 venv/*
 mydatabase
 manage.py
+*.sqlite
+*.sqlite3
