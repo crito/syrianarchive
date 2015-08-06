@@ -57,7 +57,8 @@ This is the repository holding the django application to manage the database of 
     #add admin user
     python manage.py syncdb
 
-    python manage.py import_original_locations
+    #install the database metadata - International Instruments, ViolationTypes, Devices, ETC
+    python manage.py loaddata database/data/database_meta_data.json
 
 ## Contact
 

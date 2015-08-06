@@ -8,29 +8,29 @@ from leaflet.admin import LeafletGeoAdmin
 class CollectionAdmin(TranslationAdmin):
     pass
 
-@admin.register(InternationalInstrument)
-class InternationalInstrumentEntryAdmin(TranslationAdmin):
-	pass
+# @admin.register(InternationalInstrument)
+# class InternationalInstrumentEntryAdmin(TranslationAdmin):
+# 	pass
 
-@admin.register(MediaContentType)
-class MediaContentTypeAdmin(TranslationAdmin):
-	pass
+# @admin.register(MediaContentType)
+# class MediaContentTypeAdmin(TranslationAdmin):
+# 	pass
 
-@admin.register(SourceConnection)
-class SourceConnectionAdmin(TranslationAdmin):
-	pass
+# @admin.register(SourceConnection)
+# class SourceConnectionAdmin(TranslationAdmin):
+# 	pass
 
-@admin.register(LocationPlace)
-class LocationPlaceAdmin(TranslationAdmin, LeafletGeoAdmin):
-	pass
+# @admin.register(LocationPlace)
+# class LocationPlaceAdmin(TranslationAdmin, LeafletGeoAdmin):
+# 	pass
 
-@admin.register(Device)
-class DeviceAdmin(TranslationAdmin):
-	pass
+# @admin.register(Device)
+# class DeviceAdmin(TranslationAdmin):
+# 	pass
 
-@admin.register(ViolationType)
-class ViolationTypeAdmin(TranslationAdmin):
-	pass
+# @admin.register(ViolationType)
+# class ViolationTypeAdmin(TranslationAdmin):
+# 	pass
 
 @admin.register(DatabaseEntry)
 class DatabaseEntryAdmin(TranslationAdmin, LeafletGeoAdmin):
