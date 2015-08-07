@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 class Page(models.Model):
     title = models.CharField(max_length=250)
     body = models.TextField(max_length=50000, null=True, blank=True)
-    linked_pages = models.ManyToManyField("self", null=True, blank=True)
+    linked_pages = models.ManyToManyField("self", blank=True)
     url = models.SlugField(max_length=250)
 
     def __unicode__(self):
