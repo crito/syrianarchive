@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-06 11:00+0000\n"
+"POT-Creation-Date: 2015-08-07 12:06+0000\n"
 "PO-Revision-Date: 2015-04-03 19:21+0000\n"
 "Last-Translator:   <sadh@fdsauh.dsa>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,131 +29,120 @@ msgstr "الفيديو"
 msgid "Incident"
 msgstr "الحدث"
 
-#: database/templates/database/incident.html:17
+#: database/templates/database/incident.html:24
 msgid "This video contains graphic content.  Viewer discretion is advised."
 msgstr ""
 
-#: database/templates/database/incident.html:36
-#, fuzzy
-#| msgid "Video"
-msgid "Video Url"
-msgstr "الفيديو"
-
-#: database/templates/database/incident.html:40
+#: database/templates/database/incident.html:41
 msgid "Video not Available"
 msgstr ""
 
-#: database/templates/database/incident.html:59
+#: database/templates/database/incident.html:66
 msgid "Reference Code"
 msgstr "رقم الكود"
 
-#: database/templates/database/incident.html:61
-#: database/templates/database/index.html:79
-msgid "Description"
-msgstr "التفاصيل"
-
-#: database/templates/database/incident.html:63
-#: database/templates/database/index.html:80
-msgid "Recording Date"
-msgstr "تاريخ التسجيل"
-
-#: database/templates/database/incident.html:65
-msgid "Contains Graphic Content"
-msgstr "يحوي مشاهد مؤلمة"
-
-#: database/templates/database/incident.html:66
-msgid "Keywords"
-msgstr "الكلمات المفتاحية"
-
 #: database/templates/database/incident.html:68
-msgid "Languages"
-msgstr "اللغات"
-
-#: database/templates/database/incident.html:73
-#: database/templates/database/index.html:39
-#: database/templates/database/index.html:81
-msgid "Location"
-msgstr "المحافظة"
-
-#: database/templates/database/incident.html:76
-msgid "Location Latitude"
-msgstr "احداثيات الموقع العرضي"
-
-#: database/templates/database/incident.html:77
-msgid "Location Longitude"
-msgstr "احداثيات الموقع الطولي"
-
-#: database/templates/database/incident.html:78
-msgid "Landmarks"
-msgstr "المعالم"
-
-#: database/templates/database/incident.html:79
-msgid "Weather in Media"
-msgstr "الطقس"
-
-#: database/templates/database/incident.html:83
 #: database/templates/database/index.html:32
 #: database/templates/database/index.html:82
 msgid "Type of Violation"
 msgstr "نوع الإنتهاك"
 
+#: database/templates/database/incident.html:75
+#: database/templates/database/index.html:80
+msgid "Recording Date"
+msgstr "تاريخ التسجيل"
+
+#: database/templates/database/incident.html:77
+msgid "Source"
+msgstr ""
+
+#: database/templates/database/incident.html:79
+msgid "Keywords"
+msgstr "الكلمات المفتاحية"
+
+#: database/templates/database/incident.html:84
+#: database/templates/database/index.html:39
+#: database/templates/database/index.html:81
+msgid "Location"
+msgstr "المحافظة"
+
+#: database/templates/database/incident.html:87
+msgid "Location Latitude"
+msgstr "احداثيات الموقع العرضي"
+
+#: database/templates/database/incident.html:88
+msgid "Location Longitude"
+msgstr "احداثيات الموقع الطولي"
+
 #: database/templates/database/incident.html:89
+msgid "Landmarks"
+msgstr "المعالم"
+
+#: database/templates/database/incident.html:90
+msgid "Weather in Media"
+msgstr "الطقس"
+
+#: database/templates/database/incident.html:91
+msgid "Languages"
+msgstr "اللغات"
+
+#: database/templates/database/incident.html:97
 msgid "Clothes and Uniforms"
 msgstr "الملابس والزي الرسمي"
 
-#: database/templates/database/incident.html:90
+#: database/templates/database/incident.html:98
 msgid "Sex"
 msgstr "الجنس"
 
-#: database/templates/database/incident.html:91
+#: database/templates/database/incident.html:99
 msgid "Weapons Used"
 msgstr "السلاح المستخدم"
 
-#: database/templates/database/incident.html:96
+#: database/templates/database/incident.html:104
 msgid "Edited"
 msgstr "تم تعديل الملف"
 
-#: database/templates/database/incident.html:97
+#: database/templates/database/incident.html:105
 msgid "File Size"
 msgstr "حجم الملف"
 
-#: database/templates/database/incident.html:98
+#: database/templates/database/incident.html:106
 msgid "Duration"
 msgstr "المدة"
 
-#: database/templates/database/incident.html:99
+#: database/templates/database/incident.html:107
 msgid "Device used to record"
 msgstr "الجهاز المستخدم للتسجيل"
 
-#: database/templates/database/incident.html:103
+#: database/templates/database/incident.html:111
 msgid "Media Content Type"
 msgstr "نوع محتوى الميديا"
 
-#: database/templates/database/incident.html:112
+#: database/templates/database/incident.html:120
 msgid "Chain of Custody Notes"
 msgstr "ملاحظات حول تسلسل العهدة"
 
-#: database/templates/database/incident.html:113
+#: database/templates/database/incident.html:121
 msgid "Finding Aids"
 msgstr "المواد المرتبطة"
 
-#: database/templates/database/incident.html:115
+#: database/templates/database/incident.html:123
 msgid "International Instrument"
 msgstr "الآلية القانونية"
 
-#: database/templates/database/incident.html:119
+#: database/templates/database/incident.html:127
 msgid "International Instrument Notes"
 msgstr "ملاحظات حول الآلية القانونية"
 
-#: database/templates/database/incident.html:125
+#: database/templates/database/incident.html:133
 msgid "URLs and News"
 msgstr "روابط"
 
-#: database/templates/database/incident.html:126
+#: database/templates/database/incident.html:134
 msgid "Reliability Score"
 msgstr "الموثوقية"
 
-#: database/templates/database/incident.html:127
+#: database/templates/database/incident.html:135
 msgid "Related Incidents"
 msgstr "الأحداث المرتبطة"
 
@@ -195,6 +184,10 @@ msgstr "فيما يلي الخيارات المتاحة للبحث حسب"
 msgid "Name"
 msgstr "العنوان"
 
+#: database/templates/database/index.html:79
+msgid "Description"
+msgstr "التفاصيل"
+
 #: database/templates/database/index.html:83
 msgid "Video"
 msgstr "الفيديو"
@@ -207,7 +200,13 @@ msgstr "قاعدة البيانات قيد الإنشاء"
 msgid "Please log in to see it"
 msgstr "الرجاء تسجيل الدخول"
 
-#: database/templates/database/map.html:21
+#: database/templates/database/map.html:6
+#, fuzzy
+#| msgid "Violation Database"
+msgid "Violation Map"
+msgstr "قاعدة بيانات الإنتهاكات"
+
+#: database/templates/database/map.html:28
 msgid "Incident Map"
 msgstr "خريطة الأحداث"
 
@@ -269,9 +268,20 @@ msgstr "مدونة"
 msgid "Related Pages"
 msgstr "الصفحات المرتبطة"
 
+#: templates/404.html:5
+msgid "Not Found"
+msgstr ""
+
 #: templates/404.html:11
 msgid "Page not found. (404)"
 msgstr ""
+
+#: templates/base.html:17 templates/base.html.py:22
+#, fuzzy
+#| msgid "Preserving documentation of human rights violations."
+msgid ""
+"Preserving open source documentation of human rights violations in Syria."
+msgstr "لأرشفة انتهاكات حقوق الإنسان"
 
 #: templates/base.html:102
 msgid "Home"
@@ -305,6 +315,14 @@ msgstr "إتصل بنا"
 msgid ""
 "This page is currently private and in development.  Please log in to see it."
 msgstr ""
+
+#, fuzzy
+#~| msgid "Video"
+#~ msgid "Video Url"
+#~ msgstr "الفيديو"
+
+#~ msgid "Contains Graphic Content"
+#~ msgstr "يحوي مشاهد مؤلمة"
 
 #~ msgid "Date:"
 #~ msgstr "التاريخ"
