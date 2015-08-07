@@ -23,6 +23,16 @@ This is the repository holding the django application to manage the database of 
       #mysql
       python-mysql
 
+## Features
+
+  completely translated database and interface
+    english
+    arabic
+
+  mapping of incidents
+
+  filtering and searching of incidents
+
 ## Deploy
 
     # set up the virtual environment
