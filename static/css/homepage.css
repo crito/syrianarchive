@@ -42,23 +42,23 @@ margin-left: -.05em;
 
 
 .tintedrow{
-            color:white;
+            color:#F5F5F4;
 }
 
 .tintedrow h1{
-    color:white;
+    color:#F5F5F4;
 }
 
 .aboutrow{
-    background-color:#222;
-    color:white;
+    background-color:#2C2C30;
+    color:#F5F5F4;
     /*background-image: url(/static/img/climbing.jpg);*/
     background-position: center center;
     position: relative;
     background-attachment: fixed;
     background-size: cover;
     box-shadow: 0px 5px 5px rgba(0,0,0,.3), 0px -5px 5px rgba(0,0,0,.3);
-    border-top: 1px solid black;
+    border-top: 1px solid #2C2C30;
 }
 @media screen and (-webkit-min-device-pixel-ratio:0) {
     .aboutrow{
@@ -79,17 +79,16 @@ margin-left: -.05em;
 }
 
 .collaboratetitle{
-      background-color: white;
+      background-color: #F5F5F4;
     margin-top: 3em;
 }
 
 
 .collaboratorrow{
-    background-color:#e3e3e3;
-        padding-bottom:2em;
+    padding-bottom:2em;
     padding-top:2em;
     position: relative;
-    background-image: url(/static/img/holding.jpg);
+    /*ackground-image: url(/static/img/holding.jpg);*/
     background-position: center center;
     background-attachment: fixed;
     background-size: cover;
@@ -102,14 +101,14 @@ margin-left: -.05em;
 
 
 .controe h1{
-    color: white;
+    color: #F5F5F4;
     font-size: 5em;
     line-height: .8em;
 
 }
 
 .footer{
-    background-color:#eee;
+    background-color:#ACB4AC;
     font-weight: bold;
     position: relative;
 }
@@ -123,13 +122,13 @@ margin-left: -.05em;
 }
 
 .righthomecol a h4{
-    color:white;
+    color:#F5F5F4;
 }
 
 
 a.blocklink{
-    background-color: black;
-    color:white;
+    background-color: #2C2C30;
+    color:#F5F5F4;
 }
 
 
@@ -151,7 +150,7 @@ height:100%;
 .backrow{
     height:100%;
     min-height: 800px;
-    background-color:black;
+    background-color:#2C2C30;
     background-image: url('/static/img/after.jpg');
     background-size: cover;
     position:fixed;
@@ -163,7 +162,7 @@ height:100%;
 .frontrow{
     height:100%;
     min-height: 800px;
-    background-color:black;
+    background-color:#2C2C30;
     background-image: url('/static/img/before.jpg');
     background-size: cover;
     animation-name: backchange;
@@ -226,7 +225,7 @@ opacity:0;
 
 
 .colabcol{
-    background-color: white;
+    background-color: #F5F5F4;
     display: block;
     padding:1em;
     font-weight: bold;
@@ -244,7 +243,6 @@ opacity:0;
     height:200px;
     width:100%;
     background-image: url(/static/img/holding.jpg);
-    background-size: cover;
-    background-attachment: fixed;
+    background-size: contain;
     box-shadow: inset 1px 1px 1px rgba(0,0,0,.2);
 }

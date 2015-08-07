@@ -88,6 +88,24 @@ info@syrianarchive.org
 Tech:
 niko@syrianarchive.org
 
+## Design
+
+color scheme
+
+    #main colors
+    black: #2C2C30
+    middle grey: #ACB4AC
+    light grey: #E7E5E4
+    white: #F5F5F4
+
+    #primary colors:
+    orange (main element): #FA7000
+    teal (filters): teal
+    blue (link): #0487A4
+    light blue highlight: #32BDAB
+    red(warning): #CC2200
+
+
 
 #### Hacks... :(
 

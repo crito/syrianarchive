@@ -2,7 +2,9 @@
 
 
 
-
+a{
+  color:#0487A4;
+}
 
 
 
@@ -18,7 +20,8 @@ p{
 }
 
 body{
-	background-color:#fff;
+	background-color:#F5F5F4;
+  color:#2C2C30;
     font-size:16px;
 }
 
@@ -34,8 +37,8 @@ body, html{
 
 
 .call-to-action{
-  color:orange;
-  border-color: orange;
+  color:#FA7000;
+  border-color: #FA7000;
   background-color:rgba(0,0,0,.5);
   font-size:.8em;
   font-weight:bold;
@@ -43,8 +46,8 @@ body, html{
 }
 
 .call-to-action:hover{
-  background-color: orange;
-  color: white;
+  background-color: #FA7000;
+  color: #F5F5F4;
 }
 
 
@@ -57,32 +60,32 @@ body, html{
 }
 
 .titlerow{
-    background-color:orange;
+    background-color:#FA7000;
     font-weight: bold;
-    color: white;
+    color: #F5F5F4;
     padding:1em;
 }
 
 .filterrow{
     background-color:teal;
-    color:white;
+    color:#F5F5F4;
     padding:1em;
 }
 
 .navbar-main{
-	background-color:white;
-    border:0px solid white;
-    box-shadow: 2px 2px 7px -4px black;
+	background-color:#F5F5F4;
+    border:0px solid #F5F5F4;
+    box-shadow: 2px 2px 7px -4px #2C2C30;
 }
 
 
 thead, tfoot {
-background-color: #555;
-color: white;
+background-color: #ACB4AC;
+color: #F5F5F4;
 }
 
 tr.even {
-background-color: whitesmoke;
+background-color: #E7E5E4;
 }
 
 div.navbar-collapse.collapse {
@@ -100,7 +103,7 @@ th i.fa{
     position:absolute;
     opacity:.3;
     font-size: 2em;
-    color: orange;
+    color: #FA7000;
 }
 
 .logo{
@@ -110,7 +113,7 @@ th i.fa{
 
 .sidebar{
     min-height:800px;
-    background-color: #f9f9f9;
+    background-color: #ACB4AC;
     z-index: 5;
 
 }
@@ -126,7 +129,7 @@ th i.fa{
 }
 
 .mainbar{
-    background-color:#fefefe;
+    background-color:#E7E5E4;
     min-height:800px;
     padding-top:2em;
        z-index: 10;
@@ -141,14 +144,14 @@ th i.fa{
 
 
 .footer{
-    background-color: #aaa;
+    background-color: #ACB4AC;
 }
 
 
 
 #langswitcher{
     background-color:#A68B59;
-    color:white;
+    color:#F5F5F4;
     font-weight:bold;
     border:none;
     padding: .5em;
@@ -170,7 +173,7 @@ th i.fa{
 }
 
 #filter input[type="submit"]{
-    background-color:orange;
+    background-color:#FA7000;
     font-size:3em;
     border:0px solid transparent;
     position:absolute;
@@ -188,7 +191,7 @@ th i.fa{
     height:7.7em;
 }
  .logo h1{
-    color: white;
+    color: #F5F5F4;
 line-height: .8em;
 font-size: 6em;
 text-align: right;
