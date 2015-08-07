@@ -25,6 +25,8 @@ This is the repository holding the django application to manage the database of 
 
 ## Features
 
+!(Schema)[schema.png]
+
   completely translated database and interface
     english
     arabic
