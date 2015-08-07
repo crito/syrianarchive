@@ -27,13 +27,17 @@ This is the repository holding the django application to manage the database of 
 
 !["Schema"](https://raw.githubusercontent.com/nikonikoniko/syrianarchive/dev/schema.png)
 
-  completely translated database and interface
-    english
-    arabic
+    completely translated database and interface into
+      english
+      arabic
+    using
+      django-modeltranslation
 
-  mapping of incidents
+    mapping of incidents
+      django-geojson
+      django-leaflet
 
-  filtering and searching of incidents
+    filtering and searching of incidents
 
 ## Deploy
 
