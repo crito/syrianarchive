@@ -85,6 +85,7 @@ class Command(BaseCommand):
               #recording_date
               video_url = row["videolink"],
               online_link = row["online_url"],
+              online_title = "",
               graphic_content = True
               )
 
