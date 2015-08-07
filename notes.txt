@@ -5,3 +5,7 @@ notes
 heres the mysql command to allow arabic to be stored in the database, must be run for specific fields...
 
 ALTER TABLE homepage_section MODIFY COLUMN arabic_name VARCHAR(250)  CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;
+
+find and replace for value in pages
+this means "anthing between [] : \[[^\]]*
+("linked_pages":\ \[[^\]]*\],)

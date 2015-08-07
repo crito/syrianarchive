@@ -70,6 +70,10 @@ This is the repository holding the django application to manage the database of 
     #install the database metadata - International Instruments, ViolationTypes, Devices, ETC
     python manage.py loaddata database/data/database_meta_data.json
 
+    #install the pages database... hopefully the json is kept updated
+    python manage.py loaddata database/database/pages.json
+
+
 ## Contact
 
 General:
@@ -77,6 +81,13 @@ info@syrianarchive.org
 
 Tech:
 niko@syrianarchive.org
+
+
+#### Hacks... :(
+
+things that have been hacked:
+ - python lib static directories have been copied to /static/
+  - issue for upgrade of library
 
 
 
