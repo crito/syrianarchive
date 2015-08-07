@@ -25,7 +25,7 @@ This is the repository holding the django application to manage the database of 
 
 ## Features
 
-!("Schema")[https://raw.githubusercontent.com/nikonikoniko/syrianarchive/dev/schema.png]
+!["Schema"](https://raw.githubusercontent.com/nikonikoniko/syrianarchive/dev/schema.png)
 
   completely translated database and interface
     english
