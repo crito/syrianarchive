@@ -33,7 +33,19 @@ body, html{
 
 
 
+.call-to-action{
+  color:orange;
+  border-color: orange;
+  background-color:rgba(0,0,0,.5);
+  font-size:.8em;
+  font-weight:bold;
+  float:right;
+}
 
+.call-to-action:hover{
+  background-color: orange;
+  color: white;
+}
 
 
 
