@@ -6,43 +6,43 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
-<title>{% block title %}{% endblock %} {% trans "Syrian Archive" %} </title>
+<title>{% block title %}{% endblock %} {% trans "Syrian Archive" %} | beta </title>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="description" content="Syrian Archive - Preserving open source documentation of human rights violations in Syria.">
     <meta name="viewport" content="width=device-width">
-    
 
-    <meta name="twitter:card" content="Preserving open source documentation of human rights violations in Syria.">
+
+    <meta name="twitter:card" content="{% trans 'Preserving open source documentation of human rights violations in Syria.' %}">
     <meta name="twitter:site" content="@syrianarchive">
     <meta name="twitter:creator" content="@syrianarchive">
     <meta property="og:url" content="https://syrianarchive.org/">
     <meta property="og:title" content="Syrian Archive">
-    <meta property="og:description" content="Preserving open source documentation of human rights violations in Syria.">
+    <meta property="og:description" content="{% trans 'Preserving open source documentation of human rights violations in Syria.' %}">
     <meta property="og:image" content="https://syrianarchive.org/static/img/after.png">
     <meta name="twitter:url" content="http%3A//syrianarchive.org/">
     <meta name='twitter:image' content='https://syrianarchive.org/static/img/after.png'>
 
 
 
-<link rel="apple-touch-icon" sizes="57x57" href="/static/favicon/apple-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="/static/favicon/apple-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="/static/favicon/apple-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="/static/favicon/apple-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="/static/favicon/apple-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="/static/favicon/apple-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/static/favicon/apple-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="/static/favicon/apple-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/static/favicon/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="192x192"  href="/static/favicon/android-icon-192x192.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/static/favicon/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/static/favicon/favicon-16x16.png">
-<link rel="manifest" href="/static/favicon/manifest.json">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-<meta name="theme-color" content="#ffffff">
+    <link rel="apple-touch-icon" sizes="57x57" href="/static/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/static/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/static/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
 
 <script src="/static/bootstrap/js/jquery.js"></script>
 
@@ -117,7 +117,7 @@
             <ul class="nav navbar-nav">
                 <li class=""><a href="/database/map"><i class="fa fa-map-marker "></i> {% trans "Syria Map" %}</a></li>
             </ul>
- 			
+
 
             <ul class="nav navbar-nav">
                 <li><a href="/p/page/join"><i class="fa fa-plus-square-o"></i> {% trans "Join Us" %}</a></li>
@@ -126,7 +126,7 @@
 		    <ul class="nav navbar-nav navbar-right">
 
 				<form action="{% url 'set_language' %}" method="post">
-				
+
 					<input name="uhuh" type="hidden" />
 			    	{% ifequal LANGUAGE_CODE 'en' %}
 			    	<select name="language" style="display:none;">
@@ -149,7 +149,7 @@
 
 			</ul>
 
-		   
+
 
       	</div>
  		</div>

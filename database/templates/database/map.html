@@ -3,6 +3,9 @@
 {% load leaflet_tags %}
 {% load geojson_tags %}
 
+{% block title %}{% trans "Violation Map" %} - {% endblock %}
+
+
 {% block javascripts %}
   {% leaflet_js %}
   {% leaflet_css %}
