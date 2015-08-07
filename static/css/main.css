@@ -147,9 +147,8 @@ th i.fa{
 /* database entry */
 
 .section{
-    border: 1px solid grey;
     padding: 10px;
-    margin: 20px 0;
+    margin-bottom: 20px;
 }
 
 /* database filters */
@@ -171,7 +170,7 @@ th i.fa{
 
 
 .logo{
-    background-image: url(/static/img/after.png);
+    background-image: url(/static/img/after.jpg);
     background-size: cover;
     width:100%;
     height:7.7em;

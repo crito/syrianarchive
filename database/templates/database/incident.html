@@ -46,6 +46,11 @@
 
         <div class = "section">
             {% leaflet_map "incident" callback="window.map_init" %}
+            <p><label>{% trans "Location" %}</label> {% for locations in incident.location.all %}
+            {{locations}}<br>
+            {% endfor %}</p>
+            <p><label>{% trans "Location Latitude" %}</label> {{incident.location_latitude}}</p>
+            <p><label>{% trans "Location Longitude" %}</label> {{incident.location_longitude}}</p>
         </div>
 	</div>
 
@@ -81,11 +86,7 @@
 			</div>
 
 			<div class="section">
-				<p><label>{% trans "Location" %}</label> {% for locations in incident.location.all %}
-				{{locations}}<br>
-				{% endfor %}</p>
-				<p><label>{% trans "Location Latitude" %}</label> {{incident.location_latitude}}</p>
-				<p><label>{% trans "Location Longitude" %}</label> {{incident.location_longitude}}</p>
+
 				<p><label>{% trans "Landmarks" %}</label> {{incident.landmarks}}</p>
 				<p><label>{% trans "Weather in Media" %}</label> {{incident.weather_in_media}}</p>
         <p><label>{% trans "Languages" %}</label> {{incident.languages}}</p>
@@ -97,10 +98,6 @@
 				<p><label>{% trans "Clothes and Uniforms" %}</label> {{incident.cloths_and_uniforms}}</p>
 				<p><label>{% trans "Sex" %}</label> {{incident.gender_or_sex}}</p>
 				<p><label>{% trans "Weapons Used" %}</label> {{incident.weapons_used}}</p>
-
-			</div>
-
-			<div class="section">
 				<p><label>{% trans "Edited" %}</label> {{incident.edited}}</p>
 				<p><label>{% trans "File Size" %}</label> {{incident.file_size}}</p>
 				<p><label>{% trans "Duration" %}</label> {{incident.duration}}</p>
@@ -180,10 +177,14 @@
   }
 
   .incidentbody .section label{
-    font-family:"monospace";
-    width:30%;
+    width:100%;
     border-bottom:1px solid #999;
     font-weight:normal;
+    background-color: rgba(103, 103, 103, 0.83);
+    padding-left: 12px;
+    margin-left: -12px;
+    color: #AFAFAF;
+    font-size: .9em;
   }
 
   #graphic_content{
