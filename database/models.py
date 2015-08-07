@@ -177,6 +177,22 @@ class DatabaseEntry(models.Model):
         }
         return data
 
+    @property
+    def popupcontent(self):
+      htmlcontent = '''
+      <div class="popupmodel">
+        <a href="/database/%(id)s" target="_blank">%(refcode)s</a>
+        <small>%(recording_date)s</small>
+        <p>%(description)s</p>
+      </div>
+        ''' % {
+        'id':self.pk,
+        'refcode':self.reference_code,
+        'recording_date':self.recording_date,
+        'description':self.description,
+        }
+      return htmlcontent
+
     def get_location_field(self):
         if self.geom != None:
             print "here1"

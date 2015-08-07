@@ -7,6 +7,10 @@
   {% leaflet_js %}
   {% leaflet_css %}
 
+  <link rel="stylesheet" href="/static/components/leaflet_marker_cluster/MarkerCluster.css" />
+  <link rel="stylesheet" href="/static/components/leaflet_marker_cluster/MarkerCluster.Default.css" />
+  <script src="/static/components/leaflet_marker_cluster/leaflet.markercluster-src.js"></script>
+
   <style type="text/css">
     div#incidents {
         height: 500px;
@@ -28,10 +32,25 @@
       function map_init (map, options) {
 
             var dataurl = '{% url "incidents" %}';
+
+
             // Download GeoJSON via Ajax
             $.getJSON(dataurl, function (data) {
+
+
+                function onEachFeature(feature, layer) {
+                  console.log("bind");
+                  if (feature.properties && feature.properties.popupcontent) {
+                    layer.bindPopup(feature.properties.popupcontent);
+                  }
+                }
+
+                var markers = L.markerClusterGroup();
                 // Add GeoJSON layer
-                L.geoJson(data).addTo(map);
+                var points = L.geoJson(data, {onEachFeature: onEachFeature})
+
+                markers.addLayer(points);
+                map.addLayer(markers);
             });
 
         }

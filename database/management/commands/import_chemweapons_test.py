@@ -22,6 +22,7 @@ class Command(BaseCommand):
             return
 
         DatabaseEntry.objects.all().delete()
+        notfound = []
 
         def find_location(location_string):
           locations = LocationPlace.objects.filter(name_en__icontains=location_string)
@@ -31,6 +32,7 @@ class Command(BaseCommand):
             print "found! %s", location
           else:
             print location_string, "not found"
+            notfound.append(location_string)
           return location
 
         def latlon_conversion(old):
@@ -59,8 +61,8 @@ class Command(BaseCommand):
                 "weapons",
                 "sources",
                 "sources_ar",
-                "videolink",
-                "online_url"))
+                "online_url",
+                "videolink"))
           print reader
           #print [ row["id"] for row in reader ]
           print reader
@@ -80,15 +82,19 @@ class Command(BaseCommand):
               weapons_used = row["weapons"],
               acquired_from = row["sources"],
               #source_connection = row["sources"],
+              #recording_date
               video_url = row["videolink"],
-              online_link = row["online_url"]
+              online_link = row["online_url"],
+              graphic_content = True
               )
 
             if entry.location_longitude and entry.location_latitude:
               print "adding geom"
               geofield = {'type': 'Point', 'coordinates': [float(latlon_conversion(entry.location_longitude)), float(latlon_conversion(entry.location_latitude))]}
+              entry.geom = geofield
               entry.save()
               print entry.geom
 
             print entry.name
+          print [ loc for loc in notfound]
 

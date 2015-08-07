@@ -26,14 +26,14 @@
 
 </div>
 
-<div class="row">
+<div class="row incidentbody">
 
 	<div class="col-md-6"  style="overflow:hidden;">
         {% if incident.video_url != None %}
 		<video src="{{incident.video_url}}" width="100%" height="500px"></video>
 		<div class="section">
 
-				<p><strong>{% trans "Video Url" %}</strong>: {{incident.video_url|safe}}</p>
+				<p><label>{% trans "Video Url" %}</label>: {{incident.video_url|safe}}</p>
 		</div>
         {% else %}
             <div class="section">
@@ -56,51 +56,52 @@
 			{% endif %}
 			<div class="section">
 
-				<p><strong>{% trans "Reference Code" %}</strong>: {{incident.reference_code}}</p>
+				<p><label>{% trans "Reference Code" %}</label>: {{incident.reference_code}}</p>
 
-				<p><strong>{% trans "Description" %}</strong>: {{incident.description}}</p>
+				<p><label>{% trans "Description" %}</label>: {{incident.description}}</p>
 
-				<p><strong>{% trans "Recording Date" %}</strong>: {{incident.recording_date}}</p>
+				<p><label>{% trans "Recording Date" %}</label>: {{incident.recording_date}}</p>
 
-				<p><strong>{% trans "Contains Graphic Content" %}</strong>: {{incident.graphic_content}}</p>
-				<p><strong>{% trans "Keywords" %}</strong>: {{incident.keywords}}</p>
+        <p><label>{% trans "Source" %}</label>: {{incident.acquired_from}}</p>
 
-				<p><strong>{% trans "Languages" %}</strong>: {{incident.languages}}</p>
+				<p><label>{% trans "Keywords" %}</label>: {{incident.keywords}}</p>
+
+				<p><label>{% trans "Languages" %}</label>: {{incident.languages}}</p>
 
 			</div>
 
 			<div class="section">
-				<p><strong>{% trans "Location" %}</strong>: {% for locations in incident.location.all %}
+				<p><label>{% trans "Location" %}</label>: {% for locations in incident.location.all %}
 				{{locations}}<br>
 				{% endfor %}</p>
-				<p><strong>{% trans "Location Latitude" %}</strong>: {{incident.location_latitude}}</p>
-				<p><strong>{% trans "Location Longitude" %}</strong>: {{incident.location_longitude}}</p>
-				<p><strong>{% trans "Landmarks" %}</strong>: {{incident.landmarks}}</p>
-				<p><strong>{% trans "Weather in Media" %}</strong>: {{incident.weather_in_media}}</p>
+				<p><label>{% trans "Location Latitude" %}</label>: {{incident.location_latitude}}</p>
+				<p><label>{% trans "Location Longitude" %}</label>: {{incident.location_longitude}}</p>
+				<p><label>{% trans "Landmarks" %}</label>: {{incident.landmarks}}</p>
+				<p><label>{% trans "Weather in Media" %}</label>: {{incident.weather_in_media}}</p>
 			</div>
 
 			<div class="section">
-				<p><strong>{% trans "Type of Violation" %}</strong>:
+				<p><label>{% trans "Type of Violation" %}</label>:
 		            {% for incidents in incident.type_of_violation.all %}
 						{{incidents}}<br>
 					{% endfor %}
 
 				</p>
-				<p><strong>{% trans "Clothes and Uniforms" %}</strong>: {{incident.cloths_and_uniforms}}</p>
-				<p><strong>{% trans "Sex" %}</strong>: {{incident.gender_or_sex}}</p>
-				<p><strong>{% trans "Weapons Used" %}</strong>: {{incident.weapons_used}}</p>
+				<p><label>{% trans "Clothes and Uniforms" %}</label>: {{incident.cloths_and_uniforms}}</p>
+				<p><label>{% trans "Sex" %}</label>: {{incident.gender_or_sex}}</p>
+				<p><label>{% trans "Weapons Used" %}</label>: {{incident.weapons_used}}</p>
 
 			</div>
 
 			<div class="section">
-				<p><strong>{% trans "Edited" %}</strong>: {{incident.edited}}</p>
-				<p><strong>{% trans "File Size" %}</strong>: {{incident.file_size}}</p>
-				<p><strong>{% trans "Duration" %}</strong>: {{incident.duration}}</p>
-				<p><strong>{% trans "Device used to record" %}</strong>:
+				<p><label>{% trans "Edited" %}</label>: {{incident.edited}}</p>
+				<p><label>{% trans "File Size" %}</label>: {{incident.file_size}}</p>
+				<p><label>{% trans "Duration" %}</label>: {{incident.duration}}</p>
+				<p><label>{% trans "Device used to record" %}</label>:
 		            {% for device in incident.device_used.all %}
 				      {{device}}<br>
 				    {% endfor %}</p>
-				<p><strong>{% trans "Media Content Type" %}</strong>:
+				<p><label>{% trans "Media Content Type" %}</label>:
 		            {% for media in incident.media_content_type.all %}
 				      {{media}}<br>
 				      {% endfor %}
@@ -109,22 +110,22 @@
 			</div>
 
 			<div class="section">
-				<p><strong>{% trans "Chain of Custody Notes" %}</strong>: {{incident.chain_of_custody_notes_public}}</p>
-				<p><strong>{% trans "Finding Aids" %}</strong>: {{incident.finding_aids}}</p>
+				<p><label>{% trans "Chain of Custody Notes" %}</label>: {{incident.chain_of_custody_notes_public}}</p>
+				<p><label>{% trans "Finding Aids" %}</label>: {{incident.finding_aids}}</p>
 
-				<p><strong>{% trans "International Instrument" %}</strong>:
+				<p><label>{% trans "International Instrument" %}</label>:
 		            {% for instrument in incident.international_instrument.all %}
 		                {{instrument}}
 		            {% endfor %}</br></p>
-				<p><strong>{% trans "International Instrument Notes" %}</strong>: {{incident.international_instrument_notes}}</p>
+				<p><label>{% trans "International Instrument Notes" %}</label>: {{incident.international_instrument_notes}}</p>
 
 			</div>
 
 			<div class="section">
 
-				<p><strong>{% trans "URLs and News" %}</strong>: {{incident.urls_and_news}}</p>
-				<p><strong>{% trans "Reliability Score" %}</strong>: {{incident.reliability_score}}</p>
-				<p><strong>{% trans "Related Incidents" %}</strong>:
+				<p><label>{% trans "URLs and News" %}</label>: {{incident.urls_and_news}}</p>
+				<p><label>{% trans "Reliability Score" %}</label>: {{incident.reliability_score}}</p>
+				<p><label>{% trans "Related Incidents" %}</label>:
 		            {% for incident in incident.related_incidents.all%}
 				      {{incident}}<br>
 		            {% endfor %}</p>
@@ -159,6 +160,24 @@
 
         }
 	</script>
+
+  <style type="text/css">
+  .incidentbody{
+    background-color:#444;
+    color:white;
+  }
+
+  .incidentbody .section{
+    background-color:#555;
+    font-size:1.4rem;
+  }
+
+  .incidentbody .section label{
+    font-family:"monospace";
+    width:50%;
+  }
+
+  </style>
 
 
 {% endblock %}
