@@ -183,6 +183,8 @@ class DatabaseEntry(models.Model):
       <div class="popupmodel">
         <a href="/database/%(id)s" target="_blank">%(refcode)s</a>
         <small>%(recording_date)s</small>
+        <br />
+        <strong><small>%(violation)s</small></strong>
         <p>%(description)s</p>
       </div>
         ''' % {
@@ -190,6 +192,7 @@ class DatabaseEntry(models.Model):
         'refcode':self.reference_code,
         'recording_date':self.recording_date,
         'description':self.description,
+        'violation':self.type_of_violation,
         }
       return htmlcontent
 

@@ -2,7 +2,7 @@ from modeltranslation.translator import translator, TranslationOptions
 from database.models import *
 
 class DatabaseEntryTranslationOptions(TranslationOptions):
-    fields = ('name', 
+    fields = ('name',
     	'description',
     	'chain_of_custody_notes_public',
     	'international_instrument_notes',
@@ -10,6 +10,7 @@ class DatabaseEntryTranslationOptions(TranslationOptions):
     	'weather_in_media',
     	'weapons_used',
     	'urls_and_news',
+      'acquired_from',
 
     	)
 

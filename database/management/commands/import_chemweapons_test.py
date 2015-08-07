@@ -8,6 +8,7 @@ from django.shortcuts import get_object_or_404, render
 from djgeojson.fields import PointField, PolygonField
 from django.contrib.gis.geos import GEOSGeometry
 from django.contrib.gis.geos import Point, LineString, MultiLineString
+from datetime import datetime
 
 
 class Command(BaseCommand):
@@ -46,6 +47,28 @@ class Command(BaseCommand):
           else:
               return (int(new[0])+int(new[1])/60.0+int(new[2])/3600.0) * direction[new_dir]
 
+        def parse_date(date=None):
+          if date:
+            #spreadsheet date format: 08/21/13 12:00 AM
+            try:
+              newdate = datetime.strptime(date, '%m/%d/%y %I:%M %p')
+            except:
+              return datetime.now
+            #newdate = datetime.strptime('Jun 1 2005  1:33PM', '%b %d %Y %I:%M%p')
+            return newdate
+          return datetime.now
+
+        def find_violationtype(violation_string):
+          violations = ViolationType.objects.filter(name_en__icontains=violation_string)
+          violation = None
+          if violations:
+            violation = violations[0]
+            print "found %s" % violation
+          else:
+            pass
+          return violation
+
+
         print BASE_PATH
         with open( BASE_PATH + '/database/data/chemweap.csv', 'r') as f:
           reader = csv.DictReader(f, (
@@ -57,12 +80,15 @@ class Command(BaseCommand):
                 "accuracy",
                 "time",
                 "summary",
+                "summary_ar",
                 "violationtype",
                 "weapons",
                 "sources",
                 "sources_ar",
-                "online_url",
-                "videolink"))
+                "url",
+                "yt_id",
+                "url_yt"
+                ))
           print reader
           #print [ row["id"] for row in reader ]
           print reader
@@ -77,14 +103,16 @@ class Command(BaseCommand):
               location_latitude = row["lat"],
               location_longitude = row ["lon"],
               #time = parse_date(row["time"]),
-              description = row["summary"],
-              #type_of_violation = find_violationtype(row["violationtype"]),
+              description_en = row["summary"],
+              description_ar = row["summary_ar"],
+              type_of_violation = find_violationtype(row["violationtype"]),
               weapons_used = row["weapons"],
-              acquired_from = row["sources"],
+              acquired_from_en = row["sources"],
+              acquired_from_ar = row["sources_ar"],
               #source_connection = row["sources"],
-              #recording_date
-              video_url = row["videolink"],
-              online_link = row["online_url"],
+              recording_date = parse_date(row["time"]),
+              video_url = row["url"],
+              online_link = row["url_yt"],
               online_title = "",
               graphic_content = True
               )
