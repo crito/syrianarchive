@@ -196,6 +196,10 @@ class DatabaseEntry(models.Model):
         }
       return htmlcontent
 
+    @property
+    def violation(self):
+      return self.type_of_violation.name
+
     def get_location_field(self):
         if self.geom != None:
             print "here1"

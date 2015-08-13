@@ -11,6 +11,9 @@ from .models import *
 from .forms import *
 import time
 from haystack.query import SearchQuerySet
+from djgeojson.views import GeoJSONLayerView
+
+
 
 
 @login_required
@@ -19,49 +22,29 @@ def index(request):
 
     if request.method == "GET" and request.GET.items():
         form = DatabaseFilterForm(request.GET, request.FILES)
-        print request.GET.getlist('type_of_violation')
         if form.is_valid():
             type_of_violation = form.cleaned_data['type_of_violation']
             location = form.cleaned_data['location']
             start_date = form.cleaned_data['startDate']
             end_date = form.cleaned_data['endDate']
-            page = form.cleaned_data['page']
-            search_terms = form.cleaned_data['search_terms']
 
             kwargs = {}
             if type_of_violation:
-                print type_of_violation, ' aaaaa'
                 kwargs['type_of_violation'] = type_of_violation
             if location:
                 kwargs['location'] = location
             if start_date and end_date:
                 kwargs['recording_date__range'] = (start_date, end_date)
 
-            entries = SearchQuerySet()
+            entries = DatabaseEntry.objects.all().filter(**kwargs)
 
-            print kwargs, 'kwargs'
-
-            if search_terms:
-                entries = entries.filter(content=search_terms+'~')
-
-            if page:
-                page = page - 1
-                entries = entries.filter(**kwargs)[page*50:page*50+50]
-            else:
-                entries = entries.filter(**kwargs)[0:50]
-
-            def queryset_gen(search_qs):
-                for item in search_qs:
-                    yield item.object  # This is the line that gets the model instance out of the Search object
-
-            entries = queryset_gen(entries)
 
         else:
-            entries = DatabaseEntry.objects.all()[0:50]
+            entries = DatabaseEntry.objects.all()
             form = DatabaseFilterForm(request.GET, request.FILES)
 
     else:
-        entries = DatabaseEntry.objects.all()[0:50]
+        entries = DatabaseEntry.objects.all()
         form = DatabaseFilterForm(request.GET, request.FILES)
 
     return render(request, 'database/index.html', {'entries': entries, 'form':form, "current_path":current_path})
@@ -84,5 +67,16 @@ def collection(request, id):
     return render(request, 'database/collection.html', {'collection':collection, 'videos':videos})
 
 
+class MapLayer(GeoJSONLayerView):
+
+  def get_queryset(self):
+      print self.request
+      if self.request.method == "GET" and self.request.GET.items():
+        print "yea"
+      context = DatabaseEntry.objects.all()
+      return context
+
 def map(request):
-    return render(request, 'database/map.html',{})
+
+  violationtypes = ViolationType.objects.all()
+  return render(request, 'database/map.html',{'violationtypes':violationtypes,})

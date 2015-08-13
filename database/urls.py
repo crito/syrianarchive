@@ -6,9 +6,9 @@ from database.models import DatabaseEntry
 urlpatterns = patterns('',
 	url(r'^$', views.index, name='index'),
     url(r'^collections/$', views.collections, name='collections'),
-    url(r'^map_json/$', GeoJSONLayerView.as_view(
+    url(r'^map_json/$', views.MapLayer.as_view(
         model=DatabaseEntry,
-        properties=['popupcontent'],
+        properties=['popupcontent','violation'],
         ),
       name='incidents'),
     url(r'^map/$', views.map, name='map'),

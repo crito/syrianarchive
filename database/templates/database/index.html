@@ -24,43 +24,13 @@
 		  {{ form.errors }}
 			{{ form.non_field_errors }}
 
-			{% trans "Search" %}
-			{{ form.search_terms }}
-			<table>
-				<tr>
-					<td> 
-						{% trans "Type of Violation" %}
-					</td>
-					<td>
-						{{ form.type_of_violation }}
+			{% trans "Type of Violation" %} {{ form.type_of_violation }}
 
-					</td>
-					<td> 
-			  			{% trans "Location" %}
-					</td>
-					<td>
-			  			{{form.location}}
-					</td>
-				</tr>
-				<tr>
-					<td> 
-		  				{% trans "Start Date" %}
-					</td>
-					<td>
-					  {{form.startDate}}
-					</td>
-					<td> 
-		  				{% trans "End Date" %}
-					</td>
-					<td>
-			  			{{form.endDate}}
-					</td>
-				</tr>
-			</table>
+			{% trans "Location" %} {{form.location}}
 
-		  	{% trans "Page" %}
-			  {{form.page}}
+		  {% trans "Start Date" %} {{form.startDate}}
 
+			{% trans "End Date" %} {{form.endDate}}
 
 
 		  <input type="submit" value="{% trans 'Filter' %}" />
@@ -82,7 +52,7 @@
 					<th>{% trans "Type of Violation" %}</th>
 					<th>{% trans "Video" %}</th>
 				</tr>
-				
+
 			<thead>
 
 			<tbody>
@@ -101,19 +71,15 @@
             			{{entry.recording_date}}
             		</td>
             		<td>
-            			<b>{% for loc in entry.location.all %}
-            				{{ loc.name }}
-            			{% endfor %}</b>
+            			{{ entry.location }}
             		</td>
 
             		<td>
-            			{% for ctype in entry.type_of_violation.all %}
-            				{{ ctype.name }}
-            			{% endfor %}
+                  {{ entry.type_of_violation }}
 			</td>
             		<td>
             		</td>
-					
+
 					</tr>
 				{% endfor %}
 			<tbody>
@@ -134,8 +100,8 @@
 		color: black;
 	}
 </style>
-<link href="/static/timetracker/datepicker/css/datepicker3.css" rel="stylesheet" media="screen">
-<script src="/static/timetracker/datepicker/js/bootstrap-datepicker.js"></script>
+<link href="/static/components/bootstrap-datepicker/css/bootstrap-datepicker3.css" rel="stylesheet" media="screen">
+<script src="/static/components/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
 
 
 <script type="text/javascript">

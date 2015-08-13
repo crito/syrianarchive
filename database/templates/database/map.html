@@ -14,6 +14,9 @@
   <link rel="stylesheet" href="/static/components/leaflet_marker_cluster/MarkerCluster.Default.css" />
   <script src="/static/components/leaflet_marker_cluster/leaflet.markercluster-src.js"></script>
 
+  <link href="/static/components/bootstrap-datepicker/css/bootstrap-datepicker3.css" rel="stylesheet" media="screen">
+  <script src="/static/components/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+
   <style type="text/css">
     div#incidents {
         height: 500px;
@@ -29,12 +32,25 @@
     </div>
   </div>
 
+<!--   <div class="row filterrow">
+    <div class="col-md-12">
+      <h4>Filter</h4>
+        {% for violation in violationtypes %}
+          <div class="violation" data-filter="{{violation}}">
+            {{ violation }}
+          </div>
+        {% endfor %}
+    </div>
+  </div> -->
+
 
     <script type="text/javascript">
       var collection = {{ qs_results|geojsonfeature|safe }};
       function map_init (map, options) {
 
             var dataurl = '{% url "incidents" %}';
+
+
 
 
             // Download GeoJSON via Ajax
@@ -48,15 +64,49 @@
                   }
                 }
 
+
+
+                // $(".violation").click(function(e  ){
+                //   vtype = $(self).attr('data-filter')
+                //   $(".violation").removeClass('.active');
+                //   $(this).addClass('active');
+                //   markers.setFilter(function(f) {
+                //       return f.properties['violation'] == 'vtype';
+                //   });
+                //   return false;
+
+
+                // });
+
                 var markers = L.markerClusterGroup();
                 // Add GeoJSON layer
                 var points = L.geoJson(data, {onEachFeature: onEachFeature})
 
+
                 markers.addLayer(points);
                 map.addLayer(markers);
+
+
+
             });
 
         }
+
+
+
+      (function($){
+        $(document).ready(function(){
+        $('.datepicker').datepicker({
+                format: 'dd M yyyy',
+                autoclose : true,
+                todayBtn: true,
+                closeBtn: true,
+                weekStart: 1,
+            });
+
+      });
+
+    }(jQuery));
 
     </script>
 
