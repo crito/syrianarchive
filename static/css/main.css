@@ -40,9 +40,8 @@ body, html{
   color:#FA7000;
   border-color: #FA7000;
   background-color:rgba(0,0,0,.5);
-  font-size:.8em;
+  font-size:.5em;
   font-weight:bold;
-  float:right;
 }
 
 .call-to-action:hover{
@@ -205,7 +204,22 @@ background-color: rgba(0,0,0,.5);
 
 
 
+.pagebody h3, .pagebody h4, .pagebody h2, .pagebody h5 {
+    font-weight: normal !important;
+    color: #0487A4;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    line-height: 1.6em;
+    font-family: "Droid Sans";
+    text-shadow: 2px 2px 1px white;
+    border-left:5px solid #FA7000;
+    margin-left: -31px;
+    padding-left:28px;
+}
 
+.pagebody h3 strong, .pagebody h4 strong, .pagebody h2 strong, .pagebody h5 strong{
+    font-weight: normal;
+}
 
 
 

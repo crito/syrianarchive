@@ -11,7 +11,6 @@
 
 .section-front h2, .collaboratorrow h2{
     font-size: 2em;
-    font-weight: bold;
 }
 
 
@@ -72,10 +71,14 @@ margin-left: -.05em;
 
 }
 .controe{
-    font-size:2em;
-    font-weight:bold;
+    font-size:1.8em;
     padding-top:10%;
     height:100%;
+}
+
+.controe p{
+  background-color:rgba(0,0,0,.5);
+  display: inline;
 }
 
 .collaboratetitle{
