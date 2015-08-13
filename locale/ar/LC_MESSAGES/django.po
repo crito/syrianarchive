@@ -30,8 +30,6 @@ msgid "Incident"
 msgstr "الحدث"
 
 #: database/templates/database/incident.html:24
-#, fuzzy
-#| msgid "This video contains graphic content. Viewer discretion is advised."
 msgid "This video contains graphic content.  Viewer discretion is advised."
 msgstr "يرجى الحذر. يحتوي الفيديو على مشاهد مؤلمة"
 
@@ -310,12 +308,7 @@ msgid "Contact"
 msgstr "إتصل بنا"
 
 #: templates/loginrequired.html:11
-#, fuzzy
-#| msgid ""
-#| "This page is currently private and in development. Please log in to see "
-#| "it."
-msgid ""
-"This page is currently private and in development.  Please log in to see it."
+msgid "This page is currently private and in development.  Please log in to see it."
 msgstr "إن هذه الصفحة خاصة وقيد الإنشاء."
 
 #~ msgid "Search"
