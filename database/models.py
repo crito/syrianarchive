@@ -67,6 +67,9 @@ class Collection(models.Model):
     description     = models.CharField( max_length = 8000, null = True, blank = True)
     image           = models.ImageField(upload_to="collection_images", null = True, blank = True)
 
+    def __unicode__(self):
+      return self.name
+
 class DatabaseEntry(models.Model):
     '''
         video fields

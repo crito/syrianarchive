@@ -53,7 +53,6 @@ class DatabaseEntryAdmin(TranslationAdmin, LeafletGeoAdmin):
         }),
         ('Video Fields', {
             'fields': (
-                'video_source',
                 'video_url',
                 'thumbnail',
                 'collections'
@@ -73,6 +72,7 @@ class DatabaseEntryAdmin(TranslationAdmin, LeafletGeoAdmin):
             	'recording_date',
                 'edited',
             	('file_size','duration',),
+              'reliability_score',
             	'chain_of_custody_notes_public',
             	'media_content_type',
             	'device_used',
@@ -82,8 +82,8 @@ class DatabaseEntryAdmin(TranslationAdmin, LeafletGeoAdmin):
             	'type_of_violation',
             	'graphic_content',
             	'keywords',
-            	'international_instrument',
-            	'international_instrument_notes',
+            	# 'international_instrument',
+            	# 'international_instrument_notes',
             	'landmarks',
             	'weather_in_media',
             	'weapons_used',

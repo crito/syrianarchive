@@ -128,7 +128,7 @@
 			<div class="section">
 
 				<p><label>{% trans "URLs and News" %}</label> {{incident.urls_and_news}}</p>
-				<p><label>{% trans "Reliability Score" %}</label> {{incident.reliability_score}}</p>
+				<p><label>{% trans "Reliability Score" %}</label> <br />{{incident.reliability_score}}</p>
 				<p><label>{% trans "Related Incidents" %}</label>
 		            {% for incident in incident.related_incidents.all%}
 				      {{incident}}<br>
