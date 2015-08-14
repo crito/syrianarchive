@@ -88,6 +88,17 @@ info@syrianarchive.org
 Tech:
 niko@syrianarchive.org
 
+## Contribute
+
+edit translation files:
+    (on dev branch please!) https://github.com/nikonikoniko/syrianarchive/blob/dev/locale/ar/LC_MESSAGES/django.po
+    
+help with design or coding: 
+    email niko@syrianarchive.org
+    
+help with the database:
+    email info@syrianarchive.org
+
 ## Design
 
 color scheme

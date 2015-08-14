@@ -136,7 +136,7 @@ msgstr "ملاحظات حول الآلية القانونية"
 
 #: database/templates/database/incident.html:130
 msgid "URLs and News"
-msgstr "روابط"
+msgstr "أخبار وروابط"
 
 #: database/templates/database/incident.html:131
 msgid "Reliability Score"
@@ -173,8 +173,8 @@ msgid "Filter"
 msgstr "فيما يلي الخيارات المتاحة للبحث حسب"
 
 #: database/templates/database/index.html:48
-msgid "Name"
-msgstr "العنوان"
+msgid "Code"
+msgstr "الكود"
 
 #: database/templates/database/index.html:49
 msgid "Description"
@@ -213,7 +213,7 @@ msgstr "لأرشفة انتهاكات حقوق الإنسان"
 
 #: homepage/templates/homepage/index.html:48
 msgid "View map of chemical weapons attacks"
-msgstr ""
+msgstr "إظهار خريطة الهجمات بالأسلحة الكيماوية"
 
 #: homepage/templates/homepage/index.html:54 templates/base.html:106
 msgid "About"
@@ -233,7 +233,7 @@ msgid ""
 "We collaborate with organisations and media agencies that document and "
 "report human rights violations in Syria"
 msgstr ""
-"نحن نتعاون مع منظمات المجتمع المدني والمراكز الإعلامية التي ترصد وتوثق "
+"نتعاون مع منظمات المجتمع المدني والمراكز الإعلامية التي ترصد وتوثق "
 "إنتهاكات حقوق الإنسان في سوريا"
 
 #: homepage/templates/homepage/index.html:99
@@ -266,11 +266,11 @@ msgstr "الصفحات المرتبطة"
 
 #: templates/404.html:5
 msgid "Not Found"
-msgstr ""
+msgstr "غير موجود"
 
 #: templates/404.html:11
 msgid "Page not found. (404)"
-msgstr ""
+msgstr "الصفحة غير موجودة"
 
 #: templates/base.html:17 templates/base.html.py:22
 #, fuzzy
