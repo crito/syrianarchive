@@ -233,7 +233,7 @@ msgid ""
 "We collaborate with organisations and media agencies that document and "
 "report human rights violations in Syria"
 msgstr ""
-"نحن نتعاون مع منظمات المجتمع المدني والمراكز الإعلامية التي ترصد وتوثق "
+"نتعاون مع منظمات المجتمع المدني والمراكز الإعلامية التي ترصد وتوثق "
 "إنتهاكات حقوق الإنسان في سوريا"
 
 #: homepage/templates/homepage/index.html:99
