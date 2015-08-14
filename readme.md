@@ -73,6 +73,9 @@ This is the repository holding the django application to manage the database of 
     #add admin user
     python manage.py syncdb
 
+    #install the location data (it is xml formatted to allow unicode arabic editing)
+    python manage.py loaddata database/data/locations.xml
+
     #install the database metadata - International Instruments, ViolationTypes, Devices, ETC
     python manage.py loaddata database/data/database_meta_data.json
 
@@ -92,10 +95,10 @@ niko@syrianarchive.org
 
 edit translation files:
     (on dev branch please!) https://github.com/nikonikoniko/syrianarchive/blob/dev/locale/ar/LC_MESSAGES/django.po
-    
-help with design or coding: 
+
+help with design or coding:
     email niko@syrianarchive.org
-    
+
 help with the database:
     email info@syrianarchive.org
 

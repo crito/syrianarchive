@@ -4280,8 +4280,8 @@
         <field type="IntegerField" name="dataset_id">388</field>
     </object>
     <object pk="390" model="database.locationplace">
-        <field type="CharField" name="name">latameh</field>
-        <field type="CharField" name="name_en">latameh</field>
+        <field type="CharField" name="name">latamneh</field>
+        <field type="CharField" name="name_en">latamneh</field>
         <field type="CharField" name="name_ar">اللطامنة</field>
         <field to="database.locationplace" name="region" rel="ManyToOneRel">309</field>
         <field type="TextField" name="geom">{"type":"Point","coordinates":[36.621766,35.326749]}</field>
@@ -4874,8 +4874,8 @@
         <field type="IntegerField" name="dataset_id">442</field>
     </object>
     <object pk="444" model="database.locationplace">
-        <field type="CharField" name="name">Kafr Zita</field>
-        <field type="CharField" name="name_en">Kafr Zita</field>
+        <field type="CharField" name="name">KafrZita</field>
+        <field type="CharField" name="name_en">KafrZita</field>
         <field type="CharField" name="name_ar">كفرزيتا</field>
         <field to="database.locationplace" name="region" rel="ManyToOneRel">309</field>
         <field type="TextField" name="geom">{"type":"Point","coordinates":[36.601458,35.373461]}</field>
@@ -18017,5 +18017,104 @@
         <field type="CharField" name="latitude">34.816956</field>
         <field type="CharField" name="longitude">36.116588</field>
         <field type="IntegerField" name="dataset_id">818</field>
+    </object>
+    <object pk="1653" model="database.locationplace">
+        <field type="CharField" name="name">Ayn Tarma</field>
+        <field type="CharField" name="name_en">Ayn Tarma</field>
+        <field type="CharField" name="name_ar">عين ترما</field>
+        <field to="database.locationplace" name="region" rel="ManyToOneRel">171</field>
+        <field type="TextField" name="geom">{"type":"Point","coordinates":[36.3499285,33.5123488]}</field>
+        <field type="TextField" name="region_geom"><None></None></field>
+        <field type="CharField" name="latitude">33.5123488</field>
+        <field type="CharField" name="longitude">36.3499285</field>
+        <field type="IntegerField" name="dataset_id">819</field>
+    </object>
+    <object pk="1654" model="database.locationplace">
+        <field type="CharField" name="name">Erbin</field>
+        <field type="CharField" name="name_en">Erbin</field>
+        <field type="CharField" name="name_ar">عربين</field>
+        <field to="database.locationplace" name="region" rel="ManyToOneRel">171</field>
+        <field type="TextField" name="geom">{"type":"Point","coordinates":[36.365787,33.538893]}</field>
+        <field type="TextField" name="region_geom"><None></None></field>
+        <field type="CharField" name="latitude">33.538893</field>
+        <field type="CharField" name="longitude">36.365787</field>
+        <field type="IntegerField" name="dataset_id">820</field>
+    </object>
+    <object pk="1655" model="database.locationplace">
+        <field type="CharField" name="name">Hazzah</field>
+        <field type="CharField" name="name_en">Hazzah</field>
+        <field type="CharField" name="name_ar">حزة</field>
+        <field to="database.locationplace" name="region" rel="ManyToOneRel">171</field>
+        <field type="TextField" name="geom">{"type":"Point","coordinates":[36.3647745,33.5188698]}</field>
+        <field type="TextField" name="region_geom"><None></None></field>
+        <field type="CharField" name="latitude">33.5188698</field>
+        <field type="CharField" name="longitude">36.3647745</field>
+        <field type="IntegerField" name="dataset_id">821</field>
+    </object>
+    <object pk="1656" model="database.locationplace">
+        <field type="CharField" name="name">Saqba</field>
+        <field type="CharField" name="name_en">Saqba</field>
+        <field type="CharField" name="name_ar">سقبا</field>
+        <field to="database.locationplace" name="region" rel="ManyToOneRel">171</field>
+        <field type="TextField" name="geom">{"type":"Point","coordinates":[36.3799215,33.5184752]}</field>
+        <field type="TextField" name="region_geom"><None></None></field>
+        <field type="CharField" name="latitude">33.5184752</field>
+        <field type="CharField" name="longitude">36.3799215</field>
+        <field type="IntegerField" name="dataset_id">822</field>
+    </object>
+    <object pk="1657" model="database.locationplace">
+        <field type="CharField" name="name">zamalka</field>
+        <field type="CharField" name="name_en">zamalka</field>
+        <field type="CharField" name="name_ar">زملكا</field>
+        <field to="database.locationplace" name="region" rel="ManyToOneRel">171</field>
+        <field type="TextField" name="geom">{"type":"Point","coordinates":[36.3510736,33.5261956]}</field>
+        <field type="TextField" name="region_geom"><None></None></field>
+        <field type="CharField" name="latitude">33.5261956</field>
+        <field type="CharField" name="longitude">36.3510736</field>
+        <field type="IntegerField" name="dataset_id">823</field>
+    </object>
+    <object pk="1658" model="database.locationplace">
+        <field type="CharField" name="name">Hammuriyah</field>
+        <field type="CharField" name="name_en">Hammuriyah</field>
+        <field type="CharField" name="name_ar">حمورية</field>
+        <field to="database.locationplace" name="region" rel="ManyToOneRel">171</field>
+        <field type="TextField" name="geom">{"type":"Point","coordinates":[36.3848593,33.5296468]}</field>
+        <field type="TextField" name="region_geom"><None></None></field>
+        <field type="CharField" name="latitude">33.5296468</field>
+        <field type="CharField" name="longitude">36.3848593</field>
+        <field type="IntegerField" name="dataset_id">824</field>
+    </object>
+    <object pk="1659" model="database.locationplace">
+        <field type="CharField" name="name">Tall Manis</field>
+        <field type="CharField" name="name_en">Tall Manis</field>
+        <field type="CharField" name="name_ar">تل منيس</field>
+        <field to="database.locationplace" name="region" rel="ManyToOneRel">523</field>
+        <field type="TextField" name="geom">{"type":"Point","coordinates":[36.7396118,35.6383733]}</field>
+        <field type="TextField" name="region_geom"><None></None></field>
+        <field type="CharField" name="latitude">35.6383733</field>
+        <field type="CharField" name="longitude">36.7396118</field>
+        <field type="IntegerField" name="dataset_id">825</field>
+    </object>
+    <object pk="1660" model="database.locationplace">
+        <field type="CharField" name="name">Adra</field>
+        <field type="CharField" name="name_en">Adra</field>
+        <field type="CharField" name="name_ar">عدرا</field>
+        <field to="database.locationplace" name="region" rel="ManyToOneRel">171</field>
+        <field type="TextField" name="geom">{"type":"Point","coordinates":[36.5112588,35.6383733]}</field>
+        <field type="TextField" name="region_geom"><None></None></field>
+        <field type="CharField" name="latitude">35.6383733</field>
+        <field type="CharField" name="longitude">36.5112588</field>
+        <field type="IntegerField" name="dataset_id">826</field>
+    </object>
+    <object pk="1661" model="database.locationplace">
+        <field type="CharField" name="name">AlBayadah</field>
+        <field type="CharField" name="name_en">AlBayadah</field>
+        <field type="CharField" name="name_ar">حي البياضة</field>
+        <field to="database.locationplace" name="region" rel="ManyToOneRel">473</field>
+        <field type="TextField" name="geom">{"type":"Point","coordinates":[36.7283,34.7454]}</field>
+        <field type="TextField" name="region_geom"><None></None></field>
+        <field type="CharField" name="latitude">34.7454</field>
+        <field type="CharField" name="longitude">36.7283</field>
+        <field type="IntegerField" name="dataset_id">827</field>
     </object>
 </django-objects>
